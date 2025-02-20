@@ -3,108 +3,29 @@ show// funcion abrir modad
       //ABRIR MODAL
       $(function () {
         //$('#fcclientes-modal').modal('show');
-        //obtener_data_cliente(0) ;
+        //fcc_obtener_data_ws(0) ;
 
         
       });
 
 
 
-      //CONTENEDOR PRINCIPAL DE USERS
-      document.addEventListener("DOMContentLoaded", () => {
-
-
-        const steps = document.querySelectorAll(".fcclientes-step");
-        const contents = document.querySelectorAll(".fcclientes-content");
-        const nextButtons = document.querySelectorAll(".fcclientes-button-next-btn");
-        const prevButtons = document.querySelectorAll(".fcclientes-button-prev-btn");
-
-        let currentStep = 1;
-
-        function showStep(step) {
-          steps.forEach((s, index) => {
-            s.classList.toggle("active", index + 1 === step);
-          });
-
-          contents.forEach((content) => {
-            content.classList.toggle("fcclientes-hidden", content.getAttribute("fcclientes-content-data") != step);
-          });
-
-          currentStep = step;
-          // Desplazar horizontalmente al paso correspondiente
-          const content = document.querySelector(`.fcclientes-content[fcclientes-content-data="${step}"]`);
-          document.querySelector(".fcclientes-contents").scrollTo({
-            left: content.offsetLeft,
-            behavior: "smooth"
-          });
-        }
-
-        nextButtons.forEach((button) => {
-          button.addEventListener("click", () => {
-            if (currentStep < steps.length) {
-              showStep(currentStep + 1);
-            }
-          });
-        });
-
-        prevButtons.forEach((button) => {
-          button.addEventListener("click", () => {
-            if (currentStep > 1) {
-              showStep(currentStep - 1);
-            }
-          });
-        });
-
-        steps.forEach((step) => {
-          step.addEventListener("click", () => {
-            const stepNumber = parseInt(step.getAttribute("fcclientes-step-data"));
-            showStep(stepNumber);
-          });
-        });
-      });
-
-
-      //3. PREFERENCIAS
-      document.querySelectorAll('.fcclientes-preferencias-step').forEach(fusers_tab => {
-        fusers_tab.addEventListener('click', () => {
-          // Cambiar la clase activa en los fcclientes-preferencias-steps
-          document.querySelectorAll('.fcclientes-preferencias-step').forEach(t => t.classList.remove('active'));
-          fusers_tab.classList.add('active');
-
-          // Mostrar el contenido correspondiente
-          const tabId = fusers_tab.getAttribute('fcclientes-preferencias-step-data');
-          document.querySelectorAll('.fcclientes-preferencias-content').forEach(content => {
-            content.classList.remove('active');
-          });
-          document.getElementById('fcclientes-preferencias-content-' + tabId).classList.add('active');
-        });
-      });
 
 
 
 
- // Función que se ejecuta al abrir el modal
-      function openModal() {
-        
-        document.getElementById('formContainer').style.display = 'none';
-        document.querySelector('.modal-body').classList.remove('scrollable');
 
-        // Resetear el fcc_CA_formulario
-        document.getElementById('dynamicForm').reset();
-        updateDocumentTypeOptions('persona'); // Por defecto, mostrar opciones de persona
-        document.getElementById('fcclientes_personaFields').style.display = 'none';
-        document.getElementById('fcclientes_empresaFields').style.display = 'none';
-      }
 
-      function showForm(clienteTipo) {
+
+      function fcc_Empresa_Persona(clienteTipo, ) {
         // Muestra el fcc_CA_formulario correspondiente
-        document.getElementById('formContainer').style.display = 'block';
+        document.getElementById('fcc_formContainer').style.display = 'block';
 
         // Agrega la clase scrollable al modal-body
         document.querySelector('.modal-body').classList.add('scrollable');
 
           // Obtén referencias a ambos botones
-  const btnPersona = document.getElementById('fcc_btn_persona');
+  const btnPersona = document.getElementById( 'fcc_btn_persona');
   const btnEmpresa = document.getElementById('fcc_btn_empresa');
 
    // Limpia estilos en ambos botones (para que no quede el color anterior)
@@ -124,8 +45,8 @@ show// funcion abrir modad
           document.getElementById('fcclientes_empresaFields').style.display = 'none';
       
           // Cambia el tipo de documento a "DNI"
-          document.getElementById('fcclientes_tipo_doc').value = "1";
-          updateDocumentTypeOptions('persona');
+          document.getElementById('fcc_tipo_doc').value = "1";
+          fcc_actualizarcampo_empresa_persona('persona');
       
         } else if (clienteTipo =='6') {
           // Activa el estilo naranja/blanco en el botón Empresa
@@ -137,14 +58,14 @@ show// funcion abrir modad
           document.getElementById('fcclientes_personaFields').style.display = 'none';
       
           // Cambia el tipo de documento a "RUC"
-          document.getElementById('fcclientes_tipo_doc').value = "6";
+          document.getElementById('fcc_tipo_doc').value = "6";
           // Actualiza las opciones del select
-          updateDocumentTypeOptions(clienteTipo === '6' ? 'empresa' : 'persona');
+          fcc_actualizarcampo_empresa_persona(clienteTipo === '6' ? 'empresa' : 'persona');
         }
       }
 
-      function updateDocumentTypeOptions(type) {
-        const select = document.getElementById('fcclientes_tipo_doc');
+      function fcc_actualizarcampo_empresa_persona(type) {
+        const select = document.getElementById('fcc_tipo_doc');
         select.innerHTML = ''; // Limpiar opciones
 
         if (type === 'persona') {
@@ -159,16 +80,16 @@ show// funcion abrir modad
         }
       }
 
-      function hideForm() {
-        document.getElementById('formContainer').style.display = 'none';
-        document.querySelector('.modal-body').classList.remove('scrollable');
+      // function hideForm() {
+      //   document.getElementById('fcc_formContainer').style.display = 'none';
+      //   document.querySelector('.modal-body').classList.remove('scrollable');
 
-        // Resetear el fcc_CA_formulario
-        document.getElementById('dynamicForm').reset();
-        updateDocumentTypeOptions('persona'); // Por defecto, mostrar opciones de persona
-        document.getElementById('fcclientes_personaFields').style.display = 'none';
-        document.getElementById('fcclientes_empresaFields').style.display = 'none';
-      }
+      //   // Resetear el fcc_CA_formulario
+      //   document.getElementById('fcc_dynamicForm').reset();
+      //   fcc_actualizarcampo_empresa_persona('persona'); // Por defecto, mostrar opciones de persona
+      //   document.getElementById('fcclientes_personaFields').style.display = 'none';
+      //   document.getElementById('fcclientes_empresaFields').style.display = 'none';
+      // }
 function fcclientes_btn_mas_opciones(){
   document.getElementById('fcclientes-btn-mas-opciones').classList.add('d-none');
   
@@ -194,8 +115,8 @@ function fcclientes_btn_mas_opciones(){
     
   }
    
-        // Modificar fcclientes-container
-        const container = document.querySelector('.fcclientes-container');
+        // Modificar fcRegistro_container
+        const container = document.querySelector('.fcRegistro_container');
         if (container) {
           container.style.display = 'grid';
           container.style.gridTemplateColumns = '0.5fr 1fr';
@@ -203,7 +124,7 @@ function fcclientes_btn_mas_opciones(){
 
          
 
-        // Modificar fcclientes-container
+        // Modificar fcRegistro_container
         const content = document.querySelector('.fcclientes-contents');
         if (content) {
           content.classList.remove('fcclientes-hidden');
@@ -252,14 +173,14 @@ function fcc_acordiones() {
   let camposAdicionales = [];
 
   // Referencias a los elementos del DOM
-  const container =  document.getElementById('container');
-  const agregarCampoBtn      = document.getElementById('agregarCampo');
+  const container =  document.getElementById('fcc_campos_adicionales');
+  const agregarCampoBtn      = document.getElementById('fcc_agregarCampo');
   const formularioNuevoCampo = document.getElementById('formulario-nuevo-campo');
-  const btnCancelar          = document.getElementById('btn-cancelar');
-  const btnGuardar           = document.getElementById('btn-guardar');
+  const btnCancelar          = document.getElementById('fcc_btn_cancelar');
+  const btnGuardar           = document.getElementById('fcc_btn_guardar');
 
   const inputNombreCampo      = document.getElementById('nombre_campo');
-  const inputDescripcionCampo = document.getElementById('descripcion_campo');
+  const inputDescripcionCampo = document.getElementById('fcc_descripcion_campo');
 
   const camposAdicionalesContainer = document.getElementById('camposAdicionalesContainer');
 
@@ -465,15 +386,37 @@ function editarCampo(index) {
                     };
 
 
+                    function fcc_abrirModalPersona() {
+                      const modalElement = document.getElementById('fcclientes-modal');
+                      
+                      const myModal = new bootstrap.Modal(modalElement);
+                  
+                     
+                     fcc_obtener_data_ws(0, 1); 
+                  
+                      
+                      myModal.show();
+                  }
+                  
+                  function fcc_abrirModalEmpresa() {
+                      const modalElement = document.getElementById('fcclientes-modal');
+                      const myModal = new bootstrap.Modal(modalElement);
+                  
+                      fcc_obtener_data_ws(0, 6); // Limpiamos el formulario con datos vacíos
+                  
+                     
+                  
+                      myModal.show();
+                  }
 
                             
 
   
 
-                    function obtener_data_cliente(id_cliente, tShowForm = 0) {
+                    function fcc_obtener_data_ws(id_cliente, tShowForm = 0) {
                       // Mostrar el spinner de carga
-                      document.getElementById('loadingSpinner').classList.remove('d-none');
-                      document.getElementById('fcclientes-formulario').classList.add('d-none');
+                      document.getElementById('fcRegistro_loadingSpinner').classList.remove('d-none');
+                      document.getElementById('fcRegistro_formulario').classList.add('d-none');
                   
                       const myHeaders = new Headers();
                       myHeaders.append("Content-Type", "application/json");
@@ -494,10 +437,10 @@ function editarCampo(index) {
                       .then((response) => response.text())  // Convertir la respuesta a texto (HTML)
                       .then((html) => {
                           // Ocultar el spinner de carga
-                          document.getElementById('loadingSpinner').classList.add('d-none');
+                          document.getElementById('fcRegistro_loadingSpinner').classList.add('d-none');
                   
                           // Mostrar el formulario y llenarlo con el HTML obtenido
-                          const formularioDiv = document.getElementById('fcclientes-formulario');
+                          const formularioDiv = document.getElementById('fcRegistro_formulario');
                           formularioDiv.innerHTML = html;  // Insertar el HTML en el div
                           formularioDiv.classList.remove('d-none');  // Mostrar el div
                   
@@ -516,7 +459,7 @@ function editarCampo(index) {
 
                           // Mostrar el formulario adecuado
                           if(tShowForm){
-                            showForm(tShowForm);
+                            fcc_Empresa_Persona(tShowForm);
                           }
 
                         });
@@ -525,7 +468,7 @@ function editarCampo(index) {
                       })
                       .catch((error) => {
                           console.error(error);  // Manejar errores
-                          document.getElementById('loadingSpinner').classList.add('d-none');  // Ocultar el spinner en caso de error
+                          document.getElementById('fcRegistro_loadingSpinner').classList.add('d-none');  // Ocultar el spinner en caso de error
                       });
                   }
 

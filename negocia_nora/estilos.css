@@ -1,7 +1,7 @@
 
 
 
-.fcclientes-container {
+.fcRegistro_container {
   display: grid;
   grid-template-columns: 0.5fr 0fr;
   /*gap: 20px;*/
@@ -13,7 +13,7 @@
   overflow: hidden;
 }
 
-.fcclientes-steps {
+.fcRegistro_steps{
   position: relative;
   /* Agregar esta propiedad para que la línea se posicione correctamente */
   display: flex;
@@ -255,7 +255,7 @@
 
 /* Responsive adjustments */
 @media (max-width: 992px) {
-  .fcclientes-container {
+  .fcRegistro_container {
     display: block !important;
   }
 
@@ -405,7 +405,14 @@
       .fcclientes-button-prev-btn {
         background-color: darkorange;
       }
+      button#fcc_btn_persona {
+   
+        gap: 10px;
+    }
 
+    button#fcc_btn_empresa {
+      gap: 10px;
+      }
       /*btnconsulatar*/
 
       #fcclientes_btn_cliente_proveedor_consult {
@@ -520,13 +527,13 @@
 
       
       
-      .container {
+      .fcRegistro_container_shimmer {
         margin-bottom: 30px; 
         display: flex; /* Activa Flexbox */
         justify-content: center; /* Centra los elementos horizontalmente */
         gap: 50px; /* Espacio entre los botones (opcional) */
       }
-      .fcc_btn_shimer {
+      .fcRegistro_btn_shimer {
         animation: fade 1.5s ease-in-out infinite;
         width: 120px;
         padding: 20px 20px;
@@ -536,7 +543,7 @@
         cursor: pointer;
     }
 
-    .container002{
+    .fcRegistro_from_shimmer{
       
       margin-top: 40px; 
       display: flex;
@@ -545,11 +552,11 @@
 
       width: 100%;
     }
-    .fcc_input_shimmer .fcc_label_shimmer{
+    .fcRegistro_input_shimmer .fcRegistro_label_shimmer{
       margin-bottom: 5px;
 
     }
-    .fcc_input_shimmer {
+    .fcRegistro_input_shimmer {
       box-shadow: 0 4px 8px #ccc;
       background-color: #ccc;
       border: none;
@@ -560,7 +567,7 @@
       padding: 10px; /* Espacio interno (opcional) */
       width: calc(100% - 40px); /* Ajusta el ancho para compensar los márgenes */
   }
-  .fcc_label_shimmer{
+  .fcRegistro_label_shimmer{
     margin-bottom: 3px;
     box-shadow: 0 4px 8px #ccc;
       background-color: #ccc;
@@ -609,7 +616,7 @@
     input#fc_cod_cliente_proveedor {
         background-color: #F8F8FB;
     }
-    textarea#fc_notas {
+    textarea#fcc_notas {
         background-color: #F8F8FB;
     }
 
@@ -662,6 +669,8 @@ border-radius: 8px;
 max-width: 500px;
 }
 
+
+
 /* Para cada "fila" */
 .campo-adicional-item {
   display: flex;
@@ -690,8 +699,8 @@ max-width: 500px;
   gap: 8px; 
 }
 
-button#btn-cancelar,
-button#btn-guardar {
+button#fcc_btn_cancelar,
+button#fcc_btn_guardar {
   display: inline-flex;
   align-items: center;     /* Centra verticalmente el contenido */
   justify-content: center; /* Centra horizontalmente el contenido */
@@ -700,7 +709,7 @@ button#btn-guardar {
   border: 1px solid #FFA600;
 }
 
-button#btn-cancelar {
+button#fcc_btn_cancelar {
   border-radius: .25rem;
   background-color: #FFFFFF;
   color: #FFA600;
@@ -708,7 +717,7 @@ button#btn-cancelar {
   padding: 8px 16px;
   cursor: pointer;
 }
-button#btn-guardar {
+button#fcc_btn_guardar {
   border-radius: .25rem;
   text-align: center;
   background-color: #FFA600;

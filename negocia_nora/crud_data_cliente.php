@@ -139,25 +139,26 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
   ?>
 
 
-  <div class="fcclientes-container ">
+  <div class="fcRegistro_container ">
 
 
 
-    <div class="fcclientes-steps ">
+    <div class="fcRegistro_steps ">
 
 
 
 
 
       <div class="fcclientes-eempresa-persona">
-        <div class="btn">
-          <button type="button" id="fcc_btn_persona" class="fcclientes-button-next-btn" onclick="showForm('1')">
-            <i class="fas fa-user"></i> Persona
+        <div class="btn ">
+          <button type="button" id="fcc_btn_persona" class="fcclientes-button-next-btn" onclick="fcc_Empresa_Persona('1')">
+          <img src="iconos\Icono ContactopersonaSVG.svg" alt="Icono">
+           Persona
           </button>
         </div>
         <div class="btn">
-          <button type="button" id="fcc_btn_empresa" class="fcclientes-button-next-btn" onclick="showForm('6')">
-            <i class="fas fa-building"></i> Empresa
+          <button type="button" id="fcc_btn_empresa" class="fcclientes-button-next-btn" onclick="fcc_Empresa_Persona('6')">
+          <img src="iconos\Icono ContactoEmpresaSVG.svg" alt="Icono">Empresa
           </button>
         </div>
       </div>
@@ -165,14 +166,14 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
       <!-- fcc_CA_formulario -->
 
       <!-- Single form with dynamic fields -->
-      <div id="formContainer" class="fcclientes-form" style="display:none;">
-        <form id="dynamicForm" class="fromulario">
+      <div id="fcc_formContainer" class="fcclientes-form" style="display:none;">
+        <form id="fcc_formContainer" class="fromulario">
 
 
           <div class="row" style="--bs-gutter-x: 10px;">
             <div class="col-4">
-              <label for="fcclientes_tipo_doc">Tipo de Doc.</label>
-              <select name="fcclientes_tipo_doc" id="fcclientes_tipo_doc">
+              <label for="fcc_tipo_doc">Tipo de Doc.</label>
+              <select name="fcc_tipo_doc" id="fcc_tipo_doc">
                 <option value="">Seleccione</option>
                 <option value="1" <?php echo ($ClienteTipoDoc == 1) ? 'selected="selected"' : ''; ?>>DNI</option>
                 <option value="6" <?php echo ($ClienteTipoDoc == 6) ? 'selected="selected"' : ''; ?>>Ruc</option>
@@ -183,8 +184,8 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
               </select>
             </div>
             <div class="col-4">
-              <label for="fcclientes_dni_cliente_proveedor">N° Documento</label>
-              <input type="text" id="fcclientes_dni_cliente_proveedor" name="fc_dni" value=" <?php echo $ClienteDni ?> ">
+              <label for="fcc_dni">N° Documento</label>
+              <input type="text" id="fcc_dni" name="fcc_dni" value=" <?php echo $ClienteDni ?> ">
             </div>
             <div class="col-4">
               <button id="fcclientes_btn_cliente_proveedor_consult" type="button"
@@ -193,8 +194,8 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
           </div>
 
           <div id="fcclientes_personaFields" class="form-fields">
-            <label for="fccliente_name">Nombre:</label>
-            <input type="text" id="fccliente_name" name="fccliente_name" value="<?php echo $ClienteNombre; ?>">
+            <label for="fcc_name">Nombre:</label>
+            <input type="text" id="fcc_name" name="fcc_name" value="<?php echo $ClienteNombre; ?>">
 
           </div>
 
@@ -202,13 +203,13 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
           <!-- Campos para Empresa -->
           <div id="fcclientes_empresaFields" class="form-fields" style="display:none;">
             <div class="fcclientescampos">
-              <label for="nombre_comercial">Nombre Comercial:</label>
-              <input type="text" id="fcc_nombre_comercial" name="nombre_comercial"
+              <label for="fcc_nombre_comercial">Nombre Comercial:</label>
+              <input type="text" id="fcc_nombre_comercial" name="fcc_nombre_comercial"
                 value=" <?php echo $ClienteNomComercial ?>">
             </div>
             <div class="fcclientescampos">
-              <label for="fccliente_razon">Razón Social:</label>
-              <input type="text" id="fccliente_razon" name="fccliente_razon" value="<?php echo $razonsocial; ?>">
+              <label for="fcc_razon">Razón Social:</label>
+              <input type="text" id="fcc_razon" name="fcc_razon" value="<?php echo $razonsocial; ?>">
             </div>
           </div>
 
@@ -364,14 +365,14 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
             <input type="text" class="fcclientes-imput form-control fccinput-sm" id="fc_cod_cliente_proveedor"
               name="fc_cod_cliente_proveedor" value=" <?php echo $ClienteCodigo ?>">
 
-            <div class="result_codigo_auto">
+            <!-- <div class="result_codigo_auto">
               <div id="spinner_page19d6fcp" hidden="" style="text-align:center;"><img
                   src="https://wuandos3-img-recursos.s3.amazonaws.com/operaciones_img_ajax-loader.gif"><span
                   style="font-size:9pt;">Cargando...</span></div>
               <script>
                 $('#fc_cod_cliente_proveedor').val(`1020615`);
               </script>
-            </div>
+            </div> -->
           </div>
 
           <!-- TAMBIEN ES - NEGOCIA.PE-->
@@ -382,7 +383,7 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
           </div>
           <div class="col-12 f">
             <label>Tipo Contacto</label>
-            <select aria-label="Tipo Del contacto" id="fc_tipo" name="fc_tipo">
+            <select aria-label="Tipo Del contacto" id="fcc_tipo" name="fcc_tipo">
               <option value="0">Seleccione</option>
               <option value="1" <?php echo ($ClienteIdTipoContacto == 1) ? 'selected="selected"' : ''; ?>>Cliente</option>
               <option value="2" <?php echo ($ClienteIdTipoContacto == 2) ? 'selected="selected"' : ''; ?>>Potencial Cliente
@@ -396,7 +397,7 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
 
 
           <div class="col-12  " style=" padding-bottom: 0px;"><label>Notas</label>
-            <textarea class=" fcclientes-imput form-control autosize" rows="" id="fc_notas" name="fc_notas"
+            <textarea class=" fcclientes-imput form-control autosize" rows="" id="fcc_notas" name="fcc_notas"
               placeholder="Notas"><?php echo $ClienteNotas ?></textarea>
           </div>
 
@@ -575,7 +576,7 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
             </div>
           </div>
           <div class="fccliente-desplegable-content">
-            <div class="fcc_form-container" id="container">
+            <div class="fcc_form-container" id="fcc_campos_adicionales">
               <div class="fcc_form-group">
                 <label for="fcc_CA_Composicion">Composición Química</label>
                 <input type="text" id="fcc_CA_Composicion" name="fcc_CA_Composicion" placeholder="Buscar composición">
@@ -594,14 +595,14 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
                 <input type="text" id="nombre_campo" placeholder="">
               </div>
               <div class="fcc_form-group">
-                <label for="descripcion_campo">Placa</label>
-                <!-- <textarea id="descripcion_campo" placeholder="Descripción del campo"></textarea> -->
-                <textarea class=" fcclientes-imput form-control autosize" rows="" id="descripcion_campo"
-                  name="descripcion_campo" placeholder=""></textarea>
+                <label for="fcc_descripcion_campo">Placa</label>
+                <!-- <textarea id="fcc_descripcion_campo" placeholder="Descripción del campo"></textarea> -->
+                <textarea class=" fcclientes-imput form-control autosize" rows="" id="fcc_descripcion_campo"
+                  name="fcc_descripcion_campo" placeholder=""></textarea>
               </div>
               <div class="btn-container">
-                <button class="btn btn-cancelar" id="btn-cancelar">Cancelar</button>
-                <button class="btn btn-guardar" id="btn-guardar">Guardar</button>
+                <button class="btn fcc_btn_cancelar" id="fcc_btn_cancelar">Cancelar</button>
+                <button class="btn fcc_btn_guardar" id="fcc_btn_guardar">Guardar</button>
               </div>
             </div>
 
@@ -609,7 +610,7 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
             <div id="camposAdicionalesContainer"></div>
 
             <div class="fcc-CA-agregar-ca">
-              <p id="agregarCampo">+ Agregar campo adicional</p>
+              <p id="fcc_agregarCampo">+ Agregar campo adicional</p>
             </div>
           </div>
         </div>
@@ -770,10 +771,17 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
                     <p class="mb-1"><strong>Cumpleaños:</strong> ${etiqueta.fecha}</p>
                     <div class="btncontactos d-flex justify-content-end gap-2">
                         <button class="editar btn" data-indice="${indice}">
-                            <i class="fas fa-edit"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="skyblue" class="bi bi-pencil-square" viewBox="0 0 16 16">
+  <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+  <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+</svg>
+
                         </button>
                         <button class="eliminar btn" data-indice="${indice}">
-                            <i class="fas fa-trash"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-trash-fill" viewBox="0 0 16 16">
+  <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
+</svg>
+
                         </button>
                     </div>
                 `;
@@ -869,7 +877,7 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
         ?>
         var clienteTipo = "<?php echo $clienteTipo; ?>";
         if (clienteTipo) {
-          showForm(clienteTipo); // Si hay datos, mostrar el formulario
+          fcc_Empresa_Persona(clienteTipo); // Si hay datos, mostrar el formulario
         }
 
         <?php
@@ -893,7 +901,7 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
       } else {
         ?>
         console.warn("No se proporcionó un ID de cliente válido.");
-        $("#formContainer").hide(); // Mantener el formulario oculto
+        $("#fcc_formContainer").hide(); // Mantener el formulario oculto
         manejarEtiquetas([]); // Inicializar como array vacío
         <?php
       }
@@ -902,11 +910,11 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
 
     // Función para abrir el formulario manualmente desde el menú
     // function abrirModalPersona() {
-    //     showForm('1'); // Llama a la función para mostrar el formulario de persona
+    //     fcc_Empresa_Persona('1'); // Llama a la función para mostrar el formulario de persona
     // }
 
     // function abrirModalEmpresa() {
-    //     showForm('6'); // Llama a la función para mostrar el formulario de empresa
+    //     fcc_Empresa_Persona('6'); // Llama a la función para mostrar el formulario de empresa
     // }
 
 

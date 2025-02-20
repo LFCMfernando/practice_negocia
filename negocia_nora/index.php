@@ -1,18 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -3852,25 +3837,25 @@ font-size: 16px;
 
             
 
-            <div id="loadingSpinner" class="loading-spinner d-none">
-              <div class="container">
+            <div id="fcRegistro_loadingSpinner" class="fcRegistro_loadingSpinner d-none">
+              <div class="fcRegistro_container_shimmer">
 
-              <button class="fcc_btn_shimer"></button>
-              <button class="fcc_btn_shimer"></button>
+              <button class="fcRegistro_btn_shimer"></button>
+              <button class="fcRegistro_btn_shimer"></button>
               </div>
-              <div class="container002">
-              <label class="fcc_label_shimmer" for=""></label>
-              <input class="fcc_input_shimmer" type="text">
-              <label class="fcc_label_shimmer" for=""></label>
-              <input class="fcc_input_shimmer" type="text">
-              <label class="fcc_label_shimmer" for=""></label>
-              <input class="fcc_input_shimmer"type="text">
-              <label class="fcc_label_shimmer" for=""></label>
-              <input class="fcc_input_shimmer" type="text">
-              <!-- <label  class="fcc_label_shimmer" for=""></label>
-              <input class="fcc_input_shimmer" type="text">
-              <label class="fcc_label_shimmer" for=""></label>
-              <input class="fcc_input_shimmer" type="text"> -->
+              <div class="fcRegistro_from_shimmer">
+              <label class="fcRegistro_label_shimmer" for=""></label>
+              <input class="fcRegistro_input_shimmer" type="text">
+              <label class="fcRegistro_label_shimmer" for=""></label>
+              <input class="fcRegistro_input_shimmer" type="text">
+              <label class="fcRegistro_label_shimmer" for=""></label>
+              <input class="fcRegistro_input_shimmer"type="text">
+              <label class="fcRegistro_label_shimmer" for=""></label>
+              <input class="fcRegistro_input_shimmer" type="text">
+              <!-- <label  class="fcRegistro_label_shimmer" for=""></label>
+              <input class="fcRegistro_input_shimmer" type="text">
+              <label class="fcRegistro_label_shimmer" for=""></label>
+              <input class="fcRegistro_input_shimmer" type="text"> -->
               </div>
 
 
@@ -3879,7 +3864,7 @@ font-size: 16px;
 
 
 
-            <div class="d-flex justify-content-end" id="fcclientes-formulario">
+            <div class="d-flex justify-content-end" id="fcRegistro_formulario">
 
 
             </div>
@@ -3898,35 +3883,7 @@ font-size: 16px;
 
 
 
-  <script>
 
-
- function abrirModalPersona() {
-    const modalElement = document.getElementById('fcclientes-modal');
-    
-    const myModal = new bootstrap.Modal(modalElement);
-
-   
-   obtener_data_cliente(0, 1); 
-
-    
-    myModal.show();
-}
-
-function abrirModalEmpresa() {
-    const modalElement = document.getElementById('fcclientes-modal');
-    const myModal = new bootstrap.Modal(modalElement);
-
-    obtener_data_cliente(0, 6); // Limpiamos el formulario con datos vacíos
-
-   
-
-    myModal.show();
-}
-
-
-
-</script>
 
 <div class="dropdown" style="float: right; margin-top: 50px; margin-right: 10px;">
   <button
@@ -3949,7 +3906,7 @@ function abrirModalEmpresa() {
     <li>
       <a class="dropdown-item d-flex align-items-center" 
          href="javascript:void(0);" 
-         onclick="abrirModalPersona()">
+         onclick="fcc_abrirModalPersona()">
          <!-- Ícono de usuario -->
          <i class="dripicons-user" style="font-size:18px;"></i>
          <span class="ms-2">Persona</span>
@@ -3958,7 +3915,7 @@ function abrirModalEmpresa() {
     <li>
       <a class="dropdown-item d-flex align-items-center" 
          href="javascript:void(0);" 
-         onclick="abrirModalEmpresa()">
+         onclick="fcc_abrirModalEmpresa()">
          <!-- Ícono de edificio -->
          <i class="dripicons-user" style="font-size:18px;"></i>
          <span class="ms-2">Empresa</span>
@@ -3969,7 +3926,7 @@ function abrirModalEmpresa() {
 
 
 
-  <!-- <button type="button" onclick="$('#fcclientes-modal').modal('show');obtener_data_cliente(0);"
+  <!-- <button type="button" onclick="$('#fcclientes-modal').modal('show');fcc_obtener_data_ws(0);"
     style="float: right; margin-top: 50px; margin-right: 10px;">Abrir Modal</button>
  -->
 
@@ -3980,7 +3937,7 @@ function abrirModalEmpresa() {
 
 
 
-  <button type="button" onclick="$('#fcclientes-modal').modal('show'); obtener_data_cliente(139003);"
+  <button type="button" onclick="$('#fcclientes-modal').modal('show'); fcc_obtener_data_ws(139003);"
     style="float: right; margin-top: 50px; margin-right: 10px;">Editar</button>
 
 
