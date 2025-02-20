@@ -3897,11 +3897,96 @@ font-size: 16px;
 
 
 
-  <button type="button" onclick="$('#fcclientes-modal').modal('show');obtener_data_cliente(0);"
-    style="float: right; margin-top: 50px; margin-right: 10px;">Abrir Modal</button>
 
+  <script>
+// function abrirModalPersona() {
+//   showForm('1');
+//   // En vez de new bootstrap.Modal(...) usas jQuery:
+//   $('#fcclientes-modal').modal('show');
+// }
+
+// function abrirModalEmpresa() {
+//   showForm('6');
+//   $('#fcclientes-modal').modal('show');
+// }
+
+function abrirModalPersona() {
+    const modalElement = document.getElementById('fcclientes-modal');
+    
+    const myModal = new bootstrap.Modal(modalElement);
+
+    // Asegurarse de cargar un formulario vacío antes de mostrarlo
+    obtener_data_cliente(0); // Llamamos a obtener_data_cliente con id_cliente = 0 para limpiar el formulario
+
+    // Mostrar el formulario adecuado
+   // showForm('1');
+
+    // Mostrar el modal
+    myModal.show();
+}
+
+function abrirModalEmpresa() {
+    const modalElement = document.getElementById('fcclientes-modal');
+    const myModal = new bootstrap.Modal(modalElement);
+
+    obtener_data_cliente(0); // Limpiamos el formulario con datos vacíos
+
+   //showForm('6');
+
+    myModal.show();
+}
+
+
+
+</script>
+
+<div class="dropdown" style="float: right; margin-top: 50px; margin-right: 10px;">
+  <button
+    class="btn dropdown-toggle d-flex align-items-center justify-content-center"
+    type="button"
+    id="dropdownMenuButton2"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+    style="background: #fff; color: red; padding: 5px 10px;">
+    <!-- Ícono “+” en rojo -->
+    <i class="dripicons-plus" 
+       aria-hidden="true" 
+       style="font-size: 22px;">
+    </i>
+  </button>
+
+  <!-- Menú desplegable -->
+  <!-- Usamos 'dropdown-menu-end' para que se alinee junto al botón (a la izquierda del botón si está flotado a la derecha) -->
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton2" style="min-width: 160px;">
+    <li>
+      <a class="dropdown-item d-flex align-items-center" 
+         href="javascript:void(0);" 
+         onclick="abrirModalPersona()">
+         <!-- Ícono de usuario -->
+         <i class="dripicons-user" style="font-size:18px;"></i>
+         <span class="ms-2">Persona</span>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" 
+         href="javascript:void(0);" 
+         onclick="abrirModalEmpresa()">
+         <!-- Ícono de edificio -->
+         <i class="dripicons-user" style="font-size:18px;"></i>
+         <span class="ms-2">Empresa</span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+
+  <!-- <button type="button" onclick="$('#fcclientes-modal').modal('show');obtener_data_cliente(0);"
+    style="float: right; margin-top: 50px; margin-right: 10px;">Abrir Modal</button>
+ -->
 
   <!--   -->
+<!-- BOTÓN PRINCIPAL + ÍCONO “+” + DROPDOWN -->
 
 
 

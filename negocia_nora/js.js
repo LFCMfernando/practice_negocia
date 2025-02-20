@@ -1,9 +1,9 @@
-// funcion abrir modad 
+show// funcion abrir modad 
 
       //ABRIR MODAL
       $(function () {
-        $('#fcclientes-modal').modal('show');
-        obtener_data_cliente(0) ;
+        //$('#fcclientes-modal').modal('show');
+        //obtener_data_cliente(0) ;
 
         
       });
@@ -103,39 +103,41 @@
         // Agrega la clase scrollable al modal-body
         document.querySelector('.modal-body').classList.add('scrollable');
 
+          // Obtén referencias a ambos botones
+  const btnPersona = document.getElementById('fcc_btn_persona');
+  const btnEmpresa = document.getElementById('fcc_btn_empresa');
+
+   // Limpia estilos en ambos botones (para que no quede el color anterior)
+   btnPersona.style.background = '';
+   btnPersona.style.color = '';
+   btnEmpresa.style.background = '';
+   btnEmpresa.style.color = '';
+
         // Oculta los campos de persona o empresa según el tipo
-        if (clienteTipo === '1') {
-
-          const boton = document.getElementById('fcc_btn_persona');
-
-    // Cambiar el color de fondo a naranja
-    boton.style.background = 'orange';
-
-    // Cambiar el color del texto a blanco
-    boton.style.color = 'white';
-          
+        if (clienteTipo =='1') {
+          // Activa el estilo naranja/blanco en el botón Persona
+          btnPersona.style.background = 'orange';
+          btnPersona.style.color = 'white';
+      
+          // Muestra campos de Persona, oculta los de Empresa
           document.getElementById('fcclientes_personaFields').style.display = 'block';
           document.getElementById('fcclientes_empresaFields').style.display = 'none';
-
+      
           // Cambia el tipo de documento a "DNI"
-          document.getElementById('fcclientes_tipo_doc').value = "1"; // Asumiendo que "1" es el valor para DNI
-
-          // Actualiza las opciones del select
+          document.getElementById('fcclientes_tipo_doc').value = "1";
           updateDocumentTypeOptions('persona');
-        } else if (clienteTipo === '6') {
-          const boton = document.getElementById('fcc_btn_empresa');
-
-    // Cambiar el color de fondo a naranja
-    boton.style.background = 'orange';
-
-    // Cambiar el color del texto a blanco
-    boton.style.color = 'white';
+      
+        } else if (clienteTipo =='6') {
+          // Activa el estilo naranja/blanco en el botón Empresa
+          btnEmpresa.style.background = 'orange';
+          btnEmpresa.style.color = 'white';
+      
+          // Muestra campos de Empresa, oculta los de Persona
           document.getElementById('fcclientes_empresaFields').style.display = 'block';
           document.getElementById('fcclientes_personaFields').style.display = 'none';
-
+      
           // Cambia el tipo de documento a "RUC"
-          document.getElementById('fcclientes_tipo_doc').value = "6"; // Asumiendo que "6" es el valor para RUC
-
+          document.getElementById('fcclientes_tipo_doc').value = "6";
           // Actualiza las opciones del select
           updateDocumentTypeOptions(clienteTipo === '6' ? 'empresa' : 'persona');
         }
@@ -169,8 +171,28 @@
       }
 function fcclientes_btn_mas_opciones(){
   document.getElementById('fcclientes-btn-mas-opciones').classList.add('d-none');
+  
+
+
 
   fcc_acordiones();
+
+
+  // Seleccionamos el contenedor footer y el botón Guardar
+  const footer = document.querySelector('.modal-footer.footer_sticky');
+  const btnGuardar = document.getElementById('fc_guardar_datos_cliente_proveedor');
+  
+  if (footer && btnGuardar) {
+    // Hacemos que el footer sea flex
+    footer.style.display = 'flex';
+    footer.style.alignItems = 'center';
+
+    // Movemos el botón "Guardar" a la derecha
+    btnGuardar.style.marginLeft = 'auto';
+    // Agrega margen a la derecha
+  btnGuardar.style.marginRight = '20px';
+    
+  }
    
         // Modificar fcclientes-container
         const container = document.querySelector('.fcclientes-container');
@@ -194,6 +216,7 @@ function fcclientes_btn_mas_opciones(){
 
 // function de los acordiones 
 function fcc_acordiones() {
+
                       // Selecciona todos los fcc_CA_botones de toggle dentro del acordeón
                       const toggleButtons = document.querySelectorAll(".fccliente-desplegable-header");
 
@@ -219,176 +242,233 @@ function fcc_acordiones() {
                         });
                       });
 
-                      // Array para almacenar los contactos
-                      let contactos = [];
 
-                      // Elementos del DOM
-                      const formulario = document.getElementById('fcc_CA_formulario');
-                      const mensajeVacio = document.getElementById('fcc_CA_mensajeVacio');
-                      const listaContactos = document.getElementById('fcc_CA_contactos');
-                      const botonAgregarContacto = document.getElementById('fcc_CA_agregarcontacto');
-                      const botonGuardar = document.getElementById('guardar');
-                      const botonCancelar = document.getElementById('cancelar');
 
-                      // Mostrar/ocultar formulario
-                      document.getElementById('fcc_CA_mostrarFormulario').addEventListener('click', function (e) {
-                        e.preventDefault();
-                        formulario.style.display = 'block';
-                        mensajeVacio.style.display = 'none';
 
-                      });
 
-                      // Cancelar formulario
-                      botonCancelar.addEventListener('click', function (e) {
-                        e.preventDefault();
-                        formulario.style.display = 'none'; // Ocultar el formulario
-                        limpiarFormulario(); // Limpiar los campos del formulario
 
-                        // Mostrar el div de contactos y el botón "+ Agregar contacto"
-                        if (listaContactos.children.length === 0) {
-                          mensajeVacio.style.display = "block"; // Si no hay fcc_CA_contactos, mostrar "Click para Asociar"
-                        } else {
-                          listaContactos.style.display = "flex"; // Mostrar lista de fcc_CA_contactos
-                          botonAgregarContacto.style.display = "block"; // Mostrar "+ Agregar otro contacto"
-                        }
-                      });
 
-                      // Guardar contacto
-                      botonGuardar.addEventListener('click', function (e) {
-                        e.preventDefault();
-                        const nombre = document.getElementById('fcc_CA_nombre').value;
-                        const correo = document.getElementById('fcc_CA_correo').value;
-                        const celular = document.getElementById('fcc_CA_celular').value;
-                        const cargo = document.getElementById('fcc_CA_campo').value;
-                        const fecha = document.getElementById('fcc_CA_fecha').value;
+                        // Array para almacenar los campos adicionales
+  let camposAdicionales = [];
 
-                        if (nombre && correo && celular && cargo && fecha) {
-                          const contacto = {
-                            nombre,
-                            correo,
-                            celular,
-                            cargo,
-                            fecha
-                          };
+  // Referencias a los elementos del DOM
+  const container =  document.getElementById('container');
+  const agregarCampoBtn      = document.getElementById('agregarCampo');
+  const formularioNuevoCampo = document.getElementById('formulario-nuevo-campo');
+  const btnCancelar          = document.getElementById('btn-cancelar');
+  const btnGuardar           = document.getElementById('btn-guardar');
 
-                          console.log(contacto)
+  const inputNombreCampo      = document.getElementById('nombre_campo');
+  const inputDescripcionCampo = document.getElementById('descripcion_campo');
 
-                          // Verificar si estamos editando un contacto existente
-                          const indiceEdicion = formulario.getAttribute('data-indice');
-                          if (indiceEdicion !== null) {
-                            contactos[indiceEdicion] = contacto;
-                            formulario.removeAttribute('data-indice');
-                          } else {
-                            contactos.push(contacto);
-                          }
+  const camposAdicionalesContainer = document.getElementById('camposAdicionalesContainer');
 
-                          actualizarListaContactos();
-                          limpiarFormulario();
-                          formulario.style.display = 'none';
-                          mensajeVacio.style.display = 'none';
-                          listaContactos.style.display = 'flex';
-                          botonAgregarContacto.style.display = "block"; // Mostrar "+ Agregar otro contacto"
+  agregarCampoBtn.addEventListener('click', () => {
+  // Muestra el formulario
+  formularioNuevoCampo.classList.remove('hidden');
+  
+  // Oculta otros elementos
+  
+  container.classList.add('d-none');
+  agregarCampoBtn.classList.add('d-none');
+  camposAdicionalesContainer.classList.add('d-none'); // Ocultar el contenedor de campos adicionales
+});
 
-                        }
-                        else {
-                          alert('Por favor, completa todos los campos.');
-                        }
-                      });
 
-                      // Agregar otro contacto
-                      botonAgregarContacto.addEventListener('click', function (e) {
-                        e.preventDefault();
-                        formulario.style.display = 'block';
-                        listaContactos.style.display = 'none';
+  // Ocultar formulario al presionar "Cancelar"
+  btnCancelar.addEventListener('click', () => {
+  // Limpia los campos
+  limpiarFormulario();
 
-                        botonAgregarContacto.style.display = "none "; // Mostrar "+ Agregar otro contacto"
-                        if (contactos.length > 0) {
+  // Oculta el formulario
+  formularioNuevoCampo.classList.add('hidden');
 
-                          listaContactos.style.display = 'none'; // Mostrar el div de contactos si hay contactos
-                        }
-                        limpiarFormulario();
-                      });
+  // Muestra el contenedor de campos adicionales y el botón de agregar
+  camposAdicionalesContainer.classList.remove('d-none');
+  agregarCampoBtn.classList.remove('d-none');
+  container.classList.remove('d-none');
+});
 
-                      // Función para actualizar la lista de contactos
-                      function actualizarListaContactos() {
-                        listaContactos.innerHTML = '';
-                        contactos.forEach((contacto, indice) => {
-                          const col6 = document.createElement('div');
-                          col6.className = 'col-6 col-xs-12 mb-3'; // agregamos mb-3 para margen inferior
-                          const contactoElemento = document.createElement('div');
-                          contactoElemento.className = 'fcc_CA_contacto p-3'; // agregamos p-3 para padding
-                          contactoElemento.innerHTML = `
-                                <p class="mb-1"><strong>Nombre:</strong> ${contacto.nombre}</p>
-                                <p class="mb-1"><strong>Correo:</strong> ${contacto.correo}</p>
-                                <p class="mb-1"class="mb-1"><strong>Celular:</strong> ${contacto.celular}</p>
-                                <p class="mb-1"><strong>Cargo:</strong> ${contacto.cargo}</p>
-                                <p class="mb-1"><strong>Fecha de Cumpleaños:</strong> ${contacto.fecha}</p>
-                               <div class="btncontactos d-flex justify-content-end gap-2">
-  <button class="editar btn " data-indice="0">
-    <i class="fas fa-edit"></i>
-  </button>
-  <button class="eliminar btn" data-indice="0">
-    <i class="fas fa-trash"></i>
-  </button>
-</div>
-                                                           `;
 
-                          col6.appendChild(contactoElemento);
-                          listaContactos.appendChild(col6);
-                        });
+  // 2) Al guardar, tomar los datos e insertarlos en el array, luego mostrar en el contenedor
+  // Variable para almacenar el índice del campo que se está editando (-1 si es un nuevo campo)
+let indiceEdicion = -1;
 
-                        // Agregar eventos a los botones de editar y eliminar
-                        document.querySelectorAll('.editar').forEach(boton => {
-                          boton.addEventListener('click', function () {
-                            const indice = this.getAttribute('data-indice');
-                            cargarFormularioParaEdicion(indice);
-                            listaContactos.style.display = 'none';
-                            botonAgregarContacto.style.display = "none ";
-                          });
-                        });
-                        document.querySelectorAll('.eliminar').forEach(boton => {
-                          boton.addEventListener('click', function () {
-                            if (confirm("¿Estás seguro de que deseas eliminar este contacto?")) {
-                              const indice = this.getAttribute('data-indice');
-                              contactos.splice(indice, 1);
-                              actualizarListaContactos();
-                              if (contactos.length === 0) {
-                                mensajeVacio.style.display = 'block';
-                                botonAgregarContacto.style.display = "none ";
-                              }
-                            }
-                           
-                          });
-                        });
-                      }
+btnGuardar.addEventListener("click", () => {
+  const nombre = inputNombreCampo.value.trim();
+  const descripcion = inputDescripcionCampo.value.trim();
 
-                      // Función para cargar el formulario con los datos de un contacto para editar
-                      function cargarFormularioParaEdicion(indice) {
-                        const contacto = contactos[indice];
-                        document.getElementById('fcc_CA_nombre').value = contacto.nombre;
-                        document.getElementById('fcc_CA_correo').value = contacto.correo;
-                        document.getElementById('fcc_CA_celular').value = contacto.celular;
-                        document.getElementById('fcc_CA_campo').value = contacto.cargo;
-                        document.getElementById('fcc_CA_fecha').value = contacto.fecha;
-                        formulario.setAttribute('data-indice', indice);
-                        formulario.style.display = 'block';
-                      }
+  if (!nombre) {
+    alert("Por favor, ingresa el nombre del campo.");
+    return;
+  }
 
-                      // Función para limpiar el formulario
-                      function limpiarFormulario() {
-                        document.getElementById('fcc_CA_nombre').value = '';
-                        document.getElementById('fcc_CA_correo').value = '';
-                        document.getElementById('fcc_CA_celular').value = '';
-                        document.getElementById('fcc_CA_campo').value = '';
-                        document.getElementById('fcc_CA_fecha').value = '';
-                        formulario.removeAttribute('data-indice');
-                      }
+  if (indiceEdicion === -1) {
+    // Modo: Agregar nuevo campo
+    camposAdicionales.push({ nombre, descripcion });
+  } else {
+    // Modo: Editar campo existente
+    camposAdicionales[indiceEdicion].nombre = nombre;
+    camposAdicionales[indiceEdicion].descripcion = descripcion;
+
+    // Restablecemos la variable a -1 para que futuras ediciones sean nuevas adiciones
+    indiceEdicion = -1;
+  }
+
+  renderCamposAdicionales();
+  limpiarFormulario();
+  container.classList.remove('d-none');
+
+  formularioNuevoCampo.classList.add('hidden');
+  camposAdicionalesContainer.classList.remove('d-none');
+  agregarCampoBtn.classList.remove('d-none');
+  // Mostrar en la consola lo que almacena el array
+  console.log(" Datos almacenados en el array:", camposAdicionales);
+});
+
+// Función para editar campo por índice
+function editarCampo(index) {
+  const campoAEditar = camposAdicionales[index];
+
+  // Mostramos el formulario y rellenamos los inputs
+  agregarCampoBtn.classList.add('d-none');
+  container.classList.add('d-none');
+  camposAdicionalesContainer.classList.add('d-none'); // Ocultar el contenedor de campos adicionales
+  formularioNuevoCampo.classList.remove("hidden");
+  inputNombreCampo.value = campoAEditar.nombre;
+  inputDescripcionCampo.value = campoAEditar.descripcion;
+
+  // Establecemos el índice actual en edición
+  indiceEdicion = index;
+}
+
+  // Función para limpiar formulario
+  function limpiarFormulario() {
+    inputNombreCampo.value = '';
+    inputDescripcionCampo.value = '';
+  }
+
+  // Función para mostrar los campos en el contenedor
+  function renderCamposAdicionales() {
+    // 1) Limpias el contenedor
+    camposAdicionalesContainer.innerHTML = '';
+  
+    // 2) Recorres cada elemento del array
+    camposAdicionales.forEach((campo, index) => {
+      // A) Crea el <div> con la clase "campo-adicional-item"
+      const campoItem = document.createElement('div');
+      campoItem.classList.add('campo-adicional-item');
+  
+      // B) Primer bloque: Nombre
+      const nombreWrapper = document.createElement('div');
+      nombreWrapper.classList.add('campo-wrapper');
+      
+      const labelNombre = document.createElement('label');
+      labelNombre.textContent = 'Composición Química';
+      nombreWrapper.appendChild(labelNombre);
+      
+      const inputNombre = document.createElement('input');
+      inputNombre.type = 'text';
+      inputNombre.value = campo.nombre;
+      inputNombre.readOnly = true;
+      nombreWrapper.appendChild(inputNombre);
+  
+      // C) Segundo bloque: Descripción
+      const descripcionWrapper = document.createElement('div');
+      descripcionWrapper.classList.add('campo-wrapper');
+  
+      const labelDesc = document.createElement('label');
+      labelDesc.textContent = 'Placa';
+      descripcionWrapper.appendChild(labelDesc);
+  
+      const inputDescripcion = document.createElement('input');
+      inputDescripcion.value = campo.descripcion;
+      inputDescripcion.readOnly = true;
+      descripcionWrapper.appendChild(inputDescripcion);
+  
+      // D) Agrega ambos .campo-wrapper al .campo-adicional-item
+      campoItem.appendChild(nombreWrapper);
+      campoItem.appendChild(descripcionWrapper);
+  
+      // E) Inserta el .campo-adicional-item en #camposAdicionalesContainer
+      camposAdicionalesContainer.appendChild(campoItem);
+  
+      // F) Ahora, crea un contenedor aparte para los botones
+      const acciones = document.createElement('div');
+      acciones.classList.add('boton-acciones');
+
+  const botones = document.createElement('div');
+      acciones.classList.add('boton-acciones');
+      const btnEditar = document.createElement('button');
+      btnEditar.textContent = 'Editar';
+      btnEditar.id = 'btnEditar'; // Asignamos un id
+      btnEditar.addEventListener('click', () => editarCampo(index));
+      
+      const btnEliminar = document.createElement('button');
+      btnEliminar.textContent = 'Eliminar';
+      btnEliminar.id = 'btnEliminar'; // Asignamos un id
+      btnEliminar.addEventListener('click', () => eliminarCampo(index));
+      
+      acciones.appendChild(btnEditar);
+      acciones.appendChild(btnEliminar);
+  
+      // G) Agrega .boton-acciones fuera de .campo-adicional-item 
+      //    pero aún dentro de #camposAdicionalesContainer
+      camposAdicionalesContainer.appendChild(acciones);
+    });
+  }
+  
+  
+  
+  // Función para eliminar campo por índice
+  function eliminarCampo(index) {
+    alert("seguro que desea eliminar el campo ");
+    // Elimina el elemento del array
+    camposAdicionales.splice(index, 1);
+    // Vuelve a renderizar
+    renderCamposAdicionales();
+    // Mostrar contenedores y botón de agregar
+  container.classList.remove('d-none');
+  camposAdicionalesContainer.classList.remove('d-none');
+  agregarCampoBtn.classList.remove('d-none');
+  }
+
+ 
+  // Función para restaurar el evento guardar original
+  function restaurarEventoGuardar() {
+    btnGuardar.onclick = () => {
+      const nombre     = inputNombreCampo.value.trim();
+      const descripcion = inputDescripcionCampo.value.trim();
+
+      if (!nombre) {
+        alert('Por favor, ingresa el nombre del campo.');
+        return;
+      }
+
+      const nuevoCampo = {
+        nombre,
+        descripcion
+      };
+
+      camposAdicionales.push(nuevoCampo);
+      renderCamposAdicionales();
+      limpiarFormulario();
+      formularioNuevoCampo.classList.add('hidden');
+    };
+  }
+
+
+
+
 
 
                     };
 
-                  
 
+
+                            
+
+  
 
                     function obtener_data_cliente(id_cliente) {
                       // Mostrar el spinner de carga
@@ -430,6 +510,11 @@ function fcc_acordiones() {
                                   eval(scriptContent);
                               }
                           }
+
+
+
+
+                          
                       })
                       .catch((error) => {
                           console.error(error);  // Manejar errores
@@ -439,3 +524,5 @@ function fcc_acordiones() {
 
                     
                   
+
+

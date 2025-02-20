@@ -1,4 +1,6 @@
 
+
+
 .fcclientes-container {
   display: grid;
   grid-template-columns: 0.5fr 0fr;
@@ -376,6 +378,7 @@
         font-size: 16px;
         cursor: pointer;
         transition: all 0.3s ease;
+        border-radius: .25rem;
 
       }
 
@@ -415,6 +418,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        border-radius: .25rem;
       }
 
       #fcclientes_btn_cliente_proveedor_consult:hover {
@@ -640,7 +644,14 @@
    
 
 
-      
+      .fcc_CA_etiqueta {
+        border: 1px solid #ccc; /* Borde de color gris claro */
+        border-radius: 8px; /* Bordes redondeados */
+        padding: 12px; /* Espaciado interno */
+        /*background-color: #fff; /* Fondo blanco */
+        /*box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sutil sombra para destacar */
+        /*transition: all 0.3s ease-in-out; /* Animación suave */
+    }
       .fcc_CA_contacto {
         color: #000;
 justify-content: center;
@@ -650,6 +661,109 @@ border: 1px solid #ddd;
 border-radius: 8px;
 max-width: 500px;
 }
+
+/* Para cada "fila" */
+.campo-adicional-item {
+  display: flex;
+  align-items: center; /* Alinea verticalmente en el centro */
+  gap: 2rem;           /* Espacio horizontal entre bloques */
+  margin-bottom: 10px;
+  flex-wrap: nowrap;   /* Impide que baje a una segunda fila */
+}
+
+
+/* Cada par label+input en columna */
+.campo-wrapper {
+  margin-bottom: 5px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.boton-acciones {
+  display: flex;            /* Activa el modelo flexbox */
+  justify-content: flex-end; /* Alinea los ítems (botones) al extremo derecho */
+  gap: 8px;                  /* Opcional: Espacio entre botones */
+}
+.btn-container{
+  display: flex;            /* Activa el modelo flexbox */
+  justify-content: flex-end; /* Alinea los ítems (botones) al extremo derecho */
+  gap: 8px; 
+}
+
+button#btn-cancelar,
+button#btn-guardar {
+  display: inline-flex;
+  align-items: center;     /* Centra verticalmente el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
+  padding: 8px 16px;
+  cursor: pointer;
+  border: 1px solid #FFA600;
+}
+
+button#btn-cancelar {
+  border-radius: .25rem;
+  background-color: #FFFFFF;
+  color: #FFA600;
+  border: 1px solid #FFA600;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+button#btn-guardar {
+  border-radius: .25rem;
+  text-align: center;
+  background-color: #FFA600;
+  color: #FFFFFF;
+  border: 1px solid #FFA600;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+button#btnEliminar,
+button#btnEditar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  cursor: pointer;
+  border: 1px solid #FFA600;
+}
+
+button#btnEliminar {
+  border-radius: .25rem;
+  text-align: center;
+  background-color: #FFA600;
+  color: #FFFFFF;
+  border: 1px solid #FFA600;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+button#btnEditar {
+  border-radius: .25rem;
+  background-color: #FFFFFF;
+  color: #FFA600;
+  border: 1px solid #FFA600;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+
+
+/* label arriba, con negrita */
+.campo-wrapper label {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+/* El input con algo de padding y ancho fijo o dinámico */
+/* .campo-wrapper input {
+  padding: 0.5rem;
+  width: 200px; 
+} */
+
+
+
+
       .fcc_DD_map {
 
         width: 100%;
@@ -685,6 +799,29 @@ max-width: 500px;
         font-size: 14px;
 
       }
+      .fcc_form-group textarea {
+        border-radius: 5px;
+        border:1px solid #ddd;
+        width: 100%;
+        min-height: 10px; /* Ajusta el alto inicial si quieres */
+        resize: vertical; /* Permite redimensionarlo verticalmente */
+        background-color: #F8F8FB;
+        
+      }
+
+      .campo-adicional-item label {
+        display: block;
+        font-weight: bold;
+        margin-top: 0.5rem;
+      }
+      .campo-adicional-item h4,
+      .campo-adicional-item p {
+        margin: 0; /* Ajusta márgenes según tu gusto */
+      }
+      
+
+     
+
       .fcc_LP_content select,input{
         margin: 0;
         width: 100%;
@@ -762,6 +899,24 @@ max-width: 500px;
         gap: 10px;
         /* Espacio entre los fcc_CA_botones */
       }
+      #cancelar{
+        border-radius: .25rem;
+        background-color: #FFFFFF;
+        color: #FFA600;
+        border: 1px solid #FFA600;
+        padding: 8px 16px;
+        cursor: pointer;
+
+      }
+      #guardar{
+        border-radius: .25rem;
+        text-align: center;
+        background-color: #FFA600;
+        color: #FFFFFF;
+        border: 1px solid #FFA600;
+        padding: 8px 16px;
+        cursor: pointer;
+      }
 
       .fcc_CA_boton-cancelar,
       .fcc_CA_boton-guardar {
@@ -785,17 +940,7 @@ max-width: 500px;
 
 
 
-      .fcc_CA_botones button {
-        display: flex;
-        align-items: center;
-        /* Centra el texto verticalmente */
-
-        padding: 8px 15px;
-        margin-left: 5px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-      }
+      
 
 
 
@@ -825,6 +970,11 @@ max-width: 500px;
         cursor: pointer;
         color: #ff9c00;
         text-decoration: underline;
+
+      }
+      .fcc-CA-agregar-ca p {
+
+        margin-top: 10px;
 
       }
 
@@ -911,7 +1061,7 @@ max-width: 500px;
       }
 
       .fccliente-desplegable-header:hover {
-        background-color: #f0f0f0;
+        background-color: #fff;
       }
 
 
