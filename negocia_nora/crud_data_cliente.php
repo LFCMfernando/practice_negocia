@@ -97,19 +97,19 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
 
 
 
-        // Acceder a las etiquetas
-    $etiquetas = $cliente['ArrayEtiquetas'];
-    foreach ($etiquetas as $etiqueta) {
+      // Acceder a las etiquetas
+      $etiquetas = $cliente['ArrayEtiquetas'];
+      foreach ($etiquetas as $etiqueta) {
         $EtqId = $etiqueta['EtqId'];
         $EtqColor = $etiqueta['EtqColor'];
         $EtqNombre = $etiqueta['EtqNombre'];
 
-        
+
         // Aquí puedes hacer lo que necesites con las etiquetas
-    }
-    
-    
-  
+      }
+
+
+
 
       // Imprimir los valores del JSON
       // echo "ClienteId: " . $cliente['ClienteId'] . "<br>";
@@ -149,18 +149,18 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
 
 
 
-    <div class="fcclientes-eempresa-persona">
-    <div class="btn">
-      <button type="button" id="fcc_btn_persona" class="fcclientes-button-next-btn" onclick="showForm('1')">
-        <i class="fas fa-user"></i> Persona
-      </button>
-    </div>
-    <div class="btn">
-      <button type="button" id="fcc_btn_empresa" class="fcclientes-button-next-btn" onclick="showForm('6')">
-        <i class="fas fa-building"></i> Empresa
-      </button>
-    </div>
-  </div>
+      <div class="fcclientes-eempresa-persona">
+        <div class="btn">
+          <button type="button" id="fcc_btn_persona" class="fcclientes-button-next-btn" onclick="showForm('1')">
+            <i class="fas fa-user"></i> Persona
+          </button>
+        </div>
+        <div class="btn">
+          <button type="button" id="fcc_btn_empresa" class="fcclientes-button-next-btn" onclick="showForm('6')">
+            <i class="fas fa-building"></i> Empresa
+          </button>
+        </div>
+      </div>
 
       <!-- fcc_CA_formulario -->
 
@@ -225,14 +225,13 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
               <label>Dirección</label> <!--CLICK MORTRAR - DIRECCION (2)-->
               <!--MULTIPLE-->
               <div type="button" onclick="agregar_direccion();">
-                <i class="fcclientes-direccion fa fa-plus-circle"> </i>
+                <!-- <i class="fcclientes-direccion fa fa-plus-circle"> </i> -->
                 <a class="fcclientes-direccion">
-                  Agregar otra dirección</a>
+                  + Agregar otra dirección</a>
               </div>
               <div id="fcclientes_agregar_cliente_proveedor_direccion_1" style="display: none;">
-                <i class="fcclientes-direccion fa fa-plus-circle" type="button"></i>
-                <a class="fcclientes-direccion" href="javascript:void(0)"
-                  id="fcclientes_cliente_nueva_direccion_1">Agregar otra dirección</a>
+                <!-- <i class="fcclientes-direccion fa fa-plus-circle" type="button"></i> -->
+                <a class="fcclientes-direccion" href="javascript:void(0)" id="fcclientes_cliente_nueva_direccion_1"> Agregar otra dirección</a>
               </div>
             </div>
             <textarea class=" fcclientes-imput form-control autosize" rows="1" id="fcclientes_direccion_cliente_proveedor"
@@ -425,25 +424,30 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
 
 
       <div class="fccliente-desplegable">
-      <div class="fccliente-desplegable-item">
-    <div class="fccliente-desplegable-header">
-        <img src="iconos\Ícono Contacto asociado.svg" alt="Icono">
-        <div class="fcc-AC textos">
-            <span>Contactos Asociados</span>
-            <p>Agrega información de otros contactos relacionados a este contacto</p>
-        </div>
-        <div class="fcc-CA icon"><i class="bx bx-chevron-right" id="fcc-CA-icon"></i></div>
-    </div>
-    <div class="fccliente-desplegable-content">
-    <p id="fcc_CA_mensajeVacio">No cuenta con etiquetas asociadas. <a href="#" id="fcc_CA_mostrarFormulario">Click para Asociar</a></p>
-    <div class="fcc_CA_formulario" id="fcc_CA_formulario">
-        <label for="fcc_CA_nombre">Nombre de la Etiqueta</label>
-        <input type="text" id="fcc_CA_nombre" placeholder="Nombre de la etiqueta" />
+        <div class="fccliente-desplegable-item">
+          <div class="fccliente-desplegable-header">
+            <img src="iconos\Ícono Contacto asociado.svg" alt="Icono">
+            <div class="fcc-AC textos">
+              <span>Contactos Asociados</span>
+              <p>Agrega información de otros contactos relacionados a este contacto</p>
+            </div>
+            <div class="fcc-CA icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-chevron-down" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+              </svg></div>
+          </div>
+          <div class="fccliente-desplegable-content">
+            <p id="fcc_CA_mensajeVacio">No cuenta con etiquetas asociadas. <a href="#" id="fcc_CA_mostrarFormulario">Click
+                para Asociar</a></p>
+            <div class="fcc_CA_formulario" id="fcc_CA_formulario">
+              <label for="fcc_CA_nombre">Nombre de la Etiqueta</label>
+              <input type="text" id="fcc_CA_nombre" placeholder="Nombre de la etiqueta" />
 
-        <!-- <label for="fcc_CA_color">Color de la Etiqueta</label>
+              <!-- <label for="fcc_CA_color">Color de la Etiqueta</label>
         <input type="color" id="fcc_CA_color" value="#ff0000" /> -->
 
-        <div class="row">
+              <div class="row">
                 <!-- Correo -->
                 <div class="col-6">
                   <label for="fcc_CA_correo">E-mail</label>
@@ -486,19 +490,19 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
               </div>
 
 
-        <div class="fcc_CA_botones">
-            <button class="fcc_CA_boton-cancelar" id="cancelar">Cancelar</button>
-            <button class="fcc_CA_boton-guardar" id="guardar">Guardar</button>
+              <div class="fcc_CA_botones">
+                <button class="fcc_CA_boton-cancelar" id="cancelar">Cancelar</button>
+                <button class="fcc_CA_boton-guardar" id="guardar">Guardar</button>
+              </div>
+            </div>
+
+            <div class="column">
+              <div class="row fcc_CA_etiquetas" id="fcc_CA_etiquetas" style="max-width: 500px; display: flex;"></div>
+            </div>
+
+            <p class="fcc_CA_agregarcontacto" id="fcc_CA_agregarcontacto">+ Agregar otra etiqueta</p>
+          </div>
         </div>
-    </div>
-
-    <div class="column">
-        <div class="row fcc_CA_etiquetas" id="fcc_CA_etiquetas" style="max-width: 500px; display: flex;"></div>
-    </div>
-
-    <p class="fcc_CA_agregarcontacto" id="fcc_CA_agregarcontacto">+ Agregar otra etiqueta</p>
-</div>
-</div>
 
         <div class="fccliente-desplegable-item">
           <div class="fccliente-desplegable-header">
@@ -509,7 +513,13 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
               <p>Define datos importantes para el trabajo de tus productos hacia este cliente</p>
             </div>
 
-            <div class="fcc_DD icon "><i class="bx bx-chevron-right"></i></div>
+            <div class="fcc_DD icon ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-chevron-down" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+              </svg>
+            </div>
           </div>
           <div class="fccliente-desplegable-content">
 
@@ -550,52 +560,59 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
         </div>
 
         <div class="fccliente-desplegable-item">
-    <div class="fccliente-desplegable-header">
-        <img src="iconos\Ícono campos adicionales SVG.svg" alt="Icono">
-        <div class="fcc-CA textos">
-            <span>Campos Adicionales</span>
-            <p>Agrega información adicional para este contacto de manera personalizada</p>
-        </div>
-        <div class="fcc_CA icon"><i class="bx bx-chevron-right"></i></div>
-    </div>
-    <div class="fccliente-desplegable-content">
-        <div class="fcc_form-container" id="container">
-            <div class="fcc_form-group">
+          <div class="fccliente-desplegable-header">
+            <img src="iconos\Ícono campos adicionales SVG.svg" alt="Icono">
+            <div class="fcc-CA textos">
+              <span>Campos Adicionales</span>
+              <p>Agrega información adicional para este contacto de manera personalizada</p>
+            </div>
+            <div class="fcc_CA icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-chevron-down" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+              </svg>
+            </div>
+          </div>
+          <div class="fccliente-desplegable-content">
+            <div class="fcc_form-container" id="container">
+              <div class="fcc_form-group">
                 <label for="fcc_CA_Composicion">Composición Química</label>
                 <input type="text" id="fcc_CA_Composicion" name="fcc_CA_Composicion" placeholder="Buscar composición">
-            </div>
-            <div class="fcc_form-group">
+              </div>
+              <div class="fcc_form-group">
                 <label for="fcc_CA_placa">Placa</label>
                 <input type="text" id="fcc_CA_placa" name="fcc_CA_placa" placeholder="Buscar Placa">
+              </div>
             </div>
-        </div>
-        
 
-        <!-- Formulario nuevo campo (inicialmente oculto con clase .hidden) -->
-        <div id="formulario-nuevo-campo" class="hidden">
-            <div class="fcc_form-group">
+
+            <!-- Formulario nuevo campo (inicialmente oculto con clase .hidden) -->
+            <div id="formulario-nuevo-campo" class="hidden">
+              <div class="fcc_form-group">
                 <label for="nombre_campo">Composición Química</label>
                 <input type="text" id="nombre_campo" placeholder="">
-            </div>
-            <div class="fcc_form-group">
+              </div>
+              <div class="fcc_form-group">
                 <label for="descripcion_campo">Placa</label>
                 <!-- <textarea id="descripcion_campo" placeholder="Descripción del campo"></textarea> -->
-                <textarea class=" fcclientes-imput form-control autosize" rows="" id="descripcion_campo" name="descripcion_campo" placeholder=""></textarea>
-            </div>
-            <div class="btn-container">
+                <textarea class=" fcclientes-imput form-control autosize" rows="" id="descripcion_campo"
+                  name="descripcion_campo" placeholder=""></textarea>
+              </div>
+              <div class="btn-container">
                 <button class="btn btn-cancelar" id="btn-cancelar">Cancelar</button>
                 <button class="btn btn-guardar" id="btn-guardar">Guardar</button>
+              </div>
             </div>
-        </div>
 
-        <!-- Contenedor donde mostraremos los campos adicionales almacenados -->
-        <div id="camposAdicionalesContainer"></div>
+            <!-- Contenedor donde mostraremos los campos adicionales almacenados -->
+            <div id="camposAdicionalesContainer"></div>
 
-        <div class="fcc-CA-agregar-ca">
-            <p id="agregarCampo">+ Agregar campo adicional</p>
+            <div class="fcc-CA-agregar-ca">
+              <p id="agregarCampo">+ Agregar campo adicional</p>
+            </div>
+          </div>
         </div>
-    </div>
-</div>
 
         <div class="fccliente-desplegable-item">
           <div class="fccliente-desplegable-header">
@@ -614,7 +631,13 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
               <span>Lista de Precios</span>
               <p>Establece una lista de precios de productos preestablecida para est cliente</p>
             </div>
-            <div class="fcc_LP icon "><i class="bx bx-chevron-right"></i></div>
+            <div class="fcc_LP icon ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-chevron-down" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+              </svg>
+            </div>
           </div>
           <div class="fccliente-desplegable-content">
 
@@ -646,99 +669,99 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
   <script>
 
 
- // Array para almacenar las etiquetas
- let etiquetas = [];
+    // Array para almacenar las etiquetas
+    let etiquetas = [];
 
-// Elementos del DOM
-const formulario = document.getElementById('fcc_CA_formulario');
-const mensajeVacio = document.getElementById('fcc_CA_mensajeVacio');
-const listaEtiquetas = document.getElementById('fcc_CA_etiquetas');
-const botonAgregarEtiqueta = document.getElementById('fcc_CA_agregarcontacto');
-const botonGuardar = document.getElementById('guardar');
-const botonCancelar = document.getElementById('cancelar');
+    // Elementos del DOM
+    const formulario = document.getElementById('fcc_CA_formulario');
+    const mensajeVacio = document.getElementById('fcc_CA_mensajeVacio');
+    const listaEtiquetas = document.getElementById('fcc_CA_etiquetas');
+    const botonAgregarEtiqueta = document.getElementById('fcc_CA_agregarcontacto');
+    const botonGuardar = document.getElementById('guardar');
+    const botonCancelar = document.getElementById('cancelar');
 
-// Función unificada para manejar etiquetas
-function manejarEtiquetas(etiquetasIniciales = []) {
-    etiquetas = etiquetasIniciales; // Inicializar el array de etiquetas con los datos de la API
-    actualizarListaEtiquetas(); // Mostrar etiquetas iniciales
+    // Función unificada para manejar etiquetas
+    function manejarEtiquetas(etiquetasIniciales = []) {
+      etiquetas = etiquetasIniciales; // Inicializar el array de etiquetas con los datos de la API
+      actualizarListaEtiquetas(); // Mostrar etiquetas iniciales
 
-    // Mostrar/ocultar formulario
-    document.getElementById('fcc_CA_mostrarFormulario').addEventListener('click', function (e) {
+      // Mostrar/ocultar formulario
+      document.getElementById('fcc_CA_mostrarFormulario').addEventListener('click', function (e) {
         e.preventDefault();
         formulario.style.display = 'block';
         mensajeVacio.style.display = 'none';
-    });
+      });
 
-    // Cancelar formulario
-    botonCancelar.addEventListener('click', function (e) {
+      // Cancelar formulario
+      botonCancelar.addEventListener('click', function (e) {
         e.preventDefault();
         // Mostrar el botón de agregar etiqueta nuevamente
-        document.getElementById('fcc_CA_agregarcontacto').classList.remove('d-none'); 
+        document.getElementById('fcc_CA_agregarcontacto').classList.remove('d-none');
         formulario.style.display = 'none'; // Ocultar el formulario
         limpiarFormulario(); // Limpiar los campos del formulario
         mostrarListaEtiquetas(); // Mostrar la lista de etiquetas
-    });
+      });
 
-    // Guardar etiqueta
-    botonGuardar.addEventListener('click', function (e) {
+      // Guardar etiqueta
+      botonGuardar.addEventListener('click', function (e) {
         e.preventDefault();
         const nombre = document.getElementById('fcc_CA_nombre').value;
         //const color = document.getElementById('fcc_CA_color').value;
         const email = document.getElementById('fcc_CA_correo').value;
         const celular = document.getElementById('fcc_CA_celular').value;
-        const cargo =document.getElementById('fcc_CA_campo').value;
+        const cargo = document.getElementById('fcc_CA_campo').value;
         const fecha = document.getElementById('fcc_CA_fecha').value;
 
-        if (nombre  && email && celular && cargo && fecha) {
-            const etiqueta = {
-                EtqId: Date.now(), // Usamos un timestamp como ID único
-                EtqNombre: nombre,
-                //EtqColor: color,
-                email: email,
-                celular:celular,
-                cargo:cargo,
-                fecha:fecha,
-            };
+        if (nombre && email && celular && cargo && fecha) {
+          const etiqueta = {
+            EtqId: Date.now(), // Usamos un timestamp como ID único
+            EtqNombre: nombre,
+            //EtqColor: color,
+            email: email,
+            celular: celular,
+            cargo: cargo,
+            fecha: fecha,
+          };
 
-            // Verificar si estamos editando una etiqueta existente
-            const indiceEdicion = formulario.getAttribute('data-indice');
-            if (indiceEdicion !== null) {
-                etiquetas[indiceEdicion] = etiqueta; // Editar etiqueta
-                formulario.removeAttribute('data-indice');
-            } else {
-                etiquetas.push(etiqueta); // Agregar nueva etiqueta
-            }
+          // Verificar si estamos editando una etiqueta existente
+          const indiceEdicion = formulario.getAttribute('data-indice');
+          if (indiceEdicion !== null) {
+            etiquetas[indiceEdicion] = etiqueta; // Editar etiqueta
+            formulario.removeAttribute('data-indice');
+          } else {
+            etiquetas.push(etiqueta); // Agregar nueva etiqueta
+          }
 
-            actualizarListaEtiquetas(); // Actualizar la lista de etiquetas
-            limpiarFormulario(); // Limpiar el formulario
-            formulario.style.display = 'none'; // Ocultar el formulario
-            // Mostrar el botón de agregar etiqueta nuevamente
-        document.getElementById('fcc_CA_agregarcontacto').classList.remove('d-none'); 
+          actualizarListaEtiquetas(); // Actualizar la lista de etiquetas
+          limpiarFormulario(); // Limpiar el formulario
+          formulario.style.display = 'none'; // Ocultar el formulario
+          // Mostrar el botón de agregar etiqueta nuevamente
+          document.getElementById('fcc_CA_agregarcontacto').classList.remove('d-none');
         } else {
-            alert('Por favor, completa todos los campos.');
+          alert('Por favor, completa todos los campos.');
         }
-    });
+      });
 
-    // Agregar otra etiqueta
-    botonAgregarEtiqueta.addEventListener('click', function (e) {
+      // Agregar otra etiqueta
+      botonAgregarEtiqueta.addEventListener('click', function (e) {
         e.preventDefault();
         // Mostrar el botón de agregar etiqueta nuevamente
-        document.getElementById('fcc_CA_agregarcontacto').classList.add('d-none'); 
+        document.getElementById('fcc_CA_agregarcontacto').classList.add('d-none');
         formulario.style.display = 'block'; // Mostrar el formulario
         listaEtiquetas.style.display = 'none'; // Ocultar la lista de etiquetas
         limpiarFormulario(); // Limpiar el formulario
-    });
+      });
 
-    // Función para actualizar la lista de etiquetas
-    function actualizarListaEtiquetas() {
+      // Función para actualizar la lista de etiquetas
+      function actualizarListaEtiquetas() {
         listaEtiquetas.innerHTML = ''; // Limpiar la lista
         if (etiquetas.length > 0) {
-            etiquetas.forEach((etiqueta, indice) => {
-                const col6 = document.createElement('div');
-                col6.className = 'col-6 col-xs-12 mb-3';
-                const etiquetaElemento = document.createElement('div');
-                etiquetaElemento.className = 'fcc_CA_etiqueta p-3';
-                etiquetaElemento.innerHTML = `
+          etiquetas.forEach((etiqueta, indice) => {
+            const col6 = document.createElement('div');
+            col6.className = 'col-6 col-xs-12 mb-3';
+            const etiquetaElemento = document.createElement('div');
+            etiquetaElemento.className = 'fcc_CA_etiqueta p-3';
+            etiquetaElemento.innerHTML = `
                     <p class="mb-1"><strong>Nombre:</strong> ${etiqueta.EtqNombre}</p>
                     
                     <p class="mb-1"><strong>E-mail:</strong> ${etiqueta.email}</p>
@@ -755,63 +778,63 @@ function manejarEtiquetas(etiquetasIniciales = []) {
                     </div>
                 `;
 
-                // <div class="badge" style="background-color: ${etiqueta.EtqColor}; color: white;">Color</div>
-                col6.appendChild(etiquetaElemento);
-                listaEtiquetas.appendChild(col6);
+            // <div class="badge" style="background-color: ${etiqueta.EtqColor}; color: white;">Color</div>
+            col6.appendChild(etiquetaElemento);
+            listaEtiquetas.appendChild(col6);
+          });
+
+          // Agregar eventos a los botones de editar y eliminar
+          document.querySelectorAll('.editar').forEach(boton => {
+            boton.addEventListener('click', function () {
+              const indice = this.getAttribute('data-indice');
+              cargarFormularioParaEdicion(indice);
+
+
+              // Ocultar la lista de etiquetas y el botón de agregar
+              document.getElementById('fcc_CA_etiquetas').style.display = 'none';
+              document.getElementById('fcc_CA_agregarcontacto').classList.add('d-none');
+
             });
+          });
 
-            // Agregar eventos a los botones de editar y eliminar
-            document.querySelectorAll('.editar').forEach(boton => {
-                boton.addEventListener('click', function () {
-                    const indice = this.getAttribute('data-indice');
-                    cargarFormularioParaEdicion(indice);
-
-
-        // Ocultar la lista de etiquetas y el botón de agregar
-        document.getElementById('fcc_CA_etiquetas').style.display = 'none';
-        document.getElementById('fcc_CA_agregarcontacto').classList.add('d-none');
-
-                });
+          document.querySelectorAll('.eliminar').forEach(boton => {
+            boton.addEventListener('click', function () {
+              // Se muestra el cuadro de confirmación con "Aceptar" y "Cancelar"
+              if (confirm("¿Estás seguro de que deseas eliminar esta etiqueta?")) {
+                // Si el usuario hace clic en "Aceptar", se obtiene el índice de la etiqueta
+                const indice = this.getAttribute('data-indice');
+                // Se elimina la etiqueta del array
+                etiquetas.splice(indice, 1);
+                // Se actualiza la lista de etiquetas en la interfaz
+                actualizarListaEtiquetas();
+                // Se oculta el botón de agregar etiqueta
+                botonAgregarEtiqueta.style.display = "none";
+              }
             });
-
-            document.querySelectorAll('.eliminar').forEach(boton => {
-  boton.addEventListener('click', function () {
-    // Se muestra el cuadro de confirmación con "Aceptar" y "Cancelar"
-    if (confirm("¿Estás seguro de que deseas eliminar esta etiqueta?")) {
-      // Si el usuario hace clic en "Aceptar", se obtiene el índice de la etiqueta
-      const indice = this.getAttribute('data-indice');
-      // Se elimina la etiqueta del array
-      etiquetas.splice(indice, 1);
-      // Se actualiza la lista de etiquetas en la interfaz
-      actualizarListaEtiquetas();
-      // Se oculta el botón de agregar etiqueta
-      botonAgregarEtiqueta.style.display = "none";
-    }
-  });
-});
+          });
 
 
-            mostrarListaEtiquetas(); // Mostrar la lista de etiquetas
+          mostrarListaEtiquetas(); // Mostrar la lista de etiquetas
         } else {
-            mensajeVacio.style.display = "block"; // Mostrar mensaje de "No hay etiquetas"
+          mensajeVacio.style.display = "block"; // Mostrar mensaje de "No hay etiquetas"
         }
-    }
+      }
 
-    // Función para mostrar la lista de etiquetas
-    function mostrarListaEtiquetas() {
+      // Función para mostrar la lista de etiquetas
+      function mostrarListaEtiquetas() {
         if (etiquetas.length === 0) {
-            mensajeVacio.style.display = "block"; // Mostrar mensaje de "No hay etiquetas"
-            listaEtiquetas.style.display = "none"; // Ocultar lista
-            botonAgregarEtiqueta.style.display = "none"; // Ocultar botón de agregar
+          mensajeVacio.style.display = "block"; // Mostrar mensaje de "No hay etiquetas"
+          listaEtiquetas.style.display = "none"; // Ocultar lista
+          botonAgregarEtiqueta.style.display = "none"; // Ocultar botón de agregar
         } else {
-            mensajeVacio.style.display = "none"; // Ocultar mensaje
-            listaEtiquetas.style.display = "flex"; // Mostrar lista
-            botonAgregarEtiqueta.style.display = "block"; // Mostrar botón de agregar
+          mensajeVacio.style.display = "none"; // Ocultar mensaje
+          listaEtiquetas.style.display = "flex"; // Mostrar lista
+          botonAgregarEtiqueta.style.display = "block"; // Mostrar botón de agregar
         }
-    }
+      }
 
-    // Función para cargar el formulario con los datos de una etiqueta para editar
-    function cargarFormularioParaEdicion(indice) {
+      // Función para cargar el formulario con los datos de una etiqueta para editar
+      function cargarFormularioParaEdicion(indice) {
         const etiqueta = etiquetas[indice];
         document.getElementById('fcc_CA_nombre').value = etiqueta.EtqNombre;
         //document.getElementById('fcc_CA_color').value = etiqueta.EtqColor;
@@ -822,10 +845,10 @@ function manejarEtiquetas(etiquetasIniciales = []) {
 
         formulario.setAttribute('data-indice', indice);
         formulario.style.display = 'block'; // Mostrar formulario
-    }
+      }
 
-    // Función para limpiar el formulario
-    function limpiarFormulario() {
+      // Función para limpiar el formulario
+      function limpiarFormulario() {
         document.getElementById('fcc_CA_nombre').value = '';
         //document.getElementById('fcc_CA_color').value = '#ff0000'; // Color por defecto
         document.getElementById('fcc_CA_correo').value = '';
@@ -833,61 +856,61 @@ function manejarEtiquetas(etiquetasIniciales = []) {
         document.getElementById('fcc_CA_campo').value = '';
         document.getElementById('fcc_CA_fecha').value = '';
         formulario.removeAttribute('data-indice'); // Limpiar índice de edición
+      }
     }
-}
 
 
-   // Inicializar la función con datos de la API si existen
-   $(document).ready(function () {
-    <?php
-    if (!empty($id_cliente)) {
+    // Inicializar la función con datos de la API si existen
+    $(document).ready(function () {
+      <?php
+      if (!empty($id_cliente)) {
         // Obtener el tipo de cliente desde PHP
         $clienteTipo = !empty($ClienteTipoDoc) ? $ClienteTipoDoc : '';
         ?>
         var clienteTipo = "<?php echo $clienteTipo; ?>";
         if (clienteTipo) {
-            showForm(clienteTipo); // Si hay datos, mostrar el formulario
+          showForm(clienteTipo); // Si hay datos, mostrar el formulario
         }
-        
+
         <?php
         // Manejo de etiquetas
         if (!empty($cliente['ArrayEtiquetas']) && is_array($cliente['ArrayEtiquetas'])) {
-            $etiquetas_json = json_encode($cliente['ArrayEtiquetas']);
-            if ($etiquetas_json !== false) {
-                ?>
-                manejarEtiquetas(<?php echo $etiquetas_json; ?>); // Inicializar con etiquetas del cliente
-                <?php
-            } else {
-                ?>
-                console.error("Error al convertir las etiquetas a JSON.");
-                <?php
-            }
-        } else {
+          $etiquetas_json = json_encode($cliente['ArrayEtiquetas']);
+          if ($etiquetas_json !== false) {
             ?>
-            manejarEtiquetas([]); // Inicializar como array vacío
+            manejarEtiquetas(<?php echo $etiquetas_json; ?>); // Inicializar con etiquetas del cliente
             <?php
+          } else {
+            ?>
+            console.error("Error al convertir las etiquetas a JSON.");
+            <?php
+          }
+        } else {
+          ?>
+          manejarEtiquetas([]); // Inicializar como array vacío
+          <?php
         }
-    } else {
+      } else {
         ?>
         console.warn("No se proporcionó un ID de cliente válido.");
         $("#formContainer").hide(); // Mantener el formulario oculto
         manejarEtiquetas([]); // Inicializar como array vacío
         <?php
-    }
-    ?>
-});
+      }
+      ?>
+    });
 
-// Función para abrir el formulario manualmente desde el menú
-// function abrirModalPersona() {
-//     showForm('1'); // Llama a la función para mostrar el formulario de persona
-// }
+    // Función para abrir el formulario manualmente desde el menú
+    // function abrirModalPersona() {
+    //     showForm('1'); // Llama a la función para mostrar el formulario de persona
+    // }
 
-// function abrirModalEmpresa() {
-//     showForm('6'); // Llama a la función para mostrar el formulario de empresa
-// }
+    // function abrirModalEmpresa() {
+    //     showForm('6'); // Llama a la función para mostrar el formulario de empresa
+    // }
 
 
-</script>
+  </script>
 
 
 

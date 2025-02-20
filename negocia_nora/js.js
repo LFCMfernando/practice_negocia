@@ -470,7 +470,7 @@ function editarCampo(index) {
 
   
 
-                    function obtener_data_cliente(id_cliente) {
+                    function obtener_data_cliente(id_cliente, tShowForm = 0) {
                       // Mostrar el spinner de carga
                       document.getElementById('loadingSpinner').classList.remove('d-none');
                       document.getElementById('fcclientes-formulario').classList.add('d-none');
@@ -511,8 +511,15 @@ function editarCampo(index) {
                               }
                           }
 
+                          
+                          $(document).ready(function() {
 
+                          // Mostrar el formulario adecuado
+                          if(tShowForm){
+                            showForm(tShowForm);
+                          }
 
+                        });
 
                           
                       })

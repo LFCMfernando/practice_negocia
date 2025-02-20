@@ -3899,29 +3899,17 @@ font-size: 16px;
 
 
   <script>
-// function abrirModalPersona() {
-//   showForm('1');
-//   // En vez de new bootstrap.Modal(...) usas jQuery:
-//   $('#fcclientes-modal').modal('show');
-// }
 
-// function abrirModalEmpresa() {
-//   showForm('6');
-//   $('#fcclientes-modal').modal('show');
-// }
 
-function abrirModalPersona() {
+ function abrirModalPersona() {
     const modalElement = document.getElementById('fcclientes-modal');
     
     const myModal = new bootstrap.Modal(modalElement);
 
-    // Asegurarse de cargar un formulario vacío antes de mostrarlo
-    obtener_data_cliente(0); // Llamamos a obtener_data_cliente con id_cliente = 0 para limpiar el formulario
+   
+   obtener_data_cliente(0, 1); 
 
-    // Mostrar el formulario adecuado
-   // showForm('1');
-
-    // Mostrar el modal
+    
     myModal.show();
 }
 
@@ -3929,9 +3917,9 @@ function abrirModalEmpresa() {
     const modalElement = document.getElementById('fcclientes-modal');
     const myModal = new bootstrap.Modal(modalElement);
 
-    obtener_data_cliente(0); // Limpiamos el formulario con datos vacíos
+    obtener_data_cliente(0, 6); // Limpiamos el formulario con datos vacíos
 
-   //showForm('6');
+   
 
     myModal.show();
 }
