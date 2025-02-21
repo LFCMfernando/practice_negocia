@@ -77,7 +77,7 @@
   z-index: 1;
 }
 
-.fcclientes-contents {
+.fcRegistro_contents {
   /*padding: 20px;*/
   overflow-x: auto;
   display: flex;
@@ -94,37 +94,37 @@
   gap: 15px;
 }
 
-.fcclientes-contents h2 {
+.fcRegistro_contents h2 {
   margin-top: 0;
   color: #333;
 }
 
-.fcclientes-contents form {
+.fcRegistro_contents form {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.fcclientes-contents input,
-.fcclientes-contents select {
+.fcRegistro_contents input,
+.fcRegistro_contents select {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
 }
 
-.fcclientes-contents input:focus,
-.fcclientes-contents select:focus {
+.fcRegistro_contents input:focus,
+.fcRegistro_contents select:focus {
   outline: none;
   border-color: #ff9c00;
 }
 
-.fcclientes-contents .buttons {
+.fcRegistro_contents .buttons {
   display: flex;
   justify-content: space-between;
 }
 
-.fcclientes-contents .buttons-2 {
+.fcRegistro_contents .buttons-2 {
   display: flex;
   justify-content: space-between;
   align-self: end;
@@ -132,11 +132,11 @@
 
 
 
-.fcclientes-contents button:hover {
+.fcRegistro_contents button:hover {
   background: #ff5900;
 }
 
-.fcclientes-hidden {
+.fcRegistro_hidden {
   display: none;
 }
 
@@ -261,7 +261,7 @@
 
 
 
-  .fcclientes-contents {
+  .fcRegistro_contents {
     flex-wrap: nowrap;
   }
 
@@ -270,7 +270,7 @@
     width: 100%;
   }
 
-  .fcclientes-contents .buttons {
+  .fcRegistro_contents .buttons {
     display: block;
     margin-top: 20px;
   }
@@ -282,7 +282,7 @@
     width: 100%;
   }
 
-  /*.fcclientes-preferencias .fcc_form-group {
+  /*.fcclientes-preferencias .fcRegistro_DD_form-group {
     flex: 0 0 30%;
     display: flex;
     flex-direction: column;
@@ -335,13 +335,13 @@
         font-weight: bold;
       }
 
-      .fcclientes-direccion {
+      .fcRegistro_direccion {
         color: #ff9c00;
         font-size: 9pt;
         font-weight: normal
       }
 
-      .fcclientes-imput {
+      .fcRegistro_imput {
         background: #F8F8FB;
         padding: 2px;
         padding-left: 5px;
@@ -353,7 +353,7 @@
       }
 
       /**/
-      .fcclientes-codigo {
+      .fcRegistro_codigo {
         font-size: 13px;
         font-weight: 600;
         color: #000;
@@ -361,15 +361,15 @@
 
 
 
-      /* Estilo del fcc_CA_botones empresa/persona*/
-      .fcclientes-eempresa-persona {
+      /* Estilo del fcRegistro_CA_botones empresa/persona*/
+      .fcRegistro_eempresa-persona {
         display: flex;
         justify-content: space-between;
 
 
       }
 
-      .fcclientes-eempresa-persona .btn button {
+      .fcRegistro_eempresa-persona .btn button {
 
         border: 2px solid orange;
         color: orange;
@@ -382,12 +382,12 @@
 
       }
 
-      .fcclientes-eempresa-persona .btn button:hover {
+      .fcRegistro_eempresa-persona .btn button:hover {
         background-color: orange;
         color: white;
       }
 
-      .fcclientes-button-next-btn,
+      .fcRegistro_button-next-btn,
       .fcclientes-button-prev-btn {
         background-color: orange;
         color: white;
@@ -401,21 +401,21 @@
         /* Un ancho mínimo para el botón */
       }
 
-      .fcclientes-button-next-btn,
+      .fcRegistro_button-next-btn,
       .fcclientes-button-prev-btn {
         background-color: darkorange;
       }
-      button#fcc_btn_persona {
+      button#fcRegistro_btn_persona {
    
         gap: 10px;
     }
 
-    button#fcc_btn_empresa {
+    button#fcRegistro_btn_empresa {
       gap: 10px;
       }
       /*btnconsulatar*/
 
-      #fcclientes_btn_cliente_proveedor_consult {
+      #fcRegistro_btn_cliente_proveedor_consult {
         background-color: orange;
         color: white;
         padding: 10px 10px;
@@ -428,23 +428,23 @@
         border-radius: .25rem;
       }
 
-      #fcclientes_btn_cliente_proveedor_consult:hover {
+      #fcRegistro_btn_cliente_proveedor_consult:hover {
         background-color: darkorange;
       }
 
-      /* espacio en el fcc_CA_formulario*/
-      .fcclientes-form .fromulario>* {
+      /* espacio en el fcRegistro_CA_formulario*/
+      .fcRegistro_form .fcRegistro_fromulario>* {
         margin-bottom: 10px;
       }
 
 
-      /*fcc_CA_formulario*/
+      /*fcRegistro_CA_formulario*/
 
-      .fcclientescampos {
+      .fcRegistro_campos {
         margin-bottom: 10px;
       }
 
-      .fcclientes-form {
+      .fcRegistro_form {
         display: flex;
         flex-direction: column;
         margin-bottom: 15px;
@@ -465,7 +465,7 @@
 
       }
 
-      /* Estilo para los labels del fcc_CA_formulario */
+      /* Estilo para los labels del fcRegistro_CA_formulario */
 
       .modal-body {
         overflow-y: hidden;
@@ -602,21 +602,21 @@
 
 
       /* Estilos para etiquetas */
-      .fcclientes-form label {
+      .fcRegistro_form label {
         font-size: 13px;
         font-weight: 600;
         color: #000;
         margin-bottom: 4px;
       }
 
-      textarea#fcclientes_direccion_cliente_proveedor {
+      textarea#fcRegistro_direccion_cliente_proveedor {
         background-color: #F8F8FB;
     }
 
-    input#fc_cod_cliente_proveedor {
+    input#fcRegistro_cod_cliente {
         background-color: #F8F8FB;
     }
-    textarea#fcc_notas {
+    textarea#fcRegistro_notas {
         background-color: #F8F8FB;
     }
 
@@ -693,14 +693,14 @@ max-width: 500px;
   justify-content: flex-end; /* Alinea los ítems (botones) al extremo derecho */
   gap: 8px;                  /* Opcional: Espacio entre botones */
 }
-.btn-container{
+.fcRegistro_CA_btn-container{
   display: flex;            /* Activa el modelo flexbox */
   justify-content: flex-end; /* Alinea los ítems (botones) al extremo derecho */
   gap: 8px; 
 }
 
-button#fcc_btn_cancelar,
-button#fcc_btn_guardar {
+button#fcRegistro_CA_btn_cancelar,
+button#fcRegistro_CA_btn_guardar {
   display: inline-flex;
   align-items: center;     /* Centra verticalmente el contenido */
   justify-content: center; /* Centra horizontalmente el contenido */
@@ -709,7 +709,7 @@ button#fcc_btn_guardar {
   border: 1px solid #FFA600;
 }
 
-button#fcc_btn_cancelar {
+button#fcRegistro_CA_btn_cancelar {
   border-radius: .25rem;
   background-color: #FFFFFF;
   color: #FFA600;
@@ -717,7 +717,7 @@ button#fcc_btn_cancelar {
   padding: 8px 16px;
   cursor: pointer;
 }
-button#fcc_btn_guardar {
+button#fcRegistro_CA_btn_guardar {
   border-radius: .25rem;
   text-align: center;
   background-color: #FFA600;
@@ -773,7 +773,7 @@ button#btnEditar {
 
 
 
-      .fcc_DD_map {
+      .fcRegistro_DD_map {
 
         width: 100%;
         height: 200px;
@@ -782,7 +782,7 @@ button#btnEditar {
         overflow: hidden;
       }
 
-      .fcc_form-container {
+      .fcRegistro_DD_form-container {
         /*margin-bottom: 10px;*/
         display: flex;
         gap: 20px;
@@ -791,7 +791,19 @@ button#btnEditar {
         /* Para que bajen en pantallas pequeñas */
       }
 
-      .fcc_form-group {
+      /**/
+      .fcRegistro_CA_form-container {
+        /*margin-bottom: 10px;*/
+        display: flex;
+        gap: 20px;
+        /* Espacio entre los elementos */
+        flex-wrap: wrap;
+        /* Para que bajen en pantallas pequeñas */
+      }
+
+      
+
+      .fcRegistro_DD_form-group {
         margin-bottom: 10px;
         flex: 1;
         /* Para que ocupen el mismo espacio */
@@ -799,8 +811,8 @@ button#btnEditar {
         /* Evita que se encojan demasiado */
       }
 
-      .fcc_form-group select,
-      .fcc_form-group input {
+      .fcRegistro_DD_form-group select,
+      .fcRegistro_DD_form-group input {
         width: 100%;
         padding: 5px 5px;
         border: 1px solid #ddd;
@@ -808,7 +820,35 @@ button#btnEditar {
         font-size: 14px;
 
       }
-      .fcc_form-group textarea {
+      .fcRegistro_DD_form-group textarea {
+        border-radius: 5px;
+        border:1px solid #ddd;
+        width: 100%;
+        min-height: 10px; /* Ajusta el alto inicial si quieres */
+        resize: vertical; /* Permite redimensionarlo verticalmente */
+        background-color: #F8F8FB;
+        
+      }
+      /**/
+
+      .fcRegistro_CA_form-group {
+        margin-bottom: 10px;
+        flex: 1;
+        /* Para que ocupen el mismo espacio */
+        min-width: 200px;
+        /* Evita que se encojan demasiado */
+      }
+
+      .fcRegistro_CA_form-group select,
+      .fcRegistro_CA_form-group input {
+        width: 100%;
+        padding: 5px 5px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+
+      }
+      .fcRegistro_CA_form-group textarea {
         border-radius: 5px;
         border:1px solid #ddd;
         width: 100%;
@@ -831,7 +871,7 @@ button#btnEditar {
 
      
 
-      .fcc_LP_content select,input{
+      .fcRegistro_LP_content select,input{
         margin: 0;
         width: 100%;
         padding: 5px 5px;
@@ -852,7 +892,7 @@ button#btnEditar {
         /* Espacio entre el texto y el # */
       }
 
-      .fcc_CA_formulario {
+      .fcRegistro_CA_formulario {
         color: #000;
         display: none;
         margin-top: 10px;
@@ -863,14 +903,14 @@ button#btnEditar {
         border: none;
       }
 
-      .fcc_CA_formulario label {
+      .fcRegistro_CA_formulario label {
         font-weight: bold;
         margin-bottom: 5px;
         display: block;
         /* Hace que los label estén arriba */
       }
 
-      .fcc_CA_formulario input {
+      .fcRegistro_CA_formulario input {
 
         margin-bottom: 15px;
         /* Espacio entre inputs */
@@ -886,7 +926,7 @@ button#btnEditar {
       }
 
       /* Cuando el input está en foco (seleccionado) */
-      .fcc_CA_formulario input:focus {
+      .fcRegistro_CA_formulario input:focus {
         background-color: white;
         /* Fondo blanco al hacer clic */
         border-color: #ff9c00;
@@ -898,17 +938,17 @@ button#btnEditar {
 
 
 
-      .fcc_CA_botones {
+      .fcRegistro_CA_botones {
 
         display: flex;
         align-items: center;
         /* Centra el texto verticalmente */
         justify-content: flex-end;
-        /* Alinea los fcc_CA_botones a la derecha */
+        /* Alinea los fcRegistro_CA_botones a la derecha */
         gap: 10px;
-        /* Espacio entre los fcc_CA_botones */
+        /* Espacio entre los fcRegistro_CA_botones */
       }
-      #cancelar{
+      #fcRegistro_CA_boton-cancelar{
         border-radius: .25rem;
         background-color: #FFFFFF;
         color: #FFA600;
@@ -917,7 +957,7 @@ button#btnEditar {
         cursor: pointer;
 
       }
-      #guardar{
+      #fcRegistro_CA_boton-guardar{
         border-radius: .25rem;
         text-align: center;
         background-color: #FFA600;
@@ -927,8 +967,8 @@ button#btnEditar {
         cursor: pointer;
       }
 
-      .fcc_CA_boton-cancelar,
-      .fcc_CA_boton-guardar {
+      .fcRegistro_CA_boton-cancelar,
+      .fcRegistro_CA_boton-guardar {
         background: orange;
         color: #fff;
         display: flex;
@@ -962,7 +1002,7 @@ button#btnEditar {
         background-color: #f9f9f9;
       }
 
-      .fcc_CA_agregarcontacto {
+      .fcRegistro_CA_agregarcontacto {
         margin-top: 10px;
         cursor: pointer;
         color: #ff9c00;
@@ -970,24 +1010,24 @@ button#btnEditar {
         display: none;
       }
 
-      .fcc_CA_agregarcontacto:hover {
+      .fcRegistro_CA_agregarcontacto:hover {
         color: #ff9c00;
       }
 
-      .fcc-CA-agregar-ca {
+      .fcRegistro_AC-agregar-ca {
 
         cursor: pointer;
         color: #ff9c00;
         text-decoration: underline;
 
       }
-      .fcc-CA-agregar-ca p {
+      .fcRegistro_AC-agregar-ca p {
 
         margin-top: 10px;
 
       }
 
-      .fcc-CA-agregar-ca:hover {
+      .fcRegistro_AC-agregar-ca:hover {
         color: #ff9c00;
       }
       .textos{
@@ -1027,7 +1067,7 @@ button#btnEditar {
         color: #000;
       }
 
-      .fccliente-desplegable {
+      .fcRegistro_desplegable {
         width: 100%;
         background-color: white;
         border-radius: 0px;
@@ -1037,7 +1077,7 @@ button#btnEditar {
 
       }
 
-      .fccliente-desplegable-item {
+      .fcRegistro_desplegable-item {
         /*border-left: 4px solid #ff9c00;*/
         transition: border-left 0.35s ease;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -1056,7 +1096,7 @@ button#btnEditar {
 
 
 
-      .fccliente-desplegable-header {
+      .fcRegistro_desplegable-header {
         display: flex;
         align-items: center;
         gap: 10px;
@@ -1069,23 +1109,23 @@ button#btnEditar {
         transition: background-color 0.3s;
       }
 
-      .fccliente-desplegable-header:hover {
+      .fcRegistro_desplegable-header:hover {
         background-color: #fff;
       }
 
 
 
-      .fccliente-desplegable-header svg {
+      .fcRegistro_desplegable-header svg {
         margin-right: 8px;
         flex-shrink: 0;
       }
-      .fccliente-desplegable-content label{
+      .fcRegistro_desplegable-content label{
         font-size: 14px;
         font-weight: 600;
         color: #000;
         margin-bottom: 4px;
       }
-      .fccliente-desplegable-content {
+      .fcRegistro_desplegable-content {
 color: #000;
         display: none;
         padding: 15px;
@@ -1094,19 +1134,19 @@ color: #000;
         font-size: 14px;
       }
 
-      .fccliente-desplegable-content a {
+      .fcRegistro_desplegable-content a {
         color: #ff9c00;
         text-decoration: none;
       }
 
-      .fccliente-desplegable-content a:hover {
+      .fcRegistro_desplegable-content a:hover {
         text-decoration: underline;
       }
 
       
 
       @media (max-width: 992px) {
-        .fcclientes-contents {
+        .fcRegistro_contents {
           flex-wrap: nowrap;
           width: min-content;
           min-width: 400px;

@@ -149,31 +149,31 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
 
 
 
-      <div class="fcclientes-eempresa-persona">
+      <div class="fcRegistro_eempresa-persona">
         <div class="btn ">
-          <button type="button" id="fcc_btn_persona" class="fcclientes-button-next-btn" onclick="fcc_Empresa_Persona('1')">
+          <button type="button" id="fcRegistro_btn_persona" class="fcRegistro_button-next-btn" onclick="fcRegistro_Empresa_Persona('1')">
           <img src="iconos\Icono ContactopersonaSVG.svg" alt="Icono">
            Persona
           </button>
         </div>
         <div class="btn">
-          <button type="button" id="fcc_btn_empresa" class="fcclientes-button-next-btn" onclick="fcc_Empresa_Persona('6')">
+          <button type="button" id="fcRegistro_btn_empresa" class="fcRegistro_button-next-btn" onclick="fcRegistro_Empresa_Persona('6')">
           <img src="iconos\Icono ContactoEmpresaSVG.svg" alt="Icono">Empresa
           </button>
         </div>
       </div>
 
-      <!-- fcc_CA_formulario -->
+      <!-- fcRegistro_CA_formulario -->
 
       <!-- Single form with dynamic fields -->
-      <div id="fcc_formContainer" class="fcclientes-form" style="display:none;">
-        <form id="fcc_formContainer" class="fromulario">
+      <div id="fcRegistro_formContainer" class="fcRegistro_form" style="display:none;">
+        <form id="fcRegistro_formContainer" class="fcRegistro_fromulario">
 
 
           <div class="row" style="--bs-gutter-x: 10px;">
             <div class="col-4">
-              <label for="fcc_tipo_doc">Tipo de Doc.</label>
-              <select name="fcc_tipo_doc" id="fcc_tipo_doc">
+              <label for="fcRegistro_tipo_doc">Tipo de Doc.</label>
+              <select name="fcRegistro_tipo_doc" id="fcRegistro_tipo_doc">
                 <option value="">Seleccione</option>
                 <option value="1" <?php echo ($ClienteTipoDoc == 1) ? 'selected="selected"' : ''; ?>>DNI</option>
                 <option value="6" <?php echo ($ClienteTipoDoc == 6) ? 'selected="selected"' : ''; ?>>Ruc</option>
@@ -184,32 +184,32 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
               </select>
             </div>
             <div class="col-4">
-              <label for="fcc_dni">N° Documento</label>
-              <input type="text" id="fcc_dni" name="fcc_dni" value=" <?php echo $ClienteDni ?> ">
+              <label for="fcRegistro_dni">N° Documento</label>
+              <input type="text" id="fcRegistro_dni" name="fcRegistro_dni" value=" <?php echo $ClienteDni ?> ">
             </div>
             <div class="col-4">
-              <button id="fcclientes_btn_cliente_proveedor_consult" type="button"
+              <button id="fcRegistro_btn_cliente_proveedor_consult" type="button"
                 style="margin-top: 23px; ">Consultar</button>
             </div>
           </div>
 
-          <div id="fcclientes_personaFields" class="form-fields">
-            <label for="fcc_name">Nombre:</label>
-            <input type="text" id="fcc_name" name="fcc_name" value="<?php echo $ClienteNombre; ?>">
+          <div id="fcRegistro_personaFields" class="form-fields">
+            <label for="fcRegistro_name">Nombre:</label>
+            <input type="text" id="fcRegistro_name" name="fcRegistro_name" value="<?php echo $ClienteNombre; ?>">
 
           </div>
 
 
           <!-- Campos para Empresa -->
-          <div id="fcclientes_empresaFields" class="form-fields" style="display:none;">
-            <div class="fcclientescampos">
-              <label for="fcc_nombre_comercial">Nombre Comercial:</label>
-              <input type="text" id="fcc_nombre_comercial" name="fcc_nombre_comercial"
+          <div id="fcRegistro_empresaFields" class="form-fields" style="display:none;">
+            <div class="fcRegistro_campos">
+              <label for="fcRegistro_nombre_comercial">Nombre Comercial:</label>
+              <input type="text" id="fcRegistro_nombre_comercial" name="fcRegistro_nombre_comercial"
                 value=" <?php echo $ClienteNomComercial ?>">
             </div>
-            <div class="fcclientescampos">
-              <label for="fcc_razon">Razón Social:</label>
-              <input type="text" id="fcc_razon" name="fcc_razon" value="<?php echo $razonsocial; ?>">
+            <div class="fcRegistro_campos">
+              <label for="fcRegistro_razon">Razón Social:</label>
+              <input type="text" id="fcRegistro_razon" name="fcRegistro_razon" value="<?php echo $razonsocial; ?>">
             </div>
           </div>
 
@@ -226,23 +226,23 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
               <label>Dirección</label> <!--CLICK MORTRAR - DIRECCION (2)-->
               <!--MULTIPLE-->
               <div type="button" onclick="agregar_direccion();">
-                <!-- <i class="fcclientes-direccion fa fa-plus-circle"> </i> -->
-                <a class="fcclientes-direccion">
+                <!-- <i class="fcRegistro_direccion fa fa-plus-circle"> </i> -->
+                <a class="fcRegistro_direccion">
                   + Agregar otra dirección</a>
               </div>
-              <div id="fcclientes_agregar_cliente_proveedor_direccion_1" style="display: none;">
-                <!-- <i class="fcclientes-direccion fa fa-plus-circle" type="button"></i> -->
-                <a class="fcclientes-direccion" href="javascript:void(0)" id="fcclientes_cliente_nueva_direccion_1"> Agregar otra dirección</a>
+              <div id="fcRegistro_agregar_cliente_proveedor_direccion_1" style="display: none;">
+                <!-- <i class="fcRegistro_direccion fa fa-plus-circle" type="button"></i> -->
+                <a class="fcRegistro_direccion" href="javascript:void(0)" id="fcRegistro_cliente_nueva_direccion_1"> Agregar otra dirección</a>
               </div>
             </div>
-            <textarea class=" fcclientes-imput form-control autosize" rows="1" id="fcclientes_direccion_cliente_proveedor"
-              name="fcclientes_direccion_cliente_proveedor"><?php echo $ClienteDireccion ?></textarea>
+            <textarea class=" fcRegistro_imput form-control autosize" rows="1" id="fcRegistro_direccion_cliente_proveedor"
+              name="fcRegistro_direccion_cliente_proveedor"><?php echo $ClienteDireccion ?></textarea>
 
           </div>
 
           <!-- ubigeo -->
 
-          <div class="fccubigeo" id="fcclientes_bloque_ubigeo">
+          <div class="fcRegistro_ubigeo" id="fcclientes_bloque_ubigeo">
             <select id="fcclientes_ubigeo_contacto_1" disabled>
               <option value=" <?php echo $ClienteDepartamento ?>" hidden>Buscar Ubigeo</option>
             </select>
@@ -253,7 +253,7 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
 
             <div style="flex: 1;">
               <label>Departamento</label>
-              <select name="fccubigeo_departamento_1" id="fccubigeo_departamento_1" class="fccinput-sm">
+              <select name="fcRegistro_ubigeo_departamento_1" id="fcRegistro_ubigeo_departamento_1" class="fccinput-sm">
                 <option value="0">Departamento</option> <!-- Eliminado el atributo "hidden" -->
                 <option value="01" <?php echo ($ClienteDepartamento == '01') ? 'selected="selected"' : ''; ?>>Amazonas
                 </option>
@@ -302,7 +302,7 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
 
             <div style="flex: 1;">
               <label>Provincia</label>
-              <select name="fcclientes_ubigeo_provincia_1" id="fcclientes_ubigeo_provincia_1"
+              <select name="fcRegistro_ubigeo_provincia_1" id="fcRegistro_ubigeo_provincia_1"
                 class="form-control fccinput-sm">
                 <option hidden value="<?php echo $ClienteProvincia ?>">Provincia</option>
                 <!-- Aquí se pueden agregar las provincias dependiendo del departamento seleccionado -->
@@ -311,7 +311,7 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
 
             <div style="flex: 1;">
               <label>Distrito</label>
-              <select name="ubigeo_distrito_1" id="ubigeo_distrito_1" class="form-control fccinput-sm">
+              <select name="fcRegistro_ubigeo_distrito_1" id="fcRegistro_ubigeo_distrito_1" class="form-control fccinput-sm">
                 <option hidden value="<?php echo $ClienteDistrito ?>">Distrito</option>
                 <!-- Aquí se pueden agregar los distritos dependiendo de la provincia seleccionada -->
               </select>
@@ -338,7 +338,7 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
 
                   </div>
                   <input autocomplete="off" type="cel" class="form-control"
-                    id="fcclientes-imput fc_telefono_cliente_proveedor" name="fc_telefono" data-intl-tel-input-id="2"
+                    id="fcRegistro_imput fc_telefono_cliente_proveedor" name="fcRegistro_telefono" data-intl-tel-input-id="2"
                     placeholder="912 345 678" value="<?php echo $ClienteTelefono ?>">
 
                 </div>
@@ -348,29 +348,29 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
 
             <!-- Fecha de Cumpleaños -->
             <div class="col-6">
-              <label for="cumpleanos">Fecha de Cumpleaños</label>
-              <input type="date" id="fcc_cumpleanos" class="form-control" value="<?php echo $ClienteFechaNac ?>" />
+              <label for="fcRegistro_cumpleanos">Fecha de Cumpleaños</label>
+              <input type="date" id="fcRegistro_cumpleanos" class="form-control" value="<?php echo $ClienteFechaNac ?>" />
             </div>
           </div>
 
-          <div id="fcclientes_personaFields" class="form-fields">
-            <label for="fcc_email">Correo Eléctronico:</label>
-            <input type="email" id="fcc_email" name="fcc_email" value="<?php echo $ClienteEmail ?>">
+          <div id="fcRegistro_personaFields" class="form-fields">
+            <label for="fcRegistro_email">Correo Eléctronico:</label>
+            <input type="email" id="fcRegistro_email" name="fcRegistro_email" value="<?php echo $ClienteEmail ?>">
 
           </div>
 
           <!-- codigo cliente -->
           <div class="col-12 ">
-            <label class="fcclientes-codigo">Codigo</label>
-            <input type="text" class="fcclientes-imput form-control fccinput-sm" id="fc_cod_cliente_proveedor"
-              name="fc_cod_cliente_proveedor" value=" <?php echo $ClienteCodigo ?>">
+            <label class="fcRegistro_codigo">Codigo</label>
+            <input type="text" class="fcRegistro_imput form-control fccinput-sm" id="fcRegistro_cod_cliente"
+              name="fcRegistro_cod_cliente" value=" <?php echo $ClienteCodigo ?>">
 
             <!-- <div class="result_codigo_auto">
               <div id="spinner_page19d6fcp" hidden="" style="text-align:center;"><img
                   src="https://wuandos3-img-recursos.s3.amazonaws.com/operaciones_img_ajax-loader.gif"><span
                   style="font-size:9pt;">Cargando...</span></div>
               <script>
-                $('#fc_cod_cliente_proveedor').val(`1020615`);
+                $('#fcRegistro_cod_cliente').val(`1020615`);
               </script>
             </div> -->
           </div>
@@ -378,12 +378,12 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
           <!-- TAMBIEN ES - NEGOCIA.PE-->
           <div class="col-12 ">
             <label class="container-checkbox">¿También es un
-              proveedor?<input type="checkbox" name="fc_tambien_es" id="fc_tambien_es"><span
+              proveedor?<input type="checkbox" name="fcRegistro_tambien_es" id="fcRegistro_tambien_es"><span
                 class="checkmark-box"></span></label>
           </div>
           <div class="col-12 f">
             <label>Tipo Contacto</label>
-            <select aria-label="Tipo Del contacto" id="fcc_tipo" name="fcc_tipo">
+            <select aria-label="Tipo Del contacto" id="fcRegistro_tipo" name="fcRegistro_tipo">
               <option value="0">Seleccione</option>
               <option value="1" <?php echo ($ClienteIdTipoContacto == 1) ? 'selected="selected"' : ''; ?>>Cliente</option>
               <option value="2" <?php echo ($ClienteIdTipoContacto == 2) ? 'selected="selected"' : ''; ?>>Potencial Cliente
@@ -397,18 +397,18 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
 
 
           <div class="col-12  " style=" padding-bottom: 0px;"><label>Notas</label>
-            <textarea class=" fcclientes-imput form-control autosize" rows="" id="fcc_notas" name="fcc_notas"
+            <textarea class=" fcRegistro_imput form-control autosize" rows="" id="fcRegistro_notas" name="fcRegistro_notas"
               placeholder="Notas"><?php echo $ClienteNotas ?></textarea>
           </div>
 
 
 
           <div class="modal-footer footer_sticky">
-            <button type="submit" class="btn" id="fc_guardar_datos_cliente_proveedor"
+            <button type="submit" class="btn" id="fcRegistro_guardar_datos_cliente_proveedor"
               onclick="guardar_datos_cliente_proveedor();">
               Guardar
             </button>
-            <button id="fcclientes-btn-mas-opciones" type="button" class="btn" onclick="fcclientes_btn_mas_opciones();">
+            <button id="fcRegistro_btn-mas-opciones" type="button" class="btn" onclick="fcclientes_btn_mas_opciones();">
               Más opciones
             </button>
           </div>
@@ -421,29 +421,29 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
 
     </div>
 
-    <div class="fcclientes-contents fcclientes-hidden">
+    <div class="fcRegistro_contents fcRegistro_hidden">
 
 
-      <div class="fccliente-desplegable">
-        <div class="fccliente-desplegable-item">
-          <div class="fccliente-desplegable-header">
+      <div class="fcRegistro_desplegable">
+        <div class="fcRegistro_desplegable-item">
+          <div class="fcRegistro_desplegable-header">
             <img src="iconos\Ícono Contacto asociado.svg" alt="Icono">
-            <div class="fcc-AC textos">
+            <div class="fcRegistro_AC textos">
               <span>Contactos Asociados</span>
               <p>Agrega información de otros contactos relacionados a este contacto</p>
             </div>
-            <div class="fcc-CA icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            <div class="fcRegistro_AC icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-chevron-down" viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
                   d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
               </svg></div>
           </div>
-          <div class="fccliente-desplegable-content">
-            <p id="fcc_CA_mensajeVacio">No cuenta con etiquetas asociadas. <a href="#" id="fcc_CA_mostrarFormulario">Click
+          <div class="fcRegistro_desplegable-content">
+            <p id="fcRegistro_CA_mensajeVacio">No cuenta con etiquetas asociadas. <a href="#" id="fcRegistro_CA_mostrarFormulario">Click
                 para Asociar</a></p>
-            <div class="fcc_CA_formulario" id="fcc_CA_formulario">
-              <label for="fcc_CA_nombre">Nombre de la Etiqueta</label>
-              <input type="text" id="fcc_CA_nombre" placeholder="Nombre de la etiqueta" />
+            <div class="fcRegistro_CA_formulario" id="fcRegistro_CA_formulario">
+              <label for="fcRegistro_CA_nombre">Nombre de la Etiqueta</label>
+              <input type="text" id="fcRegistro_CA_nombre" placeholder="Nombre de la etiqueta" />
 
               <!-- <label for="fcc_CA_color">Color de la Etiqueta</label>
         <input type="color" id="fcc_CA_color" value="#ff0000" /> -->
@@ -451,13 +451,13 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
               <div class="row">
                 <!-- Correo -->
                 <div class="col-6">
-                  <label for="fcc_CA_correo">E-mail</label>
-                  <input type="email" id="fcc_CA_correo" class="form-control" placeholder="Correo" />
+                  <label for="fcRegistro_CA_correo">E-mail</label>
+                  <input type="email" id="fcRegistro_CA_correo" class="form-control" placeholder="Correo" />
                 </div>
 
                 <!-- Celular -->
                 <div class="col-6">
-                  <label for="fcc_CA_celular">Celular</label>
+                  <label for="fcRegistro_CA_celular">Celular</label>
                   <div class="iti iti--allow-dropdown w-100">
                     <!-- Asegura que el contenedor sea del mismo ancho -->
                     <div class="iti__flag-container">
@@ -468,7 +468,7 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
                         <div class="iti__arrow"></div>
                       </div>
                     </div>
-                    <input autocomplete="off" type="text" id="fcc_CA_celular" name="fc_telefono" class="form-control w-80"
+                    <input autocomplete="off" type="text" id="fcRegistro_CA_celular" name="fcRegistro_telefono" class="form-control w-80"
                       placeholder="912 345 678"> <!-- Aplica la clase w-100 -->
                   </div>
                 </div>
@@ -478,43 +478,43 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
               <div class="row ">
                 <!-- Celular -->
                 <div class="col-lg-6 ">
-                  <label for="fcc_CA_campo">Cargo</label>
-                  <input type="text" id="fcc_CA_campo" class="form-control" placeholder="Cargo" />
+                  <label for="fcRegistro_CA_campo">Cargo</label>
+                  <input type="text" id="fcRegistro_CA_campo" class="form-control" placeholder="Cargo" />
                 </div>
 
 
                 <!-- Fecha de Cumpleaños -->
                 <div class="col-6">
-                  <label for="fcc_CA_fecha">Fecha de Cumpleaños</label>
-                  <input type="date" id="fcc_CA_fecha" class="form-control" />
+                  <label for="fcRegistro_CA_fecha">Fecha de Cumpleaños</label>
+                  <input type="date" id="fcRegistro_CA_fecha" class="form-control" />
                 </div>
               </div>
 
 
-              <div class="fcc_CA_botones">
-                <button class="fcc_CA_boton-cancelar" id="cancelar">Cancelar</button>
-                <button class="fcc_CA_boton-guardar" id="guardar">Guardar</button>
+              <div class="fcRegistro_CA_botones">
+                <button class="fcRegistro_CA_boton-cancelar" id="fcRegistro_CA_boton-cancelar">Cancelar</button>
+                <button class="fcRegistro_CA_boton-guardar" id="fcRegistro_CA_boton-guardar">Guardar</button>
               </div>
             </div>
 
             <div class="column">
-              <div class="row fcc_CA_etiquetas" id="fcc_CA_etiquetas" style="max-width: 500px; display: flex;"></div>
+              <div class="row fcRegistro_CA_etiquetas" id="fcRegistro_CA_etiquetas" style="max-width: 500px; display: flex;"></div>
             </div>
 
-            <p class="fcc_CA_agregarcontacto" id="fcc_CA_agregarcontacto">+ Agregar otra etiqueta</p>
+            <p class="fcRegistro_CA_agregarcontacto" id="fcRegistro_CA_agregarcontacto">+ Agregar otra etiqueta</p>
           </div>
         </div>
 
-        <div class="fccliente-desplegable-item">
-          <div class="fccliente-desplegable-header">
+        <div class="fcRegistro_desplegable-item">
+          <div class="fcRegistro_desplegable-header">
             <img src="iconos\Ícono Datos Distribución SVG.svg" alt="Icono">
 
-            <div class="fcc-DD textos">
+            <div class="fcRegistro_DD textos">
               <span>Datos Distribución</span>
               <p>Define datos importantes para el trabajo de tus productos hacia este cliente</p>
             </div>
 
-            <div class="fcc_DD icon ">
+            <div class="fcRegistro_DD icon ">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-chevron-down" viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
@@ -522,35 +522,35 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
               </svg>
             </div>
           </div>
-          <div class="fccliente-desplegable-content">
+          <div class="fcRegistro_desplegable-content">
 
-            <div class="fcc_form-container">
-              <div class="fcc_form-group">
-                <label for="fcc_DD_ruta">Ruta</label>
-                <select id="fcc_DD_ruta" name="fcc_DD_ruta">
+            <div class="fcRegistro_DD_form-container">
+              <div class="fcRegistro_DD_form-group">
+                <label for="fcRegistro_DD_ruta">Ruta</label>
+                <select id="fcRegistro_DD_ruta" name="fcRegistro_DD_ruta">
                   <option value="">- Seleccionar -</option>
                   <option value="ruta1">Ruta 1</option>
                   <option value="ruta2">Ruta 2</option>
                 </select>
               </div>
-              <div class="fcc_form-group">
-                <label for="fcc_DD_zona">Zona</label>
-                <select id="fcc_DD_zona" name="fcc_DD_zona">
+              <div class="fcRegistro_DD_form-group">
+                <label for="fcRegistro_DD_zona">Zona</label>
+                <select id="fcRegistro_DD_zona" name="fcRegistro_DD_zona">
                   <option value="">- Seleccionar -</option>
                   <option value="zona1">Zona 1</option>
                   <option value="zona2">Zona 2</option>
                 </select>
               </div>
             </div>
-            <div class="fcc_form-group">
-              <label for="fcc_DD_vendedor">Vendedor asignado</label>
-              <input type="text" id="fcc_DD_vendedor" name="fcc_DD_vendedor" placeholder="Buscar">
+            <div class="fcRegistro_DD_form-group">
+              <label for="fcRegistro_DD_vendedor">Vendedor asignado</label>
+              <input type="text" id="fcRegistro_DD_vendedor" name="fcRegistro_DD_vendedor" placeholder="Buscar">
             </div>
-            <div class="fcc_form-group">
-              <label for="fcc_DD_coordenadas">Coordenadas Maps</label>
-              <input type="text" id="fcc_DD_coordenadas" name="fcc_DD_coordenadas" placeholder="Introduce una ubicación">
+            <div class="fcRegistro_DD_form-group">
+              <label for="fcRegistro_DD_coordenadas">Coordenadas Maps</label>
+              <input type="text" id="fcRegistro_DD_coordenadas" name="fcRegistro_DD_coordenadas" placeholder="Introduce una ubicación">
             </div>
-            <div class="fcc_DD_map" id="fcc_DD_map">
+            <div class="fcRegistro_DD_map" id="fcRegistro_DD_map">
               <!-- Mapa embebido -->
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15605.824455555005!2d-77.0427939!3d-12.0463731!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDAyJzQ4LjkiUyA3N8KwMDInMzguMiJX!5e0!3m2!1ses!2spe!4v1615560382034!5m2!1ses!2spe"
@@ -560,14 +560,14 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
           </div>
         </div>
 
-        <div class="fccliente-desplegable-item">
-          <div class="fccliente-desplegable-header">
+        <div class="fcRegistro_desplegable-item">
+          <div class="fcRegistro_desplegable-header">
             <img src="iconos\Ícono campos adicionales SVG.svg" alt="Icono">
-            <div class="fcc-CA textos">
+            <div class="fcRegistro_AC textos">
               <span>Campos Adicionales</span>
               <p>Agrega información adicional para este contacto de manera personalizada</p>
             </div>
-            <div class="fcc_CA icon">
+            <div class="fcRegistro_CA icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-chevron-down" viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
@@ -575,48 +575,48 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
               </svg>
             </div>
           </div>
-          <div class="fccliente-desplegable-content">
-            <div class="fcc_form-container" id="fcc_campos_adicionales">
-              <div class="fcc_form-group">
-                <label for="fcc_CA_Composicion">Composición Química</label>
-                <input type="text" id="fcc_CA_Composicion" name="fcc_CA_Composicion" placeholder="Buscar composición">
+          <div class="fcRegistro_desplegable-content">
+            <div class="fcRegistro_CA_form-container" id="fcRegistro_CA_campos_adicionales">
+              <div class="fcRegistro_CA_form-group">
+                <label for="fcRegistro_CA_Composicion">Composición Química</label>
+                <input type="text" id="fcRegistro_CA_Composicion" name="fcRegistro_CA_Composicion" placeholder="Buscar composición">
               </div>
-              <div class="fcc_form-group">
-                <label for="fcc_CA_placa">Placa</label>
-                <input type="text" id="fcc_CA_placa" name="fcc_CA_placa" placeholder="Buscar Placa">
+              <div class="fcRegistro_CA_form-group">
+                <label for="fcRegistro_CA_placa">Placa</label>
+                <input type="text" id="fcRegistro_CA_placa" name="fcRegistro_CA_placa" placeholder="Buscar Placa">
               </div>
             </div>
 
 
             <!-- Formulario nuevo campo (inicialmente oculto con clase .hidden) -->
-            <div id="formulario-nuevo-campo" class="hidden">
-              <div class="fcc_form-group">
-                <label for="nombre_campo">Composición Química</label>
-                <input type="text" id="nombre_campo" placeholder="">
+            <div id="fcRegistro_CA_formulario-nuevo-campo" class="hidden">
+              <div class="fcRegistro_CA_form-group">
+                <label for="fcRegistro_CA_nombre_campo">Composición Química</label>
+                <input type="text" id="fcRegistro_CA_nombre_campo" placeholder="">
               </div>
-              <div class="fcc_form-group">
-                <label for="fcc_descripcion_campo">Placa</label>
-                <!-- <textarea id="fcc_descripcion_campo" placeholder="Descripción del campo"></textarea> -->
-                <textarea class=" fcclientes-imput form-control autosize" rows="" id="fcc_descripcion_campo"
-                  name="fcc_descripcion_campo" placeholder=""></textarea>
+              <div class="fcRegistro_CA_form-group">
+                <label for="fcRegistro_CA_descripcion_campo">Placa</label>
+                <!-- <textarea id="fcRegistro_CA_descripcion_campo" placeholder="Descripción del campo"></textarea> -->
+                <textarea class=" fcRegistro_imput form-control autosize" rows="" id="fcRegistro_CA_descripcion_campo"
+                  name="fcRegistro_CA_descripcion_campo" placeholder=""></textarea>
               </div>
-              <div class="btn-container">
-                <button class="btn fcc_btn_cancelar" id="fcc_btn_cancelar">Cancelar</button>
-                <button class="btn fcc_btn_guardar" id="fcc_btn_guardar">Guardar</button>
+              <div class="fcRegistro_CA_btn-container">
+                <button class="btn fcRegistro_CA_btn_cancelar" id="fcRegistro_CA_btn_cancelar">Cancelar</button>
+                <button class="btn fcRegistro_CA_btn_guardar" id="fcRegistro_CA_btn_guardar">Guardar</button>
               </div>
             </div>
 
             <!-- Contenedor donde mostraremos los campos adicionales almacenados -->
-            <div id="camposAdicionalesContainer"></div>
+            <div id="fcRegistro_CA_camposAdicionalesContainer"></div>
 
-            <div class="fcc-CA-agregar-ca">
-              <p id="fcc_agregarCampo">+ Agregar campo adicional</p>
+            <div class="fcRegistro_AC-agregar-ca">
+              <p id="fcRegistro_CA_agregarCampo">+ Agregar campo adicional</p>
             </div>
           </div>
         </div>
 
-        <div class="fccliente-desplegable-item">
-          <div class="fccliente-desplegable-header">
+        <div class="fcRegistro_desplegable-item">
+          <div class="fcRegistro_desplegable-header">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                 color="currentColor">
@@ -628,11 +628,11 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
                 </path>
               </g>
             </svg>
-            <div class="fcc-LP textos">
+            <div class="fcRegistro_LP textos">
               <span>Lista de Precios</span>
               <p>Establece una lista de precios de productos preestablecida para est cliente</p>
             </div>
-            <div class="fcc_LP icon ">
+            <div class="fcRegistro_LP icon ">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-chevron-down" viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
@@ -640,12 +640,12 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
               </svg>
             </div>
           </div>
-          <div class="fccliente-desplegable-content">
+          <div class="fcRegistro_desplegable-content">
 
 
-            <div class="fcc_LP_content">
+            <div class="fcRegistro_LP_content">
 
-              <select id="fcc_LP_elijep" name="fcc_LP_elijep">
+              <select id="fcRegistro_LP_elije" name="fcRegistro_LP_elije">
                 <option value="">Elije una lista de precios</option>
                 <option value="precio1">Precio 1</option>
                 <option value="precio2">Precio 2</option>
@@ -674,12 +674,12 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
     let etiquetas = [];
 
     // Elementos del DOM
-    const formulario = document.getElementById('fcc_CA_formulario');
-    const mensajeVacio = document.getElementById('fcc_CA_mensajeVacio');
-    const listaEtiquetas = document.getElementById('fcc_CA_etiquetas');
-    const botonAgregarEtiqueta = document.getElementById('fcc_CA_agregarcontacto');
-    const botonGuardar = document.getElementById('guardar');
-    const botonCancelar = document.getElementById('cancelar');
+    const formulario = document.getElementById('fcRegistro_CA_formulario');
+    const mensajeVacio = document.getElementById('fcRegistro_CA_mensajeVacio');
+    const listaEtiquetas = document.getElementById('fcRegistro_CA_etiquetas');
+    const botonAgregarEtiqueta = document.getElementById('fcRegistro_CA_agregarcontacto');
+    const botonGuardar = document.getElementById('fcRegistro_CA_boton-guardar');
+    const botonCancelar = document.getElementById('fcRegistro_CA_boton-cancelar');
 
     // Función unificada para manejar etiquetas
     function manejarEtiquetas(etiquetasIniciales = []) {
@@ -687,7 +687,7 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
       actualizarListaEtiquetas(); // Mostrar etiquetas iniciales
 
       // Mostrar/ocultar formulario
-      document.getElementById('fcc_CA_mostrarFormulario').addEventListener('click', function (e) {
+      document.getElementById('fcRegistro_CA_mostrarFormulario').addEventListener('click', function (e) {
         e.preventDefault();
         formulario.style.display = 'block';
         mensajeVacio.style.display = 'none';
@@ -697,7 +697,7 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
       botonCancelar.addEventListener('click', function (e) {
         e.preventDefault();
         // Mostrar el botón de agregar etiqueta nuevamente
-        document.getElementById('fcc_CA_agregarcontacto').classList.remove('d-none');
+        document.getElementById('fcRegistro_CA_agregarcontacto').classList.remove('d-none');
         formulario.style.display = 'none'; // Ocultar el formulario
         limpiarFormulario(); // Limpiar los campos del formulario
         mostrarListaEtiquetas(); // Mostrar la lista de etiquetas
@@ -706,12 +706,12 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
       // Guardar etiqueta
       botonGuardar.addEventListener('click', function (e) {
         e.preventDefault();
-        const nombre = document.getElementById('fcc_CA_nombre').value;
+        const nombre = document.getElementById('fcRegistro_CA_nombre').value;
         //const color = document.getElementById('fcc_CA_color').value;
-        const email = document.getElementById('fcc_CA_correo').value;
-        const celular = document.getElementById('fcc_CA_celular').value;
-        const cargo = document.getElementById('fcc_CA_campo').value;
-        const fecha = document.getElementById('fcc_CA_fecha').value;
+        const email = document.getElementById('fcRegistro_CA_correo').value;
+        const celular = document.getElementById('fcRegistro_CA_celular').value;
+        const cargo = document.getElementById('fcRegistro_CA_campo').value;
+        const fecha = document.getElementById('fcRegistro_CA_fecha').value;
 
         if (nombre && email && celular && cargo && fecha) {
           const etiqueta = {
@@ -737,7 +737,7 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
           limpiarFormulario(); // Limpiar el formulario
           formulario.style.display = 'none'; // Ocultar el formulario
           // Mostrar el botón de agregar etiqueta nuevamente
-          document.getElementById('fcc_CA_agregarcontacto').classList.remove('d-none');
+          document.getElementById('fcRegistro_CA_agregarcontacto').classList.remove('d-none');
         } else {
           alert('Por favor, completa todos los campos.');
         }
@@ -747,7 +747,7 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
       botonAgregarEtiqueta.addEventListener('click', function (e) {
         e.preventDefault();
         // Mostrar el botón de agregar etiqueta nuevamente
-        document.getElementById('fcc_CA_agregarcontacto').classList.add('d-none');
+        document.getElementById('fcRegistro_CA_agregarcontacto').classList.add('d-none');
         formulario.style.display = 'block'; // Mostrar el formulario
         listaEtiquetas.style.display = 'none'; // Ocultar la lista de etiquetas
         limpiarFormulario(); // Limpiar el formulario
@@ -799,8 +799,8 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
 
 
               // Ocultar la lista de etiquetas y el botón de agregar
-              document.getElementById('fcc_CA_etiquetas').style.display = 'none';
-              document.getElementById('fcc_CA_agregarcontacto').classList.add('d-none');
+              document.getElementById('fcRegistro_CA_etiquetas').style.display = 'none';
+              document.getElementById('fcRegistro_CA_agregarcontacto').classList.add('d-none');
 
             });
           });
@@ -844,12 +844,12 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
       // Función para cargar el formulario con los datos de una etiqueta para editar
       function cargarFormularioParaEdicion(indice) {
         const etiqueta = etiquetas[indice];
-        document.getElementById('fcc_CA_nombre').value = etiqueta.EtqNombre;
+        document.getElementById('fcRegistro_CA_nombre').value = etiqueta.EtqNombre;
         //document.getElementById('fcc_CA_color').value = etiqueta.EtqColor;
-        document.getElementById('fcc_CA_correo').value = etiqueta.email;
-        document.getElementById('fcc_CA_celular').value = etiqueta.celular;
-        document.getElementById('fcc_CA_campo').value = etiqueta.cargo;
-        document.getElementById('fcc_CA_fecha').value = etiqueta.fecha;
+        document.getElementById('fcRegistro_CA_correo').value = etiqueta.email;
+        document.getElementById('fcRegistro_CA_celular').value = etiqueta.celular;
+        document.getElementById('fcRegistro_CA_campo').value = etiqueta.cargo;
+        document.getElementById('fcRegistro_CA_fecha').value = etiqueta.fecha;
 
         formulario.setAttribute('data-indice', indice);
         formulario.style.display = 'block'; // Mostrar formulario
@@ -857,12 +857,12 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
 
       // Función para limpiar el formulario
       function limpiarFormulario() {
-        document.getElementById('fcc_CA_nombre').value = '';
+        document.getElementById('fcRegistro_CA_nombre').value = '';
         //document.getElementById('fcc_CA_color').value = '#ff0000'; // Color por defecto
-        document.getElementById('fcc_CA_correo').value = '';
-        document.getElementById('fcc_CA_celular').value = '';
-        document.getElementById('fcc_CA_campo').value = '';
-        document.getElementById('fcc_CA_fecha').value = '';
+        document.getElementById('fcRegistro_CA_correo').value = '';
+        document.getElementById('fcRegistro_CA_celular').value = '';
+        document.getElementById('fcRegistro_CA_campo').value = '';
+        document.getElementById('fcRegistro_CA_fecha').value = '';
         formulario.removeAttribute('data-indice'); // Limpiar índice de edición
       }
     }
@@ -877,7 +877,7 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
         ?>
         var clienteTipo = "<?php echo $clienteTipo; ?>";
         if (clienteTipo) {
-          fcc_Empresa_Persona(clienteTipo); // Si hay datos, mostrar el formulario
+          fcRegistro_Empresa_Persona(clienteTipo); // Si hay datos, mostrar el formulario
         }
 
         <?php
@@ -901,7 +901,7 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
       } else {
         ?>
         console.warn("No se proporcionó un ID de cliente válido.");
-        $("#fcc_formContainer").hide(); // Mantener el formulario oculto
+        $("#fcRegistro_formContainer").hide(); // Mantener el formulario oculto
         manejarEtiquetas([]); // Inicializar como array vacío
         <?php
       }
@@ -910,11 +910,11 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
 
     // Función para abrir el formulario manualmente desde el menú
     // function abrirModalPersona() {
-    //     fcc_Empresa_Persona('1'); // Llama a la función para mostrar el formulario de persona
+    //     fcRegistro_Empresa_Persona('1'); // Llama a la función para mostrar el formulario de persona
     // }
 
     // function abrirModalEmpresa() {
-    //     fcc_Empresa_Persona('6'); // Llama a la función para mostrar el formulario de empresa
+    //     fcRegistro_Empresa_Persona('6'); // Llama a la función para mostrar el formulario de empresa
     // }
 
 

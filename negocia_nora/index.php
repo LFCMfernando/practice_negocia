@@ -3906,7 +3906,7 @@ font-size: 16px;
     <li>
       <a class="dropdown-item d-flex align-items-center" 
          href="javascript:void(0);" 
-         onclick="fcc_abrirModalPersona()">
+         onclick="fcRegistro_abrirModalPersona()">
          <!-- Ícono de usuario -->
          <i class="dripicons-user" style="font-size:18px;"></i>
          <span class="ms-2">Persona</span>
@@ -3915,7 +3915,7 @@ font-size: 16px;
     <li>
       <a class="dropdown-item d-flex align-items-center" 
          href="javascript:void(0);" 
-         onclick="fcc_abrirModalEmpresa()">
+         onclick="fcRegistro_abrirModalEmpresa()">
          <!-- Ícono de edificio -->
          <i class="dripicons-user" style="font-size:18px;"></i>
          <span class="ms-2">Empresa</span>
@@ -3926,7 +3926,7 @@ font-size: 16px;
 
 
 
-  <!-- <button type="button" onclick="$('#fcclientes-modal').modal('show');fcc_obtener_data_ws(0);"
+  <!-- <button type="button" onclick="$('#fcclientes-modal').modal('show');fcRegistro_obtener_data_ws(0);"
     style="float: right; margin-top: 50px; margin-right: 10px;">Abrir Modal</button>
  -->
 
@@ -3937,7 +3937,7 @@ font-size: 16px;
 
 
 
-  <button type="button" onclick="$('#fcclientes-modal').modal('show'); fcc_obtener_data_ws(139003);"
+  <button type="button" onclick="$('#fcclientes-modal').modal('show'); fcRegistro_obtener_data_ws(139003);"
     style="float: right; margin-top: 50px; margin-right: 10px;">Editar</button>
 
 
