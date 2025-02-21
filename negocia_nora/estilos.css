@@ -948,7 +948,7 @@ button#btnEditar {
         gap: 10px;
         /* Espacio entre los fcRegistro_CA_botones */
       }
-      #fcRegistro_CA_boton-cancelar{
+      #fcRegistro_CA_boton_cancelar{
         border-radius: .25rem;
         background-color: #FFFFFF;
         color: #FFA600;
@@ -957,7 +957,7 @@ button#btnEditar {
         cursor: pointer;
 
       }
-      #fcRegistro_CA_boton-guardar{
+      #fcRegistro_CA_boton_guardar{
         border-radius: .25rem;
         text-align: center;
         background-color: #FFA600;
@@ -967,8 +967,8 @@ button#btnEditar {
         cursor: pointer;
       }
 
-      .fcRegistro_CA_boton-cancelar,
-      .fcRegistro_CA_boton-guardar {
+      .fcRegistro_CA_boton_cancelar,
+      .fcRegistro_CA_boton_guardar {
         background: orange;
         color: #fff;
         display: flex;

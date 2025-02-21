@@ -20,25 +20,27 @@ show// funcion abrir modad
       function fcRegistro_Empresa_Persona(clienteTipo, ) {
         // Muestra el fcRegistro_CA_formulario correspondiente
         document.getElementById('fcRegistro_formContainer').style.display = 'block';
+       
 
         // Agrega la clase scrollable al modal-body
         document.querySelector('.modal-body').classList.add('scrollable');
 
           // Obtén referencias a ambos botones
-  const btnPersona = document.getElementById( 'fcRegistro_btn_persona');
-  const btnEmpresa = document.getElementById('fcRegistro_btn_empresa');
+  const fcRegistro_btn_persona = document.getElementById( 'fcRegistro_btn_persona');
+  const fcRegistro_btn_empresa = document.getElementById('fcRegistro_btn_empresa');
 
    // Limpia estilos en ambos botones (para que no quede el color anterior)
-   btnPersona.style.background = '';
-   btnPersona.style.color = '';
-   btnEmpresa.style.background = '';
-   btnEmpresa.style.color = '';
+   fcRegistro_btn_persona.style.background = '';
+   fcRegistro_btn_persona.style.color = '';
+   fcRegistro_btn_empresa.style.background = '';
+   fcRegistro_btn_empresa.style.color = '';
 
         // Oculta los campos de persona o empresa según el tipo
         if (clienteTipo =='1') {
+          
           // Activa el estilo naranja/blanco en el botón Persona
-          btnPersona.style.background = 'orange';
-          btnPersona.style.color = 'white';
+          fcRegistro_btn_persona.style.background = 'orange';
+          fcRegistro_btn_persona.style.color = 'white';
       
           // Muestra campos de Persona, oculta los de Empresa
           document.getElementById('fcRegistro_personaFields').style.display = 'block';
@@ -50,8 +52,8 @@ show// funcion abrir modad
       
         } else if (clienteTipo =='6') {
           // Activa el estilo naranja/blanco en el botón Empresa
-          btnEmpresa.style.background = 'orange';
-          btnEmpresa.style.color = 'white';
+          fcRegistro_btn_empresa.style.background = 'orange';
+          fcRegistro_btn_empresa.style.color = 'white';
       
           // Muestra campos de Empresa, oculta los de Persona
           document.getElementById('fcRegistro_empresaFields').style.display = 'block';
@@ -80,17 +82,8 @@ show// funcion abrir modad
         }
       }
 
-      // function hideForm() {
-      //   document.getElementById('fcRegistro_formContainer').style.display = 'none';
-      //   document.querySelector('.modal-body').classList.remove('scrollable');
 
-      //   // Resetear el fcRegistro_CA_formulario
-      //   document.getElementById('fcc_dynamicForm').reset();
-      //   fcc_actualizarcampo_empresa_persona('persona'); // Por defecto, mostrar opciones de persona
-      //   document.getElementById('fcRegistro_personaFields').style.display = 'none';
-      //   document.getElementById('fcRegistro_empresaFields').style.display = 'none';
-      // }
-function fcclientes_btn_mas_opciones(){
+      function fcclientes_btn_mas_opciones(){
   document.getElementById('fcRegistro_btn-mas-opciones').classList.add('d-none');
   
 
@@ -99,66 +92,66 @@ function fcclientes_btn_mas_opciones(){
   fcc_acordiones();
 
 
-  // Seleccionamos el contenedor footer y el botón Guardar
-  const footer = document.querySelector('.modal-footer.footer_sticky');
-  const btnGuardar = document.getElementById('fcRegistro_guardar_datos_cliente_proveedor');
+  // Seleccionamos el contenedor fcRegistro_footer y el botón Guardar
+  const fcRegistro_footer = document.querySelector('.modal-fcRegistro_footer.footer_sticky');
+  const fcRegistro_btnGuardar = document.getElementById('fcRegistro_guardar_datos_cliente_proveedor');
   
-  if (footer && btnGuardar) {
-    // Hacemos que el footer sea flex
-    footer.style.display = 'flex';
-    footer.style.alignItems = 'center';
+  if (fcRegistro_footer && fcRegistro_btnGuardar) {
+    // Hacemos que el fcRegistro_footer sea flex
+    fcRegistro_footer.style.display = 'flex';
+    fcRegistro_footer.style.alignItems = 'center';
 
     // Movemos el botón "Guardar" a la derecha
-    btnGuardar.style.marginLeft = 'auto';
+    fcRegistro_btnGuardar.style.marginLeft = 'auto';
     // Agrega margen a la derecha
-  btnGuardar.style.marginRight = '20px';
+    fcRegistro_btnGuardar.style.marginRight = '20px';
     
   }
    
         // Modificar fcRegistro_container
-        const container = document.querySelector('.fcRegistro_container');
-        if (container) {
-          container.style.display = 'grid';
-          container.style.gridTemplateColumns = '0.5fr 1fr';
+        const fcRegistro_container = document.querySelector('.fcRegistro_container');
+        if (fcRegistro_container) {
+          fcRegistro_container.style.display = 'grid';
+          fcRegistro_container.style.gridTemplateColumns = '0.5fr 1fr';
         }
 
          
 
         // Modificar fcRegistro_container
-        const content = document.querySelector('.fcRegistro_contents');
-        if (content) {
-          content.classList.remove('fcRegistro_hidden');
-          content.scrollIntoView({ behavior: "smooth", block: "start" });
+        const fcRegistro_content = document.querySelector('.fcRegistro_contents');
+        if (fcRegistro_content) {
+          fcRegistro_content.classList.remove('fcRegistro_hidden');
+          fcRegistro_content.scrollIntoView({ behavior: "smooth", block: "start" });
         }
-}
+      }
       
 
 
 
 // function de los acordiones 
-function fcc_acordiones() {
+                    function fcc_acordiones() {
 
                       // Selecciona todos los fcRegistro_CA_botones de toggle dentro del acordeón
-                      const toggleButtons = document.querySelectorAll(".fcRegistro_desplegable-header");
+                      const fcRegistro_toggleButtons = document.querySelectorAll(".fcRegistro_desplegable-header");
 
-                      toggleButtons.forEach(header => {
+                      fcRegistro_toggleButtons.forEach(header => {
                         header.addEventListener("click", () => {
-                          const content = header.nextElementSibling; // Encuentra el contenido asociado
-                          const icon = header.querySelector(".icon i"); // Encuentra el ícono dentro del header
+                          const fcRegistro_content = header.nextElementSibling; // Encuentra el contenido asociado
+                          const fcRegistro_icon = header.querySelector(".icon i"); // Encuentra el ícono dentro del header
 
                           // Alternar el estado del acordeón actual
-                          if (content.style.display === "block") {
-                            content.style.display = "none";
-                            icon.classList.remove("bx-chevron-down");
-                            icon.classList.add("bx-chevron-right");
+                          if (fcRegistro_content.style.display === "block") {
+                            fcRegistro_content.style.display = "none";
+                            fcRegistro_icon.classList.remove("bx-chevron-down");
+                            fcRegistro_icon.classList.add("bx-chevron-right");
                             header.style.borderLeft = "none"; // Eliminar borde del header
-                            content.style.borderLeft = "none"; // Eliminar el borde cuando se oculta
+                            fcRegistro_content.style.borderLeft = "none"; // Eliminar el borde cuando se oculta
                           } else {
-                            content.style.display = "block";
-                            icon.classList.remove("bx-chevron-right");
-                            icon.classList.add("bx-chevron-down");
+                            fcRegistro_content.style.display = "block";
+                            fcRegistro_icon.classList.remove("bx-chevron-right");
+                            fcRegistro_icon.classList.add("bx-chevron-down");
                             header.style.borderLeft = "4px solid #ff9c00"; // Agregar borde al header
-                            content.style.borderLeft = "4px solid #ff9c00"; // Agregar el borde izquierdo
+                            fcRegistro_content.style.borderLeft = "4px solid #ff9c00"; // Agregar el borde izquierdo
                           }
                         });
                       });
@@ -170,112 +163,112 @@ function fcc_acordiones() {
 
 
                         // Array para almacenar los campos adicionales
-  let camposAdicionales = [];
+  let fcRegistro_CA_ARR_campoadicionales = [];
 
   // Referencias a los elementos del DOM
-  const container =  document.getElementById('fcRegistro_CA_campos_adicionales');
-  const agregarCampoBtn      = document.getElementById('fcRegistro_CA_agregarCampo');
-  const formularioNuevoCampo = document.getElementById('fcRegistro_CA_formulario-nuevo-campo');
-  const btnCancelar          = document.getElementById('fcRegistro_CA_btn_cancelar');
-  const btnGuardar           = document.getElementById('fcRegistro_CA_btn_guardar');
+  const fcRegistro_CA_campos_adicionales =  document.getElementById('fcRegistro_CA_campos_adicionales');
+  const fcRegistro_CA_agregarCampo      = document.getElementById('fcRegistro_CA_agregarCampo');
+  const fcRegistro_CA_formulario_nuevo_campo = document.getElementById('fcRegistro_CA_formulario_nuevo_campo');
+  const fcRegistro_CA_btn_cancelar          = document.getElementById('fcRegistro_CA_btn_cancelar');
+  const fcRegistro_CA_btn_guardar           = document.getElementById('fcRegistro_CA_btn_guardar');
 
-  const inputNombreCampo      = document.getElementById('fcRegistro_CA_nombre_campo');
-  const inputDescripcionCampo = document.getElementById('fcRegistro_CA_descripcion_campo');
+  const fcRegistro_CA_nombre_campo      = document.getElementById('fcRegistro_CA_nombre_campo');
+  const fcRegistro_CA_descripcion_campo = document.getElementById('fcRegistro_CA_descripcion_campo');
 
   const fcRegistro_CA_camposAdicionalesContainer = document.getElementById('fcRegistro_CA_camposAdicionalesContainer');
 
-  agregarCampoBtn.addEventListener('click', () => {
+  fcRegistro_CA_agregarCampo.addEventListener('click', () => {
   // Muestra el formulario
-  formularioNuevoCampo.classList.remove('hidden');
+  fcRegistro_CA_formulario_nuevo_campo.classList.remove('hidden');
   
   // Oculta otros elementos
   
-  container.classList.add('d-none');
-  agregarCampoBtn.classList.add('d-none');
+  fcRegistro_CA_campos_adicionales.classList.add('d-none');
+  fcRegistro_CA_agregarCampo.classList.add('d-none');
   fcRegistro_CA_camposAdicionalesContainer.classList.add('d-none'); // Ocultar el contenedor de campos adicionales
 });
 
 
   // Ocultar formulario al presionar "Cancelar"
-  btnCancelar.addEventListener('click', () => {
+  fcRegistro_CA_btn_cancelar.addEventListener('click', () => {
   // Limpia los campos
-  limpiarFormulario();
+  fcRegistro_CA_limpiarFormulario();
 
   // Oculta el formulario
-  formularioNuevoCampo.classList.add('hidden');
+  fcRegistro_CA_formulario_nuevo_campo.classList.add('hidden');
 
   // Muestra el contenedor de campos adicionales y el botón de agregar
   fcRegistro_CA_camposAdicionalesContainer.classList.remove('d-none');
-  agregarCampoBtn.classList.remove('d-none');
-  container.classList.remove('d-none');
+  fcRegistro_CA_agregarCampo.classList.remove('d-none');
+  fcRegistro_CA_campos_adicionales.classList.remove('d-none');
 });
 
 
   // 2) Al guardar, tomar los datos e insertarlos en el array, luego mostrar en el contenedor
   // Variable para almacenar el índice del campo que se está editando (-1 si es un nuevo campo)
-let indiceEdicion = -1;
+let fcRegistro_CA_ARR_indiceEdicion = -1;
 
-btnGuardar.addEventListener("click", () => {
-  const nombre = inputNombreCampo.value.trim();
-  const descripcion = inputDescripcionCampo.value.trim();
+fcRegistro_CA_btn_guardar.addEventListener("click", () => {
+  const fcRegistro_CA_nombre = fcRegistro_CA_nombre_campo.value.trim();
+  const fcRegistro_CA_descripcion = fcRegistro_CA_descripcion_campo.value.trim();
 
-  if (!nombre) {
-    alert("Por favor, ingresa el nombre del campo.");
+  if (!fcRegistro_CA_nombre) {
+    alert("Por favor, ingresa el fcRegistro_CA_nombre del campo.");
     return;
   }
 
-  if (indiceEdicion === -1) {
+  if (fcRegistro_CA_ARR_indiceEdicion === -1) {
     // Modo: Agregar nuevo campo
-    camposAdicionales.push({ nombre, descripcion });
+    fcRegistro_CA_ARR_campoadicionales.push({ fcRegistro_CA_nombre, fcRegistro_CA_descripcion });
   } else {
     // Modo: Editar campo existente
-    camposAdicionales[indiceEdicion].nombre = nombre;
-    camposAdicionales[indiceEdicion].descripcion = descripcion;
+    fcRegistro_CA_ARR_campoadicionales[fcRegistro_CA_ARR_indiceEdicion].fcRegistro_CA_nombre = fcRegistro_CA_nombre;
+    fcRegistro_CA_ARR_campoadicionales[fcRegistro_CA_ARR_indiceEdicion].fcRegistro_CA_descripcion = fcRegistro_CA_descripcion;
 
     // Restablecemos la variable a -1 para que futuras ediciones sean nuevas adiciones
-    indiceEdicion = -1;
+    fcRegistro_CA_ARR_indiceEdicion = -1;
   }
 
-  renderCamposAdicionales();
-  limpiarFormulario();
-  container.classList.remove('d-none');
+  fcRegistro_CA_renderCamposAdicionales();
+  fcRegistro_CA_limpiarFormulario();
+  fcRegistro_CA_campos_adicionales.classList.remove('d-none');
 
-  formularioNuevoCampo.classList.add('hidden');
+  fcRegistro_CA_formulario_nuevo_campo.classList.add('hidden');
   fcRegistro_CA_camposAdicionalesContainer.classList.remove('d-none');
-  agregarCampoBtn.classList.remove('d-none');
+  fcRegistro_CA_agregarCampo.classList.remove('d-none');
   // Mostrar en la consola lo que almacena el array
-  console.log(" Datos almacenados en el array:", camposAdicionales);
+  console.log(" Datos almacenados en el array:", fcRegistro_CA_ARR_campoadicionales);
 });
 
 // Función para editar campo por índice
 function editarCampo(index) {
-  const campoAEditar = camposAdicionales[index];
+  const campoAEditar = fcRegistro_CA_ARR_campoadicionales[index];
 
   // Mostramos el formulario y rellenamos los inputs
-  agregarCampoBtn.classList.add('d-none');
-  container.classList.add('d-none');
+  fcRegistro_CA_agregarCampo.classList.add('d-none');
+  fcRegistro_CA_campos_adicionales.classList.add('d-none');
   fcRegistro_CA_camposAdicionalesContainer.classList.add('d-none'); // Ocultar el contenedor de campos adicionales
-  formularioNuevoCampo.classList.remove("hidden");
-  inputNombreCampo.value = campoAEditar.nombre;
-  inputDescripcionCampo.value = campoAEditar.descripcion;
+  fcRegistro_CA_formulario_nuevo_campo.classList.remove("hidden");
+  fcRegistro_CA_nombre_campo.value = campoAEditar.fcRegistro_CA_nombre;
+  fcRegistro_CA_descripcion_campo.value = campoAEditar.fcRegistro_CA_descripcion;
 
   // Establecemos el índice actual en edición
-  indiceEdicion = index;
+  fcRegistro_CA_ARR_indiceEdicion = index;
 }
 
   // Función para limpiar formulario
-  function limpiarFormulario() {
-    inputNombreCampo.value = '';
-    inputDescripcionCampo.value = '';
+  function fcRegistro_CA_limpiarFormulario() {
+    fcRegistro_CA_nombre_campo.value = '';
+    fcRegistro_CA_descripcion_campo.value = '';
   }
 
   // Función para mostrar los campos en el contenedor
-  function renderCamposAdicionales() {
+  function fcRegistro_CA_renderCamposAdicionales() {
     // 1) Limpias el contenedor
     fcRegistro_CA_camposAdicionalesContainer.innerHTML = '';
   
     // 2) Recorres cada elemento del array
-    camposAdicionales.forEach((campo, index) => {
+    fcRegistro_CA_ARR_campoadicionales.forEach((campo, index) => {
       // A) Crea el <div> con la clase "campo-adicional-item"
       const campoItem = document.createElement('div');
       campoItem.classList.add('campo-adicional-item');
@@ -290,7 +283,7 @@ function editarCampo(index) {
       
       const inputNombre = document.createElement('input');
       inputNombre.type = 'text';
-      inputNombre.value = campo.nombre;
+      inputNombre.value = campo.fcRegistro_CA_nombre;
       inputNombre.readOnly = true;
       nombreWrapper.appendChild(inputNombre);
   
@@ -303,7 +296,7 @@ function editarCampo(index) {
       descripcionWrapper.appendChild(labelDesc);
   
       const inputDescripcion = document.createElement('input');
-      inputDescripcion.value = campo.descripcion;
+      inputDescripcion.value = campo.fcRegistro_CA_descripcion;
       inputDescripcion.readOnly = true;
       descripcionWrapper.appendChild(inputDescripcion);
   
@@ -328,7 +321,7 @@ function editarCampo(index) {
       const btnEliminar = document.createElement('button');
       btnEliminar.textContent = 'Eliminar';
       btnEliminar.id = 'btnEliminar'; // Asignamos un id
-      btnEliminar.addEventListener('click', () => eliminarCampo(index));
+      btnEliminar.addEventListener('click', () => fcRegistro_CA_eliminarCampo(index));
       
       acciones.appendChild(btnEditar);
       acciones.appendChild(btnEliminar);
@@ -342,39 +335,39 @@ function editarCampo(index) {
   
   
   // Función para eliminar campo por índice
-  function eliminarCampo(index) {
+  function fcRegistro_CA_eliminarCampo(index) {
     alert("seguro que desea eliminar el campo ");
     // Elimina el elemento del array
-    camposAdicionales.splice(index, 1);
+    fcRegistro_CA_ARR_campoadicionales.splice(index, 1);
     // Vuelve a renderizar
-    renderCamposAdicionales();
+    fcRegistro_CA_renderCamposAdicionales();
     // Mostrar contenedores y botón de agregar
-  container.classList.remove('d-none');
+    fcRegistro_CA_campos_adicionales.classList.remove('d-none');
   fcRegistro_CA_camposAdicionalesContainer.classList.remove('d-none');
-  agregarCampoBtn.classList.remove('d-none');
+  fcRegistro_CA_agregarCampo.classList.remove('d-none');
   }
 
  
   // Función para restaurar el evento guardar original
   function restaurarEventoGuardar() {
-    btnGuardar.onclick = () => {
-      const nombre     = inputNombreCampo.value.trim();
-      const descripcion = inputDescripcionCampo.value.trim();
+    fcRegistro_CA_btn_guardar.onclick = () => {
+      const fcRegistro_CA_nombre     = fcRegistro_CA_nombre_campo.value.trim();
+      const fcRegistro_CA_descripcion = fcRegistro_CA_descripcion_campo.value.trim();
 
-      if (!nombre) {
-        alert('Por favor, ingresa el nombre del campo.');
+      if (!fcRegistro_CA_nombre) {
+        alert('Por favor, ingresa el fcRegistro_CA_nombre del campo.');
         return;
       }
 
       const nuevoCampo = {
-        nombre,
-        descripcion
+        fcRegistro_CA_nombre,
+        fcRegistro_CA_descripcion
       };
 
-      camposAdicionales.push(nuevoCampo);
-      renderCamposAdicionales();
-      limpiarFormulario();
-      formularioNuevoCampo.classList.add('hidden');
+      fcRegistro_CA_ARR_campoadicionales.push(nuevoCampo);
+      fcRegistro_CA_renderCamposAdicionales();
+      fcRegistro_CA_limpiarFormulario();
+      fcRegistro_CA_formulario_nuevo_campo.classList.add('hidden');
     };
   }
 
@@ -383,7 +376,18 @@ function editarCampo(index) {
 
 
 
-                    };
+                  };
+
+
+
+
+
+
+
+
+
+
+
 
 
                     function fcRegistro_abrirModalPersona() {
@@ -391,28 +395,23 @@ function editarCampo(index) {
                       
                       const myModal = new bootstrap.Modal(modalElement);
                   
-                     
-                     fcRegistro_obtener_data_ws(0, 1); 
+                      
+
+                     fcRegistro_obtener_data_ws(0, 1, $('#fcRegistroTitulo').html('crear cliente')); 
                   
                       
                       myModal.show();
-                  }
-                  
+                  }                  
                   function fcRegistro_abrirModalEmpresa() {
                       const modalElement = document.getElementById('fcclientes-modal');
                       const myModal = new bootstrap.Modal(modalElement);
                   
-                      fcRegistro_obtener_data_ws(0, 6); // Limpiamos el formulario con datos vacíos
+                      fcRegistro_obtener_data_ws(0, 6,$('#fcRegistroTitulo').html('crear cliente')); // Limpiamos el formulario con datos vacíos
                   
                      
                   
                       myModal.show();
-                  }
-
-                            
-
-  
-
+                  }                            
                     function fcRegistro_obtener_data_ws(id_cliente, tShowForm = 0) {
                       // Mostrar el spinner de carga
                       document.getElementById('fcRegistro_loadingSpinner').classList.remove('d-none');
@@ -440,6 +439,7 @@ function editarCampo(index) {
                           document.getElementById('fcRegistro_loadingSpinner').classList.add('d-none');
                   
                           // Mostrar el formulario y llenarlo con el HTML obtenido
+                         
                           const formularioDiv = document.getElementById('fcRegistro_formulario');
                           formularioDiv.innerHTML = html;  // Insertar el HTML en el div
                           formularioDiv.classList.remove('d-none');  // Mostrar el div
@@ -456,9 +456,10 @@ function editarCampo(index) {
 
                           
                           $(document).ready(function() {
-
+                           
                           // Mostrar el formulario adecuado
                           if(tShowForm){
+                            
                             fcRegistro_Empresa_Persona(tShowForm);
                           }
 
@@ -471,7 +472,6 @@ function editarCampo(index) {
                           document.getElementById('fcRegistro_loadingSpinner').classList.add('d-none');  // Ocultar el spinner en caso de error
                       });
                   }
-
                     
                   
 

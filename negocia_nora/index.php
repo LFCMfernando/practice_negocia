@@ -3827,7 +3827,7 @@ font-size: 16px;
 
 
           <div class="modal-header">
-            <p>Editar cliente</p>
+            <p id="fcRegistroTitulo">Editar cliente</p>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
 

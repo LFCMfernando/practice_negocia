@@ -492,8 +492,8 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
 
 
               <div class="fcRegistro_CA_botones">
-                <button class="fcRegistro_CA_boton-cancelar" id="fcRegistro_CA_boton-cancelar">Cancelar</button>
-                <button class="fcRegistro_CA_boton-guardar" id="fcRegistro_CA_boton-guardar">Guardar</button>
+                <button class="fcRegistro_CA_boton_cancelar" id="fcRegistro_CA_boton_cancelar">Cancelar</button>
+                <button class="fcRegistro_CA_boton_guardar" id="fcRegistro_CA_boton_guardar">Guardar</button>
               </div>
             </div>
 
@@ -589,7 +589,7 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
 
 
             <!-- Formulario nuevo campo (inicialmente oculto con clase .hidden) -->
-            <div id="fcRegistro_CA_formulario-nuevo-campo" class="hidden">
+            <div id="fcRegistro_CA_formulario_nuevo_campo" class="hidden">
               <div class="fcRegistro_CA_form-group">
                 <label for="fcRegistro_CA_nombre_campo">Composición Química</label>
                 <input type="text" id="fcRegistro_CA_nombre_campo" placeholder="">
@@ -671,71 +671,71 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
 
 
     // Array para almacenar las etiquetas
-    let etiquetas = [];
+    let fcRegistro_CA_ARR_etiquetas = [];
 
     // Elementos del DOM
-    const formulario = document.getElementById('fcRegistro_CA_formulario');
-    const mensajeVacio = document.getElementById('fcRegistro_CA_mensajeVacio');
-    const listaEtiquetas = document.getElementById('fcRegistro_CA_etiquetas');
-    const botonAgregarEtiqueta = document.getElementById('fcRegistro_CA_agregarcontacto');
-    const botonGuardar = document.getElementById('fcRegistro_CA_boton-guardar');
-    const botonCancelar = document.getElementById('fcRegistro_CA_boton-cancelar');
+    const fcRegistro_CA_formulario = document.getElementById('fcRegistro_CA_formulario');
+    const fcRegistro_CA_mensajeVacio = document.getElementById('fcRegistro_CA_mensajeVacio');
+    const fcRegistro_CA_etiquetas = document.getElementById('fcRegistro_CA_etiquetas');
+    const fcRegistro_CA_agregarcontacto = document.getElementById('fcRegistro_CA_agregarcontacto');
+    const fcRegistro_CA_boton_guardar = document.getElementById('fcRegistro_CA_boton_guardar');
+    const fcRegistro_CA_boton_cancelar = document.getElementById('fcRegistro_CA_boton_cancelar');
 
     // Función unificada para manejar etiquetas
-    function manejarEtiquetas(etiquetasIniciales = []) {
-      etiquetas = etiquetasIniciales; // Inicializar el array de etiquetas con los datos de la API
-      actualizarListaEtiquetas(); // Mostrar etiquetas iniciales
+    function fcRegistro_CA_manejarEtiquetas(etiquetasIniciales = []) {
+      fcRegistro_CA_ARR_etiquetas = etiquetasIniciales; // Inicializar el array de etiquetas con los datos de la API
+      fcRegistro_CA_actualizarListaEtiquetas(); // Mostrar etiquetas iniciales
 
-      // Mostrar/ocultar formulario
+      // Mostrar/ocultar fcRegistro_CA_formulario
       document.getElementById('fcRegistro_CA_mostrarFormulario').addEventListener('click', function (e) {
         e.preventDefault();
-        formulario.style.display = 'block';
-        mensajeVacio.style.display = 'none';
+        fcRegistro_CA_formulario.style.display = 'block';
+        fcRegistro_CA_mensajeVacio.style.display = 'none';
       });
 
-      // Cancelar formulario
-      botonCancelar.addEventListener('click', function (e) {
+      // Cancelar fcRegistro_CA_formulario
+      fcRegistro_CA_boton_cancelar.addEventListener('click', function (e) {
         e.preventDefault();
         // Mostrar el botón de agregar etiqueta nuevamente
         document.getElementById('fcRegistro_CA_agregarcontacto').classList.remove('d-none');
-        formulario.style.display = 'none'; // Ocultar el formulario
-        limpiarFormulario(); // Limpiar los campos del formulario
-        mostrarListaEtiquetas(); // Mostrar la lista de etiquetas
+        fcRegistro_CA_formulario.style.display = 'none'; // Ocultar el fcRegistro_CA_formulario
+        fcRegistro_CA_limpiarFormulario(); // Limpiar los campos del fcRegistro_CA_formulario
+        fcRegistro_CA_mostrarListaEtiquetas(); // Mostrar la lista de etiquetas
       });
 
       // Guardar etiqueta
-      botonGuardar.addEventListener('click', function (e) {
+      fcRegistro_CA_boton_guardar.addEventListener('click', function (e) {
         e.preventDefault();
-        const nombre = document.getElementById('fcRegistro_CA_nombre').value;
+        const fcRegistro_CA_nombre = document.getElementById('fcRegistro_CA_nombre').value;
         //const color = document.getElementById('fcc_CA_color').value;
-        const email = document.getElementById('fcRegistro_CA_correo').value;
-        const celular = document.getElementById('fcRegistro_CA_celular').value;
-        const cargo = document.getElementById('fcRegistro_CA_campo').value;
-        const fecha = document.getElementById('fcRegistro_CA_fecha').value;
+        const fcRegistro_CA_correo = document.getElementById('fcRegistro_CA_correo').value;
+        const fcRegistro_CA_celular = document.getElementById('fcRegistro_CA_celular').value;
+        const fcRegistro_CA_campo = document.getElementById('fcRegistro_CA_campo').value;
+        const fcRegistro_CA_fecha = document.getElementById('fcRegistro_CA_fecha').value;
 
-        if (nombre && email && celular && cargo && fecha) {
+        if (fcRegistro_CA_nombre && fcRegistro_CA_correo && fcRegistro_CA_celular && fcRegistro_CA_campo && fcRegistro_CA_fecha) {
           const etiqueta = {
             EtqId: Date.now(), // Usamos un timestamp como ID único
-            EtqNombre: nombre,
+            EtqNombre: fcRegistro_CA_nombre,
             //EtqColor: color,
-            email: email,
-            celular: celular,
-            cargo: cargo,
-            fecha: fecha,
+            email: fcRegistro_CA_correo,
+            celular: fcRegistro_CA_celular,
+            cargo: fcRegistro_CA_campo,
+            fecha: fcRegistro_CA_fecha,
           };
 
           // Verificar si estamos editando una etiqueta existente
-          const indiceEdicion = formulario.getAttribute('data-indice');
+          const indiceEdicion = fcRegistro_CA_formulario.getAttribute('data-indice');
           if (indiceEdicion !== null) {
-            etiquetas[indiceEdicion] = etiqueta; // Editar etiqueta
-            formulario.removeAttribute('data-indice');
+            fcRegistro_CA_ARR_etiquetas[indiceEdicion] = etiqueta; // Editar etiqueta
+            fcRegistro_CA_formulario.removeAttribute('data-indice');
           } else {
-            etiquetas.push(etiqueta); // Agregar nueva etiqueta
+            fcRegistro_CA_ARR_etiquetas.push(etiqueta); // Agregar nueva etiqueta
           }
 
-          actualizarListaEtiquetas(); // Actualizar la lista de etiquetas
-          limpiarFormulario(); // Limpiar el formulario
-          formulario.style.display = 'none'; // Ocultar el formulario
+          fcRegistro_CA_actualizarListaEtiquetas(); // Actualizar la lista de etiquetas
+          fcRegistro_CA_limpiarFormulario(); // Limpiar el fcRegistro_CA_formulario
+          fcRegistro_CA_formulario.style.display = 'none'; // Ocultar el fcRegistro_CA_formulario
           // Mostrar el botón de agregar etiqueta nuevamente
           document.getElementById('fcRegistro_CA_agregarcontacto').classList.remove('d-none');
         } else {
@@ -744,20 +744,20 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
       });
 
       // Agregar otra etiqueta
-      botonAgregarEtiqueta.addEventListener('click', function (e) {
+      fcRegistro_CA_agregarcontacto.addEventListener('click', function (e) {
         e.preventDefault();
         // Mostrar el botón de agregar etiqueta nuevamente
         document.getElementById('fcRegistro_CA_agregarcontacto').classList.add('d-none');
-        formulario.style.display = 'block'; // Mostrar el formulario
-        listaEtiquetas.style.display = 'none'; // Ocultar la lista de etiquetas
-        limpiarFormulario(); // Limpiar el formulario
+        fcRegistro_CA_formulario.style.display = 'block'; // Mostrar el fcRegistro_CA_formulario
+        fcRegistro_CA_etiquetas.style.display = 'none'; // Ocultar la lista de etiquetas
+        fcRegistro_CA_limpiarFormulario(); // Limpiar el fcRegistro_CA_formulario
       });
 
       // Función para actualizar la lista de etiquetas
-      function actualizarListaEtiquetas() {
-        listaEtiquetas.innerHTML = ''; // Limpiar la lista
-        if (etiquetas.length > 0) {
-          etiquetas.forEach((etiqueta, indice) => {
+      function fcRegistro_CA_actualizarListaEtiquetas() {
+        fcRegistro_CA_etiquetas.innerHTML = ''; // Limpiar la lista
+        if (fcRegistro_CA_ARR_etiquetas.length > 0) {
+          fcRegistro_CA_ARR_etiquetas.forEach((etiqueta, indice) => {
             const col6 = document.createElement('div');
             col6.className = 'col-6 col-xs-12 mb-3';
             const etiquetaElemento = document.createElement('div');
@@ -770,14 +770,14 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
                     <p class="mb-1"><strong>Cargo:</strong> ${etiqueta.cargo}</p>
                     <p class="mb-1"><strong>Cumpleaños:</strong> ${etiqueta.fecha}</p>
                     <div class="btncontactos d-flex justify-content-end gap-2">
-                        <button class="editar btn" data-indice="${indice}">
+                        <button class="fcRegistro_CA_editar btn" data-indice="${indice}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="skyblue" class="bi bi-pencil-square" viewBox="0 0 16 16">
   <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
   <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
 </svg>
 
                         </button>
-                        <button class="eliminar btn" data-indice="${indice}">
+                        <button class="fcRegistro_CA_eliminar  btn" data-indice="${indice}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-trash-fill" viewBox="0 0 16 16">
   <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
 </svg>
@@ -788,11 +788,11 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
 
             // <div class="badge" style="background-color: ${etiqueta.EtqColor}; color: white;">Color</div>
             col6.appendChild(etiquetaElemento);
-            listaEtiquetas.appendChild(col6);
+            fcRegistro_CA_etiquetas.appendChild(col6);
           });
 
           // Agregar eventos a los botones de editar y eliminar
-          document.querySelectorAll('.editar').forEach(boton => {
+          document.querySelectorAll('.fcRegistro_CA_editar').forEach(boton => {
             boton.addEventListener('click', function () {
               const indice = this.getAttribute('data-indice');
               cargarFormularioParaEdicion(indice);
@@ -805,45 +805,45 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
             });
           });
 
-          document.querySelectorAll('.eliminar').forEach(boton => {
+          document.querySelectorAll('.fcRegistro_CA_eliminar ').forEach(boton => {
             boton.addEventListener('click', function () {
               // Se muestra el cuadro de confirmación con "Aceptar" y "Cancelar"
               if (confirm("¿Estás seguro de que deseas eliminar esta etiqueta?")) {
                 // Si el usuario hace clic en "Aceptar", se obtiene el índice de la etiqueta
                 const indice = this.getAttribute('data-indice');
                 // Se elimina la etiqueta del array
-                etiquetas.splice(indice, 1);
+                fcRegistro_CA_ARR_etiquetas.splice(indice, 1);
                 // Se actualiza la lista de etiquetas en la interfaz
-                actualizarListaEtiquetas();
+                fcRegistro_CA_actualizarListaEtiquetas();
                 // Se oculta el botón de agregar etiqueta
-                botonAgregarEtiqueta.style.display = "none";
+                fcRegistro_CA_agregarcontacto.style.display = "none";
               }
             });
           });
 
 
-          mostrarListaEtiquetas(); // Mostrar la lista de etiquetas
+          fcRegistro_CA_mostrarListaEtiquetas(); // Mostrar la lista de etiquetas
         } else {
-          mensajeVacio.style.display = "block"; // Mostrar mensaje de "No hay etiquetas"
+          fcRegistro_CA_mensajeVacio.style.display = "block"; // Mostrar mensaje de "No hay etiquetas"
         }
       }
 
       // Función para mostrar la lista de etiquetas
-      function mostrarListaEtiquetas() {
-        if (etiquetas.length === 0) {
-          mensajeVacio.style.display = "block"; // Mostrar mensaje de "No hay etiquetas"
-          listaEtiquetas.style.display = "none"; // Ocultar lista
-          botonAgregarEtiqueta.style.display = "none"; // Ocultar botón de agregar
+      function fcRegistro_CA_mostrarListaEtiquetas() {
+        if (fcRegistro_CA_ARR_etiquetas.length === 0) {
+          fcRegistro_CA_mensajeVacio.style.display = "block"; // Mostrar mensaje de "No hay etiquetas"
+          fcRegistro_CA_etiquetasfcRegistro_CA_etiquetas.style.display = "none"; // Ocultar lista
+          fcRegistro_CA_agregarcontacto.style.display = "none"; // Ocultar botón de agregar
         } else {
-          mensajeVacio.style.display = "none"; // Ocultar mensaje
-          listaEtiquetas.style.display = "flex"; // Mostrar lista
-          botonAgregarEtiqueta.style.display = "block"; // Mostrar botón de agregar
+          fcRegistro_CA_mensajeVacio.style.display = "none"; // Ocultar mensaje
+          fcRegistro_CA_etiquetas.style.display = "flex"; // Mostrar lista
+          fcRegistro_CA_agregarcontacto.style.display = "block"; // Mostrar botón de agregar
         }
       }
 
-      // Función para cargar el formulario con los datos de una etiqueta para editar
+      // Función para cargar el fcRegistro_CA_formulario con los datos de una etiqueta para editar
       function cargarFormularioParaEdicion(indice) {
-        const etiqueta = etiquetas[indice];
+        const etiqueta = fcRegistro_CA_ARR_etiquetas[indice];
         document.getElementById('fcRegistro_CA_nombre').value = etiqueta.EtqNombre;
         //document.getElementById('fcc_CA_color').value = etiqueta.EtqColor;
         document.getElementById('fcRegistro_CA_correo').value = etiqueta.email;
@@ -851,19 +851,19 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
         document.getElementById('fcRegistro_CA_campo').value = etiqueta.cargo;
         document.getElementById('fcRegistro_CA_fecha').value = etiqueta.fecha;
 
-        formulario.setAttribute('data-indice', indice);
-        formulario.style.display = 'block'; // Mostrar formulario
+        fcRegistro_CA_formulario.setAttribute('data-indice', indice);
+        fcRegistro_CA_formulario.style.display = 'block'; // Mostrar fcRegistro_CA_formulario
       }
 
-      // Función para limpiar el formulario
-      function limpiarFormulario() {
+      // Función para limpiar el fcRegistro_CA_formulario
+      function fcRegistro_CA_limpiarFormulario() {
         document.getElementById('fcRegistro_CA_nombre').value = '';
         //document.getElementById('fcc_CA_color').value = '#ff0000'; // Color por defecto
         document.getElementById('fcRegistro_CA_correo').value = '';
         document.getElementById('fcRegistro_CA_celular').value = '';
         document.getElementById('fcRegistro_CA_campo').value = '';
         document.getElementById('fcRegistro_CA_fecha').value = '';
-        formulario.removeAttribute('data-indice'); // Limpiar índice de edición
+        fcRegistro_CA_formulario.removeAttribute('data-indice'); // Limpiar índice de edición
       }
     }
 
@@ -877,7 +877,7 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
         ?>
         var clienteTipo = "<?php echo $clienteTipo; ?>";
         if (clienteTipo) {
-          fcRegistro_Empresa_Persona(clienteTipo); // Si hay datos, mostrar el formulario
+          fcRegistro_Empresa_Persona(clienteTipo); // Si hay datos, mostrar el fcRegistro_CA_formulario
         }
 
         <?php
@@ -886,7 +886,7 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
           $etiquetas_json = json_encode($cliente['ArrayEtiquetas']);
           if ($etiquetas_json !== false) {
             ?>
-            manejarEtiquetas(<?php echo $etiquetas_json; ?>); // Inicializar con etiquetas del cliente
+            fcRegistro_CA_manejarEtiquetas(<?php echo $etiquetas_json; ?>); // Inicializar con etiquetas del cliente
             <?php
           } else {
             ?>
@@ -895,27 +895,25 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
           }
         } else {
           ?>
-          manejarEtiquetas([]); // Inicializar como array vacío
+          fcRegistro_CA_manejarEtiquetas([]); // Inicializar como array vacío
           <?php
         }
       } else {
         ?>
         console.warn("No se proporcionó un ID de cliente válido.");
-        $("#fcRegistro_formContainer").hide(); // Mantener el formulario oculto
-        manejarEtiquetas([]); // Inicializar como array vacío
+        $("#fcRegistro_formContainer").hide(); // Mantener el fcRegistro_CA_formulario oculto
+        fcRegistro_CA_manejarEtiquetas([]); // Inicializar como array vacío
         <?php
       }
       ?>
     });
 
-    // Función para abrir el formulario manualmente desde el menú
-    // function abrirModalPersona() {
-    //     fcRegistro_Empresa_Persona('1'); // Llama a la función para mostrar el formulario de persona
-    // }
+   
+    
 
-    // function abrirModalEmpresa() {
-    //     fcRegistro_Empresa_Persona('6'); // Llama a la función para mostrar el formulario de empresa
-    // }
+
+
+
 
 
   </script>
