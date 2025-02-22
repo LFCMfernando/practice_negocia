@@ -8,15 +8,6 @@ show// funcion abrir modad
         
       });
 
-
-
-
-
-
-
-
-
-
       function fcRegistro_Empresa_Persona(clienteTipo, ) {
         // Muestra el fcRegistro_CA_formulario correspondiente
         document.getElementById('fcRegistro_formContainer').style.display = 'block';
@@ -26,10 +17,17 @@ show// funcion abrir modad
         document.querySelector('.modal-body').classList.add('scrollable');
 
           // Obtén referencias a ambos botones
+          const fcRegistro_icono_persona = document.getElementById("fcRegistro_icono_persona");
+          const fcRegistro_icono_empresa=document.getElementById("fcRegistro_icono_empresa");
+  // Cambia el atributo fill a 'white'
+
   const fcRegistro_btn_persona = document.getElementById( 'fcRegistro_btn_persona');
   const fcRegistro_btn_empresa = document.getElementById('fcRegistro_btn_empresa');
 
    // Limpia estilos en ambos botones (para que no quede el color anterior)
+   fcRegistro_icono_persona.setAttribute("fill", "orange");
+
+   fcRegistro_icono_empresa.setAttribute("fill", "orange");
    fcRegistro_btn_persona.style.background = '';
    fcRegistro_btn_persona.style.color = '';
    fcRegistro_btn_empresa.style.background = '';
@@ -39,8 +37,10 @@ show// funcion abrir modad
         if (clienteTipo =='1') {
           
           // Activa el estilo naranja/blanco en el botón Persona
+          fcRegistro_icono_persona.setAttribute("fill", "white");
           fcRegistro_btn_persona.style.background = 'orange';
           fcRegistro_btn_persona.style.color = 'white';
+          
       
           // Muestra campos de Persona, oculta los de Empresa
           document.getElementById('fcRegistro_personaFields').style.display = 'block';
@@ -52,6 +52,7 @@ show// funcion abrir modad
       
         } else if (clienteTipo =='6') {
           // Activa el estilo naranja/blanco en el botón Empresa
+          fcRegistro_icono_empresa.setAttribute("fill", "white");
           fcRegistro_btn_empresa.style.background = 'orange';
           fcRegistro_btn_empresa.style.color = 'white';
       
@@ -82,7 +83,6 @@ show// funcion abrir modad
         }
       }
 
-
       function fcclientes_btn_mas_opciones(){
   document.getElementById('fcRegistro_btn-mas-opciones').classList.add('d-none');
   
@@ -93,13 +93,14 @@ show// funcion abrir modad
 
 
   // Seleccionamos el contenedor fcRegistro_footer y el botón Guardar
-  const fcRegistro_footer = document.querySelector('.modal-fcRegistro_footer.footer_sticky');
+  const fcRegistro_footer = document.querySelector('.modal-footer.footer_sticky');
   const fcRegistro_btnGuardar = document.getElementById('fcRegistro_guardar_datos_cliente_proveedor');
   
   if (fcRegistro_footer && fcRegistro_btnGuardar) {
     // Hacemos que el fcRegistro_footer sea flex
     fcRegistro_footer.style.display = 'flex';
     fcRegistro_footer.style.alignItems = 'center';
+    fcRegistro_footer.style.justifyContent = 'flex-end'; 
 
     // Movemos el botón "Guardar" a la derecha
     fcRegistro_btnGuardar.style.marginLeft = 'auto';
@@ -125,9 +126,6 @@ show// funcion abrir modad
         }
       }
       
-
-
-
 // function de los acordiones 
                     function fcc_acordiones() {
 
@@ -378,26 +376,12 @@ function editarCampo(index) {
 
                   };
 
-
-
-
-
-
-
-
-
-
-
-
-
                     function fcRegistro_abrirModalPersona() {
                       const modalElement = document.getElementById('fcclientes-modal');
                       
                       const myModal = new bootstrap.Modal(modalElement);
-                  
-                      
 
-                     fcRegistro_obtener_data_ws(0, 1, $('#fcRegistroTitulo').html('crear cliente')); 
+                      fcRegistro_obtener_data_ws(0, 1, $('#fcRegistroTitulo').html('crear cliente')); 
                   
                       
                       myModal.show();
@@ -408,7 +392,6 @@ function editarCampo(index) {
                   
                       fcRegistro_obtener_data_ws(0, 6,$('#fcRegistroTitulo').html('crear cliente')); // Limpiamos el formulario con datos vacíos
                   
-                     
                   
                       myModal.show();
                   }                            
@@ -439,7 +422,7 @@ function editarCampo(index) {
                           document.getElementById('fcRegistro_loadingSpinner').classList.add('d-none');
                   
                           // Mostrar el formulario y llenarlo con el HTML obtenido
-                         
+
                           const formularioDiv = document.getElementById('fcRegistro_formulario');
                           formularioDiv.innerHTML = html;  // Insertar el HTML en el div
                           formularioDiv.classList.remove('d-none');  // Mostrar el div
@@ -456,7 +439,7 @@ function editarCampo(index) {
 
                           
                           $(document).ready(function() {
-                           
+
                           // Mostrar el formulario adecuado
                           if(tShowForm){
                             

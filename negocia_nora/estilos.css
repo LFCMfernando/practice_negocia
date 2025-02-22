@@ -382,10 +382,11 @@
 
       }
 
-      .fcRegistro_eempresa-persona .btn button:hover {
+      /* .fcRegistro_eempresa-persona .btn button:hover  {
         background-color: orange;
         color: white;
-      }
+      } */
+
 
       .fcRegistro_button-next-btn,
       .fcclientes-button-prev-btn {
@@ -486,6 +487,8 @@
 
 
       /*footer*/
+
+      
 
       .modal-footer.footer_sticky {
         margin: auto;
@@ -830,6 +833,9 @@ button#btnEditar {
         
       }
       /**/
+      #fcRegistro_icono_persona{
+        color: orange;
+      }
 
       .fcRegistro_CA_form-group {
         margin-bottom: 10px;

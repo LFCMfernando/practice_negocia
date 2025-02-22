@@ -3892,12 +3892,11 @@ font-size: 16px;
     id="dropdownMenuButton2"
     data-bs-toggle="dropdown"
     aria-expanded="false"
-    style="background: #fff; color: red; padding: 5px 10px;">
+    style="background: #fff; color: orange; padding: 5px 10px;">
     <!-- Ícono “+” en rojo -->
-    <i class="dripicons-plus" 
-       aria-hidden="true" 
-       style="font-size: 22px;">
-    </i>
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="orange" class="bi bi-plus" viewBox="0 0 16 16">
+  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+</svg>
   </button>
 
   <!-- Menú desplegable -->
@@ -3908,8 +3907,9 @@ font-size: 16px;
          href="javascript:void(0);" 
          onclick="fcRegistro_abrirModalPersona()">
          <!-- Ícono de usuario -->
-         <i class="dripicons-user" style="font-size:18px;"></i>
-         <span class="ms-2">Persona</span>
+         <svg id="fcRegistro_icono_persona" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="orange" class="bi bi-person" viewBox="0 0 16 16">
+  <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+</svg>         <span class="ms-2">Persona</span>
       </a>
     </li>
     <li>
@@ -3917,7 +3917,9 @@ font-size: 16px;
          href="javascript:void(0);" 
          onclick="fcRegistro_abrirModalEmpresa()">
          <!-- Ícono de edificio -->
-         <i class="dripicons-user" style="font-size:18px;"></i>
+         <svg id="fcRegistro_icono_empresa" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="orange" class="bi bi-buildings-fill" viewBox="0 0 16 16">
+  <path d="M15 .5a.5.5 0 0 0-.724-.447l-8 4A.5.5 0 0 0 6 4.5v3.14L.342 9.526A.5.5 0 0 0 0 10v5.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V14h1v1.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5zM2 11h1v1H2zm2 0h1v1H4zm-1 2v1H2v-1zm1 0h1v1H4zm9-10v1h-1V3zM8 5h1v1H8zm1 2v1H8V7zM8 9h1v1H8zm2 0h1v1h-1zm-1 2v1H8v-1zm1 0h1v1h-1zm3-2v1h-1V9zm-1 2h1v1h-1zm-2-4h1v1h-1zm3 0v1h-1V7zm-2-2v1h-1V5zm1 0h1v1h-1z"/>
+</svg>
          <span class="ms-2">Empresa</span>
       </a>
     </li>

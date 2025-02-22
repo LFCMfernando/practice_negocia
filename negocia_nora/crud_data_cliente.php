@@ -94,9 +94,6 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
       $ClienteIdTipoContacto = $cliente['ClienteIdTipoContacto'];
       $ClienteNotas = $cliente['ClienteNotas'];
 
-
-
-
       // Acceder a las etiquetas
       $etiquetas = $cliente['ArrayEtiquetas'];
       foreach ($etiquetas as $etiqueta) {
@@ -104,12 +101,8 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
         $EtqColor = $etiqueta['EtqColor'];
         $EtqNombre = $etiqueta['EtqNombre'];
 
-
         // Aquí puedes hacer lo que necesites con las etiquetas
       }
-
-
-
 
       // Imprimir los valores del JSON
       // echo "ClienteId: " . $cliente['ClienteId'] . "<br>";
@@ -135,9 +128,7 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
 
   }
 
-
   ?>
-
 
   <div class="fcRegistro_container ">
 
@@ -152,13 +143,21 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
       <div class="fcRegistro_eempresa-persona">
         <div class="btn ">
           <button type="button" id="fcRegistro_btn_persona" class="fcRegistro_button-next-btn" onclick="fcRegistro_Empresa_Persona('1')">
-          <img src="iconos\Icono ContactopersonaSVG.svg" alt="Icono">
+          <!-- Inicialmente, el ícono es naranja -->
+<svg id="fcRegistro_icono_persona" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="orange" class="bi bi-person" viewBox="0 0 16 16">
+  <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+</svg>
+
            Persona
           </button>
         </div>
         <div class="btn">
           <button type="button" id="fcRegistro_btn_empresa" class="fcRegistro_button-next-btn" onclick="fcRegistro_Empresa_Persona('6')">
-          <img src="iconos\Icono ContactoEmpresaSVG.svg" alt="Icono">Empresa
+          <svg id="fcRegistro_icono_empresa" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="orange" class="bi bi-buildings-fill" viewBox="0 0 16 16">
+  <path d="M15 .5a.5.5 0 0 0-.724-.447l-8 4A.5.5 0 0 0 6 4.5v3.14L.342 9.526A.5.5 0 0 0 0 10v5.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V14h1v1.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5zM2 11h1v1H2zm2 0h1v1H4zm-1 2v1H2v-1zm1 0h1v1H4zm9-10v1h-1V3zM8 5h1v1H8zm1 2v1H8V7zM8 9h1v1H8zm2 0h1v1h-1zm-1 2v1H8v-1zm1 0h1v1h-1zm3-2v1h-1V9zm-1 2h1v1h-1zm-2-4h1v1h-1zm3 0v1h-1V7zm-2-2v1h-1V5zm1 0h1v1h-1z"/>
+</svg>
+
+          Empresa
           </button>
         </div>
       </div>
@@ -227,8 +226,11 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
               <!--MULTIPLE-->
               <div type="button" onclick="agregar_direccion();">
                 <!-- <i class="fcRegistro_direccion fa fa-plus-circle"> </i> -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="orange" class="bi bi-plus" viewBox="0 0 16 16">
+  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+</svg>
                 <a class="fcRegistro_direccion">
-                  + Agregar otra dirección</a>
+                   Agregar otra dirección</a>
               </div>
               <div id="fcRegistro_agregar_cliente_proveedor_direccion_1" style="display: none;">
                 <!-- <i class="fcRegistro_direccion fa fa-plus-circle" type="button"></i> -->
@@ -395,13 +397,10 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
             </select>
           </div>
 
-
           <div class="col-12  " style=" padding-bottom: 0px;"><label>Notas</label>
             <textarea class=" fcRegistro_imput form-control autosize" rows="" id="fcRegistro_notas" name="fcRegistro_notas"
               placeholder="Notas"><?php echo $ClienteNotas ?></textarea>
           </div>
-
-
 
           <div class="modal-footer footer_sticky">
             <button type="submit" class="btn" id="fcRegistro_guardar_datos_cliente_proveedor"
@@ -413,11 +412,8 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
             </button>
           </div>
 
-
-
         </form>
       </div>
-
 
     </div>
 
@@ -770,19 +766,19 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
                     <p class="mb-1"><strong>Cargo:</strong> ${etiqueta.cargo}</p>
                     <p class="mb-1"><strong>Cumpleaños:</strong> ${etiqueta.fecha}</p>
                     <div class="btncontactos d-flex justify-content-end gap-2">
-                        <button class="fcRegistro_CA_editar btn" data-indice="${indice}">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="skyblue" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                        
+                            <svg class="fcRegistro_CA_editar " data-indice="${indice}" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="skyblue" class="bi bi-pencil-square" viewBox="0 0 16 16">
   <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
   <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
 </svg>
 
-                        </button>
-                        <button class="fcRegistro_CA_eliminar  btn" data-indice="${indice}">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                       
+                        
+                            <svg class="fcRegistro_CA_eliminar " data-indice="${indice}" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-trash-fill" viewBox="0 0 16 16">
   <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
 </svg>
 
-                        </button>
+                        
                     </div>
                 `;
 
@@ -917,13 +913,6 @@ if (!empty($json['operacionCliente']) && $json['operacionCliente'] == 1) {
 
 
   </script>
-
-
-
-
-
-
-
 
   <?php
   exit();
