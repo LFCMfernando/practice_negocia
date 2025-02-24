@@ -31,7 +31,7 @@
   <link href="./base_files/rwd-table.min.css" rel="stylesheet" type="text/css">
 
 
-    <!-- ALERTAS FERR -->
+  <!-- ALERTAS FERRS -->
 
 
   <!-- PLUGIN JQUERY SELECT MULTIPLE -->
@@ -4738,30 +4738,26 @@ font-size: 16px;
                                 <p>Selecciona las sucursales donde tendra acceso el usuario.</p>
                                 <label class="container-checkbox">
                                   Sucursal-Myperu
-                                  <input type="checkbox" id="value_impresion_1" 
-                                  onclick="checksCargaSucursales();">
+                                  <input type="checkbox" id="value_impresion_1" onclick="checksCargaSucursales();">
                                   <span class="checkmark-box"></span>
                                 </label>
                                 <div>
                                   <label class="container-checkbox">
                                     Sucursal Chiclayo
-                                    <input type="checkbox" id="value_impresion_1" 
-                                    onclick="checksCargaSucursales();">
+                                    <input type="checkbox" id="value_impresion_1" onclick="checksCargaSucursales();">
                                     <span class="checkmark-box"></span>
                                   </label>
                                   <div>
                                     <label class="container-checkbox">
                                       Sucursal Negocia
-                                      <input type="checkbox" id="value_impresion_1"
-                                      onclick="checksCargaSucursales();">
+                                      <input type="checkbox" id="value_impresion_1" onclick="checksCargaSucursales();">
                                       <span class="checkmark-box"></span>
                                     </label>
                                   </div>
                                   <div>
                                     <label class="container-checkbox">
                                       Sucursal Sullana
-                                      <input type="checkbox" id="value_impresion_1"
-                                        onclick="checksCargaSucursales();">
+                                      <input type="checkbox" id="value_impresion_1" onclick="checksCargaSucursales();">
                                       <span class="checkmark-box"></span>
                                     </label>
                                   </div>
@@ -4968,7 +4964,7 @@ font-size: 16px;
 
 
 
-                        
+
                       </div>
 
 
@@ -5069,29 +5065,29 @@ font-size: 16px;
     });
 
 
-    function checksCargaSucursales(){
+    function checksCargaSucursales() {
       const comprobantes = [
-                { id: "001", label: "Boleta Tradicional" },
-                { id: "0444", label: "Nota de Venta" },
-                { id: "BD05", label: "Nota de Débito Electrónica (Boletas)" },
-                { id: "BN29", label: "Boleta Tradicional" },
-                { id: "BNN1", label: "Boleta Tradicional" },
-                { id: "F013", label: "Factura Electrónica" },
-                { id: "F034", label: "Factura Electrónica" },
-                { id: "FAC1", label: "Factura Electrónica" },
-                { id: "T000", label: "Guía de Remisión Electrónica" }
-            ];
+        { id: "001", label: "Boleta Tradicional" },
+        { id: "0444", label: "Nota de Venta" },
+        { id: "BD05", label: "Nota de Débito Electrónica (Boletas)" },
+        { id: "BN29", label: "Boleta Tradicional" },
+        { id: "BNN1", label: "Boleta Tradicional" },
+        { id: "F013", label: "Factura Electrónica" },
+        { id: "F034", label: "Factura Electrónica" },
+        { id: "FAC1", label: "Factura Electrónica" },
+        { id: "T000", label: "Guía de Remisión Electrónica" }
+      ];
 
-            let checkboxesHTML = "";
-            comprobantes.forEach(comprobante => {
-                checkboxesHTML += `<label class="checkbox-label">
+      let checkboxesHTML = "";
+      comprobantes.forEach(comprobante => {
+        checkboxesHTML += `<label class="checkbox-label">
                     <input type="checkbox"> ${comprobante.id} <span class="tag">${comprobante.label}</span>
                 </label>`;
-            });
-            
-            document.querySelector(".containerSeriesSucursales").insertAdjacentHTML("afterbegin", checkboxesHTML);
+      });
 
-      }
+      document.querySelector(".containerSeriesSucursales").insertAdjacentHTML("afterbegin", checkboxesHTML);
+
+    }
 
     function toggleAccordion(element) {
       let parent = element.parentElement;
