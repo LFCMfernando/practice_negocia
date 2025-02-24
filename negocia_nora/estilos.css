@@ -381,7 +381,9 @@
         border-radius: .25rem;
 
       }
-
+      .fcRegistro_steps {
+        width: 100%;
+      }
       /* .fcRegistro_eempresa-persona .btn button:hover  {
         background-color: orange;
         color: white;
@@ -445,12 +447,14 @@
         margin-bottom: 10px;
       }
 
+      
+
       .fcRegistro_form {
         display: flex;
         flex-direction: column;
         margin-bottom: 15px;
-        width: 100%;
-        margin-bottom: 40px;
+        width: 350px;
+        /*margin-bottom: 40px;*/
       }
 
       .fccdepartamentos {

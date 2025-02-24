@@ -9,38 +9,43 @@ show// funcion abrir modad
       });
 
       function fcRegistro_Empresa_Persona(clienteTipo, ) {
-        // Muestra el fcRegistro_CA_formulario correspondiente
         document.getElementById('fcRegistro_formContainer').style.display = 'block';
-       
-
+  
         // Agrega la clase scrollable al modal-body
         document.querySelector('.modal-body').classList.add('scrollable');
-
-          // Obtén referencias a ambos botones
-          const fcRegistro_icono_persona = document.getElementById("fcRegistro_icono_persona");
-          const fcRegistro_icono_empresa=document.getElementById("fcRegistro_icono_empresa");
-  // Cambia el atributo fill a 'white'
-
-  const fcRegistro_btn_persona = document.getElementById( 'fcRegistro_btn_persona');
-  const fcRegistro_btn_empresa = document.getElementById('fcRegistro_btn_empresa');
-
-   // Limpia estilos en ambos botones (para que no quede el color anterior)
-   fcRegistro_icono_persona.setAttribute("fill", "orange");
-
-   fcRegistro_icono_empresa.setAttribute("fill", "orange");
-   fcRegistro_btn_persona.style.background = '';
-   fcRegistro_btn_persona.style.color = '';
-   fcRegistro_btn_empresa.style.background = '';
-   fcRegistro_btn_empresa.style.color = '';
-
-        // Oculta los campos de persona o empresa según el tipo
-        if (clienteTipo =='1') {
-          
-          // Activa el estilo naranja/blanco en el botón Persona
-          fcRegistro_icono_persona.setAttribute("fill", "white");
-          fcRegistro_btn_persona.style.background = 'orange';
-          fcRegistro_btn_persona.style.color = 'white';
-          
+      
+        // Obtén referencias a ambos (o uno) de los botones/íconos si existen
+        const fcRegistro_icono_persona = document.getElementById("fcRegistro_icono_persona");
+        const fcRegistro_icono_empresa = document.getElementById("fcRegistro_icono_empresa");
+        const fcRegistro_btn_persona   = document.getElementById("fcRegistro_btn_persona");
+        const fcRegistro_btn_empresa   = document.getElementById("fcRegistro_btn_empresa");
+      
+        // Si existen, limpia el estilo previo
+        if (fcRegistro_icono_persona) {
+          fcRegistro_icono_persona.setAttribute("fill", "orange");
+        }
+        if (fcRegistro_icono_empresa) {
+          fcRegistro_icono_empresa.setAttribute("fill", "orange");
+        }
+        if (fcRegistro_btn_persona) {
+          fcRegistro_btn_persona.style.background = '';
+          fcRegistro_btn_persona.style.color = '';
+        }
+        if (fcRegistro_btn_empresa) {
+          fcRegistro_btn_empresa.style.background = '';
+          fcRegistro_btn_empresa.style.color = '';
+        }
+      
+        // Dependiendo de clienteTipo, activamos estilos y mostramos/ocultamos campos
+        if (clienteTipo == '1') {
+          // Solo si el botón de Persona existe
+          if (fcRegistro_icono_persona) {
+            fcRegistro_icono_persona.setAttribute("fill", "white");
+          }
+          if (fcRegistro_btn_persona) {
+            fcRegistro_btn_persona.style.background = 'orange';
+            fcRegistro_btn_persona.style.color = 'white';
+          }
       
           // Muestra campos de Persona, oculta los de Empresa
           document.getElementById('fcRegistro_personaFields').style.display = 'block';
@@ -49,12 +54,16 @@ show// funcion abrir modad
           // Cambia el tipo de documento a "DNI"
           document.getElementById('fcRegistro_tipo_doc').value = "1";
           fcc_actualizarcampo_empresa_persona('persona');
-      
-        } else if (clienteTipo =='6') {
-          // Activa el estilo naranja/blanco en el botón Empresa
-          fcRegistro_icono_empresa.setAttribute("fill", "white");
-          fcRegistro_btn_empresa.style.background = 'orange';
-          fcRegistro_btn_empresa.style.color = 'white';
+        
+        } else if (clienteTipo == '6') {
+          // Activa el estilo en el botón Empresa (si existe)
+          if (fcRegistro_icono_empresa) {
+            fcRegistro_icono_empresa.setAttribute("fill", "white");
+          }
+          if (fcRegistro_btn_empresa) {
+            fcRegistro_btn_empresa.style.background = 'orange';
+            fcRegistro_btn_empresa.style.color = 'white';
+          }
       
           // Muestra campos de Empresa, oculta los de Persona
           document.getElementById('fcRegistro_empresaFields').style.display = 'block';
@@ -380,22 +389,33 @@ function editarCampo(index) {
                       const modalElement = document.getElementById('fcclientes-modal');
                       
                       const myModal = new bootstrap.Modal(modalElement);
-
-                      fcRegistro_obtener_data_ws(0, 1, $('#fcRegistroTitulo').html('crear cliente')); 
+                      //$('#fcRegistroTitulo').html('crear cliente')
+                      fcRegistro_obtener_data_ws(0, 1,1,1); 
                   
                       
                       myModal.show();
                   }                  
-                  function fcRegistro_abrirModalEmpresa() {
+                  function fcRegistro_abrirModalEmpresa(tipo) {
                       const modalElement = document.getElementById('fcclientes-modal');
                       const myModal = new bootstrap.Modal(modalElement);
                   
-                      fcRegistro_obtener_data_ws(0, 6,$('#fcRegistroTitulo').html('crear cliente')); // Limpiamos el formulario con datos vacíos
+                     // $('#fcRegistroTitulo').html('crear cliente');
+                      fcRegistro_obtener_data_ws(0,6,1,1); // Limpiamos el formulario con datos vacíos
                   
                   
                       myModal.show();
-                  }                            
-                    function fcRegistro_obtener_data_ws(id_cliente, tShowForm = 0) {
+                  }   
+                  
+                  //proveedores
+
+                  function fcRegistroocultarBTNEmpresa() {
+                    
+                     document.getElementById('fcRegistro_btn_empresa').style.display = 'none';
+                  }
+
+
+
+                    function fcRegistro_obtener_data_ws(id_registro, tShowForm = 0, opcrud = 0, opRegistro = 0) {
                       // Mostrar el spinner de carga
                       document.getElementById('fcRegistro_loadingSpinner').classList.remove('d-none');
                       document.getElementById('fcRegistro_formulario').classList.add('d-none');
@@ -404,8 +424,9 @@ function editarCampo(index) {
                       myHeaders.append("Content-Type", "application/json");
                   
                       const raw = JSON.stringify({
-                          "operacionCliente": 1,
-                          "id_cliente": id_cliente
+                          "opcrud": opcrud,
+                          "opRegistro": opRegistro,
+                          "id_registro": id_registro
                       });
                   
                       const requestOptions = {
@@ -420,6 +441,8 @@ function editarCampo(index) {
                       .then((html) => {
                           // Ocultar el spinner de carga
                           document.getElementById('fcRegistro_loadingSpinner').classList.add('d-none');
+
+                          
                   
                           // Mostrar el formulario y llenarlo con el HTML obtenido
 
@@ -436,9 +459,15 @@ function editarCampo(index) {
                                   eval(scriptContent);
                               }
                           }
-
+                         
                           
+                          if (opRegistro == 2) {
+                            fcRegistroocultarBTNEmpresa();
+                        }
+                        
                           $(document).ready(function() {
+
+                           
 
                           // Mostrar el formulario adecuado
                           if(tShowForm){
@@ -457,5 +486,16 @@ function editarCampo(index) {
                   }
                     
                   
+              
 
+              //   function fcRegistro_abrirModalProveedor() {
+              //     const modalElement = document.getElementById('fcclientes-modal');
+              //     const myModal = new bootstrap.Modal(modalElement);
+              
+              //     $('#fcRegistroTitulo').html('crear proveedor');
+              //     fcRegistro_obtener_data_ws(0, 1, 2);
+                  
+              //     myModal.show();
+              // }
+              
 
