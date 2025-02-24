@@ -1,0 +1,28 @@
+function print_automatico_pt(printInfo){
+    
+let { id_print, id_impresion, tipo_impresion, div_resultados, EC2_DOMINIO, id_modulo, url_exist, id_session, id_mesa, moneda, id_cliente } = printInfo; 
+let pdf_url_ticket = '';
+
+const count_print_automatico = $('#count_print_automatico').val();
+
+var data_print = new FormData();
+data_print.append('id_venta', id_print);
+data_print.append('id_impresora', id_impresion);
+data_print.append('tipo_impresion', tipo_impresion);
+data_print.append('id_modulo', id_modulo);
+data_print.append('url_exist', url_exist);
+if(url_exist == 1){
+pdf_url_ticket = $('#link_url_pdf').val();
+}
+data_print.append('pdf_url_ticket', pdf_url_ticket); 
+data_print.append('print_procesos', 1);
+
+data_print.append('id_session', id_session); 
+data_print.append('id_mesa', id_mesa); 
+data_print.append('moneda', moneda); 
+data_print.append('id_cliente', id_cliente); 
+data_print.append('count_print_automatico', count_print_automatico); 
+
+eval(devolver_ajax(2, EC2_DOMINIO+'functions/fn_impresion_automatica.php', 'data_print', div_resultados, ''));
+}   
+ 

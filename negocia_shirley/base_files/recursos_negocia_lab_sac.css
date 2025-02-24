@@ -1,0 +1,534 @@
+/* NEGOCIA.PE @COPYRIGHT 2020 */
+
+
+/*
+body{
+-moz-transform: scale(0.8, 0.8);
+zoom: 115;
+zoom: 91.5%; 
+}
+
+.modal-backdrop{
+width: 112vw !important;    
+height: 112vh !important;    
+}
+*/
+
+.lado_izquierdo{
+text-align: left !important;    
+}
+
+/*NUEVO - SPAN REPORTES*/
+.span_boleta_electronica{
+color: #2ab57d !important;
+background-color: rgba(42,181,125,.15) !important;
+border-color: transparent;
+height: 28px !important;
+font-size: 11px !important;
+padding: 4px !important;
+border-radius: 5px !important;
+width: auto !important;
+text-align: center;
+opacity: 1 !important;
+}
+
+.span_factura_electronica{
+color: #ff9c00 !important;
+background-color: rgba(255,191,83,.15) !important;
+border-color: transparent;
+height: 28px !important;
+font-size: 11px !important;
+padding: 4px !important;
+border-radius: 5px !important;
+width: auto !important;
+text-align: center;
+opacity: 1 !important;
+}
+
+.span_nota_venta_electronica{
+color: #74788d !important;
+background-color: rgba(116,120,141,.15) !important;
+border-color: transparent;
+height: 28px !important;
+font-size: 11px !important;
+padding: 4px !important;
+border-radius: 5px !important;
+width: auto !important;
+text-align: center;
+opacity: 1 !important;
+}
+
+.span_condicion_pago{
+color: #2ab57d !important;
+background-color: rgba(42,181,125,.15) !important;
+border-color: transparent;
+height: 28px !important;
+font-size: 11px !important;
+padding: 5px !important;
+border-radius: 5px !important;
+width: auto !important;
+text-align: center;
+opacity: 1 !important;
+} 
+
+.span_condicion_pendiente{
+color: #ffbf53 !important;
+background-color: rgba(255,191,83,.15) !important;
+border-color: transparent;
+height: 28px !important;
+font-size: 11px !important;
+padding: 5px !important;
+border-radius: 5px !important;
+width: auto !important;
+text-align: center;
+opacity: 1 !important;
+}
+
+.span_condicion_vencido{
+color: #fd625e !important;
+background-color: rgba(253,98,94,.15) !important;
+border-color: transparent;
+height: 28px !important;
+font-size: 11px !important;
+padding: 5px !important;
+border-radius: 5px !important;
+width: auto !important;
+text-align: center;
+opacity: 1 !important;
+}
+
+.span_estado_aceptado{
+color: #2ab57d !important;
+background-color: rgba(42,181,125,.15) !important;
+border-color: transparent;
+height: 28px !important;
+font-size: 11px !important;
+padding: 5px !important;
+border-radius: 5px !important;
+width: auto !important;
+text-align: center;
+opacity: 1 !important;
+} 
+
+.span_estado_proceso{
+color: #4ba6ef !important;
+background-color: rgba(75,166,239,.15) !important;
+border-color: transparent;
+height: 28px !important;
+font-size: 11px !important;
+padding: 5px !important;
+border-radius: 5px !important;
+width: auto !important;
+text-align: center;
+opacity: 1 !important;
+
+} 
+
+.span_estado_no_existe{
+color: #d9534f !important;
+background-color: rgba(253,80,0,.15) !important;
+border-color: transparent !important;
+height: 28px !important; 
+font-size: 11px !important;
+padding: 5px !important;
+border-radius: 5px !important;
+width: auto !important;
+text-align: center;
+opacity: 1 !important;
+}
+
+/*COLORES CHIFLES SAN MiGUEL*/
+.span_boleta_electronica_chifles_SanMiguel{
+color: #fff !important; /*color: #2ab57d !important;*/
+background-color: #ff9c00 !important; /*background-color: rgba(42,181,125,.15) !important;*/
+border-color: transparent;
+height: 28px !important;
+font-size: 11px !important;
+padding: 4px !important;
+border-radius: 5px !important;
+width: auto !important;
+text-align: center;
+opacity: 1 !important;
+}
+
+.span_factura_electronica_chifles_SanMiguel{
+color: #fff !important; /*color: #ff9c00 !important;*/
+background-color: #ff5900 !important; /*background-color: rgba(255,191,83,.15) !important;*/
+border-color: transparent;
+height: 28px !important;
+font-size: 11px !important;
+padding: 4px !important;
+border-radius: 5px !important;
+width: auto !important;
+text-align: center;
+opacity: 1 !important;
+}
+
+.span_nota_venta_electronica_chifles_SanMiguel{
+color: #000 !important; /*color: #74788d !important;*/
+background-color: #ccc !important; /*background-color: rgba(116,120,141,.15) !important;*/
+border-color: transparent;
+height: 28px !important;
+font-size: 11px !important;
+padding: 4px !important;
+border-radius: 5px !important;
+width: auto !important;
+text-align: center;
+opacity: 1 !important;
+}
+
+
+.span_condicion_pago_chifles_SanMiguel{
+color: #fff !important; /*color: #2ab57d !important;*/
+background-color: #73C273 !important; /*background-color: rgba(42,181,125,.15) !important;*/
+border-color: transparent;
+height: 28px !important;
+font-size: 11px !important;
+padding: 5px !important;
+border-radius: 5px !important;
+width: auto !important;
+text-align: center;
+opacity: 1 !important;
+} 
+
+.span_condicion_pendiente_chifles_SanMiguel{
+color: #fff !important; /*color: #ffbf53 !important;*/
+background-color: #d9534f !important; /*background-color: rgba(255,191,83,.15) !important;*/
+border-color: transparent;
+height: 28px !important;
+font-size: 11px !important;
+padding: 5px !important;
+border-radius: 5px !important;
+width: auto !important;
+text-align: center;
+opacity: 1 !important;
+}
+
+.span_condicion_vencido_chifles_SanMiguel{
+color: #fff !important; /*color: #fd625e !important;*/
+background-color: #d9534f !important; /*background-color: rgba(253,98,94,.15) !important;*/
+border-color: transparent;
+height: 28px !important;
+font-size: 11px !important;
+padding: 5px !important;
+border-radius: 5px !important;
+width: auto !important;
+text-align: center;
+opacity: 1 !important;
+}
+
+.span_estado_aceptado_chifles_SanMiguel{
+color: #fff !important; /*color: #2ab57d !important;*/
+background-color: #73C273 !important; /*background-color: rgba(42,181,125,.15) !important;*/
+border-color: transparent;
+height: 28px !important;
+font-size: 11px !important;
+padding: 5px !important;
+border-radius: 5px !important;
+width: auto !important;
+text-align: center;
+opacity: 1 !important;
+} 
+
+.span_estado_proceso_chifles_SanMiguel{
+color: #fff !important; /*color: #4ba6ef !important;*/
+background-color: #337ab7 !important; /*background-color: rgba(75,166,239,.15) !important;*/
+border-color: transparent;
+height: 28px !important;
+font-size: 11px !important;
+padding: 5px !important;
+border-radius: 5px !important;
+width: auto !important;
+text-align: center;
+opacity: 1 !important;
+
+} 
+
+.span_estado_no_existe_chifles_SanMiguel{
+color: #fff !important; /*color: #d9534f !important;*/
+background-color: #d9534f !important; /*background-color: rgba(253,80,0,.15) !important;*/
+border-color: transparent !important;
+height: 28px !important; 
+font-size: 11px !important;
+padding: 5px !important;
+border-radius: 5px !important;
+width: auto !important;
+text-align: center;
+opacity: 1 !important;
+}
+
+
+
+/* 0. COLORES PRINCIPALES (TEXTO) */
+.text-gris{
+color: #4F4F4F !important;
+}
+.text-naranja{
+color: #FF5900 !important;
+}
+.text-amarillo{
+color: #FF9C00 !important;
+}
+.text-verde-claro{
+color: #5CB85C !important;
+}
+.text-verde-oscuro{
+color: #228B22 !important;
+}
+.text-blanco{
+color: #FFFFFF !important;
+}
+.text-negro{
+color: #111111 !important;
+}
+.text-rojo{
+color: #ff0000 !important;
+}
+
+/* 0. COLORES PRINCIPALES (FONDO) */
+.bg-gris{
+background-color: #4F4F4F !important;
+}
+.bg-naranja{
+background-color: #FF5900 !important;
+}
+.bg-amarillo{
+background-color: #FF9C00 !important;
+}
+.bg-verde-claro{
+background-color: #5CB85C !important;
+}
+.bg-verde-oscuro{
+background-color: #228B22 !important;
+}
+.bg-blanco{
+background-color: #FFFFFF !important;
+}
+.bg-negro{
+background-color: #111111 !important;
+}
+.bg-rojo{
+background-color: #ff0000 !important;
+}
+
+/* 0. COLORES PRINCIPALES (BORDE) */
+.border-gris{
+border-color: #4F4F4F !important;
+}
+.border-naranja{
+border-color: #FF5900 !important;
+}
+.border-amarillo{
+border-color: #FF9C00 !important;
+}
+.border-verde-claro{
+border-color: #5CB85C !important;
+}
+.border-verde-oscuro{
+border-color: #228B22 !important;
+}
+.border-blanco{
+border-color: #FFFFFF !important;
+}
+.border-negro{
+border-color: #111111 !important;
+}
+.border-rojo{
+border-color: #ff0000 !important;
+}
+
+/* 1. FIELSET NEGOCIA PRINCIPAL */
+.dom_fieldset_principal{
+border-width: 2px;
+border-style: solid;
+border-radius: 15px;
+width: 90%;
+margin: 0 auto;
+text-align: center;
+margin-bottom: 30px;
+}
+.dom_fieldset_principal_legend{
+font-size: 18px;
+width: 50%;
+border: none;
+}
+.dom_fieldset_principal_content{
+min-height: 290px;
+max-height: 290px;
+overflow-x: hidden;
+overflow-y: auto;
+}
+
+/* 2. FIELSET NEGOCIA NORMAL */
+.dom_fieldset{
+border-width: 1px;
+border-style: solid;
+border-radius: 15px;
+width: 90%;
+margin: 0 auto;
+text-align: center;
+margin-bottom: 30px;
+}
+.dom_fieldset_legend{
+font-size: 18px;
+padding: 5px 10px;
+border-radius: 10px;
+width: 90%;
+border: none;
+}
+.dom_fieldset_content{
+min-height: 150px;
+max-height: 150px;
+overflow-x: hidden;
+overflow-y: auto;
+text-align: left;
+}
+.sombra_btn{
+box-shadow: rgba(143, 141, 143, 0.35) 0px 1px 1px 1px !important;
+}
+.recortar_texto_sucursal span{
+width: 130px !important;
+max-width: 130px !important;
+display:inline-block;
+white-space: nowrap !important;
+overflow: hidden !important;
+text-overflow: ellipsis !important;    
+}
+.select_texto{
+width: 130px !important;
+max-width: 130px !important;
+display:inline-block;
+white-space: nowrap !important;
+overflow: hidden !important;
+text-overflow: ellipsis !important;    
+}
+.recortar_texto_sucursal{
+-webkit-box-align: center!important;
+align-items: center!important;
+display: flex !important;
+max-width: 130px !important;
+}
+@media screen and (max-width: 768px) {
+.oculto{
+display: none !important;
+}
+.recortar_texto_sucursal span{
+width: 120px !important;
+max-width: 120px !important;
+display:inline-block;
+white-space: nowrap !important;
+overflow: hidden !important;
+text-overflow: ellipsis !important;    
+}
+.recortar_texto_sucursal{
+max-width: 120px !important;
+}
+.rep_thead_tb_cliente { min-width: 102px !important;}
+}
+
+/*CSS PERSONALIZAR TABLA*/
+#tech-companies-1, #tech-companies-2, #tech-companies-3, #tech-companies-4, #tech-companies-5, #tech-companies-6, #tech-companies-7, #tech-companies-8, #tech-companies-9, #tech-companies-10{ padding: 0;margin-top: 10px; }
+#tech-companies-1 thead tr th { word-wrap: break-word; font-weight: bold; vertical-align: middle;padding: 7px; }
+#tech-companies-2 thead tr th { word-wrap: break-word; font-weight: bold; vertical-align: middle;padding: 7px; }
+#tech-companies-3 thead tr th { word-wrap: break-word; font-weight: bold; vertical-align: middle;padding: 7px; }
+#tech-companies-4 thead tr th { word-wrap: break-word; font-weight: bold; vertical-align: middle;padding: 7px; }
+#tech-companies-5 thead tr th { word-wrap: break-word; font-weight: bold; vertical-align: middle;padding: 7px; }
+#tech-companies-6 thead tr th { word-wrap: break-word; font-weight: bold; vertical-align: middle;padding: 7px; }
+#tech-companies-7 thead tr th { word-wrap: break-word; font-weight: bold; vertical-align: middle;padding: 7px; }
+#tech-companies-8 thead tr th { word-wrap: break-word; font-weight: bold; vertical-align: middle;padding: 7px; }
+#tech-companies-9 thead tr th { word-wrap: break-word; font-weight: bold; vertical-align: middle;padding: 7px; }
+#tech-companies-10 thead tr th { word-wrap: break-word; font-weight: bold; vertical-align: middle;padding: 7px; }
+.tr_tb_encabezado { background: #FFEDD1 ! important ; color: #3c3939; font-size: 13px; /*height: 35px;*/ }
+/* COLOCAR PADDING - 1° TH */
+tr th:first-child {
+    padding-left: 20px !important;
+}
+tr td:first-child {
+    padding-left: 20px !important;
+}
+/* COLOCAR PADDING - 1° TH */
+.reportes_th_tabla_principal { font-size: 12px; padding: 5px !important; }
+.rep_thead_tb { font-size: 13px; padding: 5px !important; font-weight: 500 !important; text-align: left !important;}
+.reportes_tr_tabla_normal:hover{background: whitesmoke;}
+.fa-long-arrow-alt-down{cursor: pointer; color: #0000004d;}
+.fa-long-arrow-alt-up{cursor: pointer; color: #0000004d;}
+
+
+/*ALERT FUNCION*/
+.alert .close{
+    background: transparent !important;
+    border: none !important;
+}
+
+/*SELECCIONAR TODO EL TEXTO*/
+.allselecttexto {
+  -moz-user-select: all;
+  -webkit-user-select: all;
+  -ms-user-select: all;
+  user-select: all;
+}
+
+.css_flecha_naranja {
+appearance: none;
+background-repeat: no-repeat, repeat !important;
+background-position: right 0.7em top 50%, 0 0 !important;
+background-size: 0.7em 0.7em, 100% !important;
+padding-right: 22px !important;
+}
+
+
+.v2023_input{
+position: relative;
+}
+.v2023_input input{
+display: block;
+background: transparent;
+border: solid 1px #ccc;
+transition: all .3s ease;
+padding: 0 10px;
+padding-top: 8px;
+padding-bottom: 2px;
+height: 30px;
+font-size: 13px;
+}
+.v2023_input select{
+display: block;
+background: transparent;
+border: solid 1px #ccc;
+transition: all .3s ease;
+padding: 0 10px;
+padding-top: 8px;
+padding-bottom: 2px;
+height: 30px;
+font-size: 13px;
+}
+.v2023_input input:focus{
+border-color: #ff9c00
+}
+.v2023_input select:focus{
+border-color: #ff9c00
+}
+.v2023_input label{
+position: absolute;
+cursor: text;
+z-index: 2;
+top: -10px;
+left: 17px;
+font-size: 13px;
+font-weight: bold;
+background: #fff;
+padding: 0 10px;
+color: #333333bf;
+transition: all .3s ease;
+width: auto;
+}
+.v2023_input input:focus + label{
+font-size: 13px;
+top: -12px;
+color: #ff9c00;
+}
+.v2023_input select:focus + label{
+font-size: 13px;
+top: -12px;
+color: #ff9c00;
+}

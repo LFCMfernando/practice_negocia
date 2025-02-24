@@ -1,0 +1,67 @@
+function devolver_ajax(tipo, url, parametros, div_retorno, id_boton){
+    
+//<img src='+"'"+'https://negsb-img-recursos.s3.amazonaws.com/operaciones_img_ajax-loader.gif'+"'"+'>
+
+if(tipo == 1 || tipo == 2 || tipo == 3 || tipo == 4){
+var ajax  = '';
+ajax = ajax + ' $.ajax({';
+if(tipo == 2 || tipo == 4){
+ajax = ajax + ' type : "POST",';
+}
+ajax = ajax + ' url: "'+url+'",';
+if(tipo == 2 || tipo == 4){
+ajax = ajax + ' data: '+parametros+',';
+ajax = ajax + ' cache: false,';
+ajax = ajax + ' contentType: false,';
+ajax = ajax + ' processData: false,';
+}
+ajax = ajax + ' beforeSend: function(){';
+if(id_boton != ''){
+ajax = ajax + ' $("'+id_boton+'").prop("disabled", true);';
+}
+if(tipo != 3 && tipo != 4){
+ajax = ajax + ' $("'+div_retorno+'").html("<div style='+"'"+'text-align:center;'+"'"+'><span style='+"'"+'font-size:9pt;'+"'"+'>Cargando...</span></div>");';
+}
+ajax = ajax + ' },';
+ajax = ajax + ' success: function(data){';
+ajax = ajax + ' $("'+div_retorno+'").html(data).fadeIn("slow");';
+if(id_boton != ''){
+ajax = ajax + ' $("'+id_boton+'").prop("disabled", false);';
+}
+ajax = ajax + ' }';
+ajax = ajax + ' });';
+return ajax;
+}
+}
+function devolver_alerta(tipo, titulo_html, then){
+var icono = '';
+var titulo = '';
+if(tipo == 1){
+icono = '<i class="fa fa-check-circle" style="font-size: 50px; color: #22BF12;"></i>';
+titulo = '<span style="font-size: 17px; color: #22BF12; font-weight: bold; display: block; margin-bottom: 5px;">'+titulo_html+'</span>';
+}
+if(tipo == 2){
+icono = '<i class="fa fa-warning" style="font-size: 50px; color: #ff9c00;"></i>';
+titulo = '<span style="font-size: 17px; color: #ff9c00; font-weight: bold; display: block; margin-bottom: 5px;">'+titulo_html+'</span>';
+}
+if(tipo == 3){
+icono = '<i class="fa fa-exclamation-circle" style="font-size: 50px; color: #d9534f;"></i>';
+titulo = '<span style="font-size: 17px; color: #d9534f; font-weight: bold; display: block; margin-bottom: 5px;">'+titulo_html+'</span>';
+}
+
+var swal  = '';
+swal = swal + ' swal({';
+swal = swal + " html: '"+icono+"<br><br>"+titulo+"',";
+swal = swal + ' showConfirmButton: false,';
+swal = swal + ' allowOutsideClick : false,';
+swal = swal + ' timer: 2000';
+swal = swal + ' })';
+if(then != ''){
+swal = swal + ' .then(function(){';
+swal = swal + then;
+swal = swal + ' })';
+}
+swal = swal + ' ;';
+
+return swal;
+}
